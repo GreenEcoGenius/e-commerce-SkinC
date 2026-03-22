@@ -1,0 +1,28 @@
+.checkbox,
+.checkboxIcon {
+  display: flex;
+  align-items: center;
+}
+.checkbox {
+  align-self: stretch;
+  gap: var(--gap-8);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--Black);
+  font-family: var(--font-inter);
+}
+.checkboxIcon {
+  height: var(--height-24);
+  width: var(--width-24);
+  border-radius: var(--br-6);
+  background-color: var(--White);
+  border: var(--border-2);
+  box-sizing: border-box;
+  justify-content: center;
+}
+.checkboxLabel {
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}

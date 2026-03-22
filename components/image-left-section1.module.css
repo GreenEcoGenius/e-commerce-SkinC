@@ -1,0 +1,194 @@
+.imageLeftSection {
+  align-self: stretch;
+  background-color: var(--White);
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: column;
+  padding: 104px var(--padding-40) var(--padding-56);
+  z-index: 0;
+}
+.container,
+.imageLeftSection,
+.thumbnails {
+  display: flex;
+  align-items: flex-start;
+}
+.container {
+  align-self: stretch;
+  gap: var(--gap-24);
+}
+.thumbnails {
+  width: var(--width-588);
+  flex-direction: column;
+  gap: var(--gap-8);
+}
+.thumbnailIcon {
+  align-self: stretch;
+  position: relative;
+  border-radius: var(--br-8);
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.images {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-8);
+}
+.imageIcon {
+  height: var(--height-78);
+  width: var(--width-78);
+  position: relative;
+  border-radius: var(--br-8);
+  object-fit: cover;
+}
+.text,
+.textButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.textButton {
+  flex: 1;
+  gap: var(--gap-24);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--Black);
+  font-family: var(--font-inter);
+}
+.text {
+  gap: var(--gap-16);
+}
+.face,
+.heading,
+.text {
+  align-self: stretch;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+}
+.face {
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--Gray-3);
+}
+.pureSolutionEssence {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-family: inherit;
+}
+.elevateYourSkincare,
+.h3,
+.pureSolutionEssence {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.h3 {
+  margin: 0;
+  font-size: var(--fs-24);
+  font-family: inherit;
+}
+.elevateYourSkincare {
+  color: var(--Gray-3);
+}
+.variants {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--gap-8);
+}
+.quantity {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.footer {
+  gap: var(--gap-8);
+  color: var(--Gray-3);
+}
+.accordion,
+.footer {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+@media screen and (max-width: 390px) {
+  .imageLeftSection {
+    padding-top: 88px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .thumbnails {
+    align-self: stretch;
+    width: 100%;
+  }
+  .images {
+    display: none;
+  }
+  .textButton {
+    align-self: stretch;
+  }
+  .pureSolutionEssence {
+    font-size: var(--fs-32);
+  }
+  .imageLeftSection {
+    align-self: stretch;
+    width: 100%;
+    gap: var(--gap-32);
+    padding: 104px var(--padding-40) var(--padding-56);
+    box-sizing: border-box;
+  }
+  .imageLeftSection,
+  .thumbnails {
+    display: flex;
+    height: var(--height-auto);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .thumbnailIcon {
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-588);
+    gap: var(--gap-8);
+    padding: var(--padding-16);
+    box-sizing: border-box;
+  }
+  .imageIcon {
+    display: block;
+    gap: var(--gap-0);
+  }
+  .textButton {
+    display: flex;
+    flex: 1;
+    height: var(--height-auto);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .h3,
+  .pureSolutionEssence {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+}

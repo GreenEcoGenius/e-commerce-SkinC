@@ -1,0 +1,42 @@
+.root {
+  border-radius: var(--br-8);
+  background-color: var(--White);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-8) var(--padding-16);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--Red);
+  font-family: var(--font-inter);
+}
+.root[data-color="Gray"] {
+  background-color: var(--Gray-2);
+  border: 0;
+}
+.root[data-color="Dark"] .badgeText {
+  color: var(--Black);
+}
+.root[data-color="Gray"] .badgeText {
+  color: var(--Black);
+  text-transform: uppercase;
+}
+.badgeText {
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}
+@media screen and (max-width: 390px) {
+  .root {
+    display: flex;
+    width: var(--width-auto);
+    align-self: unset;
+    height: var(--height-auto);
+    flex-direction: row;
+    gap: var(--gap-0);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
