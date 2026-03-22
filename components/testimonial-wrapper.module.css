@@ -58,3 +58,40 @@
 .viewProduct {
   color: var(--Gray-3);
 }
+@media screen and (max-width: 390px) {
+  .button,
+  .testimonialWrapper {
+    display: flex;
+    height: var(--height-auto);
+  }
+  .testimonialWrapper {
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .button {
+    align-self: stretch;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    backdrop-filter: blur(52px);
+  }
+  .imageIcon {
+    display: block;
+    height: var(--height-50);
+    gap: var(--gap-0);
+  }
+  .rightText {
+    display: flex;
+    width: var(--width-auto);
+    align-self: unset;
+    height: var(--height-auto);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}

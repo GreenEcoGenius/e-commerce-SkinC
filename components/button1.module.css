@@ -20,3 +20,17 @@
   color: var(--White);
   text-align: left;
 }
+@media screen and (max-width: 390px) {
+  .button {
+    display: flex;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+    flex-direction: row;
+    gap: var(--gap-24);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    backdrop-filter: blur(52px);
+  }
+}

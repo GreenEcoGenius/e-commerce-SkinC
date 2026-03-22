@@ -123,13 +123,9 @@
   .products {
     padding-left: var(--padding-24);
     padding-right: var(--padding-24);
-    box-sizing: border-box;
   }
   .youMightAlso {
     font-size: var(--fs-32);
-  }
-  .productsWrapper {
-    flex-direction: column;
   }
   .product {
     flex: unset;
@@ -144,5 +140,43 @@
   }
   .image2 {
     height: var(--height-392_94);
+  }
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .products,
+  .productsWrapper,
+  .youMightAlso {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+  .youMightAlso {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+  }
+  .productsWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .discount,
+  .priceValue {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+    width: var(--width-auto);
+    align-self: unset;
+    height: var(--height-auto);
   }
 }

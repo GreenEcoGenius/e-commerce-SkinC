@@ -36,6 +36,10 @@
 }
 @media screen and (max-width: 390px) {
   .imageIcon {
-    height: var(--height-187_28);
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-324);
+    gap: var(--gap-0);
   }
 }

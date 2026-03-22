@@ -23,3 +23,14 @@
   text-align: left;
   display: inline-block;
 }
+@media screen and (max-width: 390px) {
+  .placeholder {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+    flex: 1;
+    height: var(--height-auto);
+  }
+}

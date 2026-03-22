@@ -56,17 +56,21 @@
   font-weight: 500;
 }
 @media screen and (max-width: 390px) {
+  .faceMask,
   .imageIcon {
     display: block;
   }
-  .imageIcon2 {
-    display: none;
-  }
   .faceMask {
-    display: block;
     flex: 1;
   }
   .bodyWash {
     display: none;
+  }
+  .imageIcon2 {
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-324);
+    gap: var(--gap-0);
   }
 }

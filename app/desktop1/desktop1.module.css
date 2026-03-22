@@ -28,13 +28,13 @@
   z-index: 3;
 }
 .globalNavigationMobile {
-  width: 390px;
+  width: var(--width-390);
   height: var(--height-67);
   margin: 0 !important;
   position: absolute;
   top: 0;
   left: 0;
-  border-bottom: var(--border-1);
+  border-bottom: var(--border-2);
   align-items: center;
   justify-content: space-between;
   gap: var(--gap-20);
@@ -82,5 +82,13 @@
 @media screen and (max-width: 390px) {
   .globalNavigationMobile {
     display: flex;
+  }
+  .menuIcon,
+  .searchIcon {
+    display: block;
+    gap: var(--gap-0);
+  }
+  .searchIcon {
+    height: var(--height-24);
   }
 }

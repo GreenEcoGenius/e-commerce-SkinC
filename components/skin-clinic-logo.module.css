@@ -17,3 +17,11 @@
   overflow: hidden;
   max-height: 100%;
 }
+@media screen and (max-width: 390px) {
+  .vectorIcon {
+    background-color: var(--Black);
+    display: block;
+    width: var(--width-120);
+    height: var(--height-18_4);
+  }
+}

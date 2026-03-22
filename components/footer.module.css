@@ -1,7 +1,7 @@
 .divider,
 .footer {
   align-self: stretch;
-  border-top: var(--border-1);
+  border-top: var(--border-2);
 }
 .footer {
   background-color: var(--White);
@@ -48,4 +48,35 @@
   letter-spacing: -0.06em;
   line-height: 100%;
   font-weight: 500;
+}
+@media screen and (max-width: 390px) {
+  .bottomContent,
+  .footer,
+  .legalLinks {
+    display: flex;
+    height: var(--height-auto);
+    align-items: flex-start;
+  }
+  .footer {
+    align-self: stretch;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .bottomContent,
+  .legalLinks {
+    flex-direction: row;
+  }
+  .bottomContent {
+    align-self: stretch;
+    width: 100%;
+    gap: 709px;
+    justify-content: space-between;
+  }
+  .legalLinks {
+    width: var(--width-auto);
+    align-self: unset;
+    justify-content: flex-start;
+  }
 }

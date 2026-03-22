@@ -40,6 +40,10 @@
     align-self: stretch;
   }
   .imageIcon {
-    height: var(--height-392_94);
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-324);
+    gap: var(--gap-0);
   }
 }

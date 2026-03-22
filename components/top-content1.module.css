@@ -187,4 +187,12 @@
   .aboutUs3 {
     display: none;
   }
+  .facebookIcon,
+  .instagramIcon {
+    display: block;
+    gap: var(--gap-0);
+  }
+  .facebookIcon {
+    height: var(--height-16);
+  }
 }

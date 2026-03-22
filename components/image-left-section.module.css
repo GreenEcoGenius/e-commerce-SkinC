@@ -23,7 +23,7 @@
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
-  min-width: 382px;
+  min-width: var(--min-w-382);
 }
 .text,
 .textButton {
@@ -33,10 +33,10 @@
 }
 .textButton {
   flex: 0.6906;
-  padding: var(--padding-20) 102px;
+  padding: var(--padding-20) var(--padding-102);
   box-sizing: border-box;
   gap: var(--gap-24);
-  min-width: 382px;
+  min-width: var(--min-w-382);
   text-align: left;
   font-size: var(--fs-40);
   color: var(--Black);
@@ -62,4 +62,62 @@
 .indulgeYourSkin {
   font-size: var(--fs-16);
   color: var(--Gray-3);
+}
+@media screen and (max-width: 390px) {
+  .container,
+  .imageLeftSection {
+    display: flex;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+    justify-content: flex-start;
+  }
+  .imageLeftSection {
+    flex-direction: column;
+    gap: var(--gap-32);
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  .container {
+    flex-direction: row;
+    align-items: center;
+  }
+  .imageIcon,
+  .textButton {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .imageIcon {
+    height: var(--height-588);
+    gap: var(--gap-8);
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: var(--padding-16);
+  }
+  .textButton {
+    height: var(--height-auto);
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .hydrateRevitalize,
+  .text {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .hydrateRevitalize {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+  }
 }

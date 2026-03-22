@@ -68,7 +68,7 @@
 .button {
   width: var(--width-300);
   backdrop-filter: blur(52px);
-  background-color: var(--color-gray);
+  background-color: var(--color-gray-200);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -114,4 +114,100 @@
 }
 .space2 {
   color: var(--White);
+}
+@media screen and (max-width: 390px) {
+  .fullImageSection {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+    flex-direction: column;
+    gap: var(--gap-32);
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .fullImageSection,
+  .heroOffer,
+  .imageWrapper {
+    display: flex;
+    max-width: 100%;
+  }
+  .imageWrapper {
+    align-self: stretch;
+    width: 100%;
+    flex-direction: row;
+    gap: 200px;
+    align-items: flex-end;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+  .heroOffer {
+    height: var(--height-auto);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .pureHydrationIn,
+  .text {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .pureHydrationIn {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+  }
+  .button {
+    display: flex;
+    height: var(--height-auto);
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    backdrop-filter: blur(52px);
+  }
+  .imageIcon {
+    display: block;
+    height: var(--height-100);
+    gap: var(--gap-0);
+  }
+  .rightText {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .price,
+  .rightText,
+  .space,
+  .space2 {
+    width: var(--width-auto);
+    align-self: unset;
+    height: var(--height-auto);
+  }
+  .price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .space,
+  .space2 {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+  }
 }

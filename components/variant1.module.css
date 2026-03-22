@@ -1,6 +1,6 @@
 .root {
   cursor: pointer;
-  border: 1px solid var(--Black);
+  border: var(--border-3);
   padding: var(--padding-8) var(--padding-16);
   background-color: var(--Gray-1);
   border-radius: var(--br-8);
@@ -9,7 +9,7 @@
   justify-content: center;
 }
 .root[data-checked="false"] {
-  border: var(--border-1);
+  border: var(--border-2);
   background-color: var(--White);
 }
 .option {
@@ -21,4 +21,17 @@
   font-family: var(--font-inter);
   color: var(--Black);
   text-align: left;
+}
+@media screen and (max-width: 390px) {
+  .root {
+    display: flex;
+    width: var(--width-auto);
+    align-self: unset;
+    height: var(--height-auto);
+    flex-direction: row;
+    gap: var(--gap-0);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
 }

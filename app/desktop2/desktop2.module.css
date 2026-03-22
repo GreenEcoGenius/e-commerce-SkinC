@@ -42,7 +42,7 @@
 }
 .textWrapper {
   flex: 0.8741;
-  padding: var(--padding-0) 102px var(--padding-0) var(--padding-0);
+  padding: var(--padding-0) var(--padding-102) var(--padding-0) var(--padding-0);
 }
 .text {
   align-self: stretch;
@@ -155,14 +155,14 @@
   background-image: url(/Image20@3x.png);
 }
 .globalNavigationMobile {
-  width: 390px;
+  width: var(--width-390);
   height: var(--height-67);
   margin: 0 !important;
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--White);
-  border-bottom: var(--border-1);
+  border-bottom: var(--border-2);
   box-sizing: border-box;
   flex-shrink: 0;
   display: none;
@@ -215,7 +215,6 @@
   .imageLeftSection {
     padding-left: var(--padding-24);
     padding-right: var(--padding-24);
-    box-sizing: border-box;
   }
   .container {
     flex-direction: column;
@@ -225,23 +224,89 @@
   }
   .imageIcon {
     height: 342px;
-    flex: unset;
     align-self: stretch;
   }
   .categorySection {
     padding-left: var(--padding-24);
     padding-right: var(--padding-24);
-    box-sizing: border-box;
   }
   .categoryWrapper {
     flex-direction: column;
   }
   .imageWrapper {
     height: 392px;
-    flex: unset;
     align-self: stretch;
   }
   .globalNavigationMobile {
     display: flex;
+  }
+  .imageLeftSection,
+  .yourDailyGlow {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+  .imageLeftSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-32);
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .yourDailyGlow {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+  }
+  .imageIcon {
+    display: flex;
+    flex: 1;
+    height: var(--height-588);
+    flex-direction: column;
+    gap: var(--gap-8);
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: var(--padding-16);
+    box-sizing: border-box;
+  }
+  .categorySection,
+  .imageWrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .categorySection {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  .imageWrapper {
+    flex: 1;
+    flex-direction: row;
+    gap: var(--gap-0);
+    align-items: center;
+  }
+  .hyaluronicAcid {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+  .menuIcon,
+  .searchIcon {
+    display: block;
+    gap: var(--gap-0);
+  }
+  .searchIcon {
+    height: var(--height-24);
   }
 }

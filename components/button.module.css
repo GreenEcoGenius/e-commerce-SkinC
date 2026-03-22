@@ -2,7 +2,7 @@
   cursor: pointer;
   border: 0;
   padding: var(--padding-24) var(--padding-48);
-  background-color: var(--color-gray);
+  background-color: var(--color-gray-200);
   backdrop-filter: blur(52px);
   border-radius: var(--br-8);
   display: flex;
@@ -10,7 +10,7 @@
   justify-content: center;
 }
 .root[data-color="Dark"] {
-  border: 1px solid var(--Gray-3);
+  border: var(--border-1);
   background-color: transparent;
 }
 .root[data-color="Dark"] .buttonLabel {
@@ -25,4 +25,18 @@
   font-family: var(--font-inter);
   color: var(--White);
   text-align: left;
+}
+@media screen and (max-width: 390px) {
+  .root {
+    display: flex;
+    width: var(--width-auto);
+    align-self: unset;
+    height: var(--height-auto);
+    flex-direction: row;
+    gap: var(--gap-24);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    backdrop-filter: blur(52px);
+  }
 }

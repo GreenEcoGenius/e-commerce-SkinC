@@ -42,3 +42,34 @@
 .getExclusiveAccess {
   font-size: var(--fs-16);
 }
+@media screen and (max-width: 390px) {
+  .imageWrapper,
+  .textInput {
+    display: flex;
+    flex-direction: column;
+  }
+  .imageWrapper {
+    background-color: var(--color-gray-100);
+    align-self: stretch;
+    width: 100%;
+    gap: var(--gap-0);
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .textInput {
+    height: var(--height-auto);
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .subscribeForExclusive {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+}

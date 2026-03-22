@@ -1,7 +1,7 @@
 .variant {
   border-radius: var(--br-8);
   background-color: var(--White);
-  border: var(--border-1);
+  border: var(--border-2);
   display: flex;
   align-items: center;
   justify-content: center;

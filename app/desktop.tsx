@@ -118,8 +118,8 @@ const Desktop: NextPage = () => {
             <div className={styles.productInfo}>
               <div className={styles.faceToner}>Face Toner</div>
               <div className={styles.price}>
-                <div className={styles.priceSymbol}>$59.99</div>
-                <div className={styles.priceValue}>$47.99</div>
+                <div className={styles.div}>$59.99</div>
+                <div className={styles.div2}>$47.99</div>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@ const Desktop: NextPage = () => {
             </div>
             <div className={styles.productInfo}>
               <div className={styles.faceToner}>Body Serum</div>
-              <div className={styles.serumPrice}>$49.99</div>
+              <div className={styles.div3}>$49.99</div>
             </div>
           </div>
           <Product image="/Image10@2x.png" bodyWash="Face Mask" />

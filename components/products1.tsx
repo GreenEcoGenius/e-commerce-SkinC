@@ -169,7 +169,7 @@ const Products1: NextPage<Products1Type> = ({ className = "" }) => {
               <div className={styles.productInfo}>
                 <div className={styles.faceToner2}>Face Toner</div>
                 <div className={styles.price2}>
-                  <div className={styles.priceSpacer}>$59.99</div>
+                  <div className={styles.div4}>$59.99</div>
                   <div className={styles.div3}>$47.99</div>
                 </div>
                 <div className={styles.bodySerum3}>Body Serum</div>
@@ -226,7 +226,7 @@ const Products1: NextPage<Products1Type> = ({ className = "" }) => {
               <div className={styles.productInfo}>
                 <div className={styles.bodySerum}>Face Toner</div>
                 <div className={styles.price4}>
-                  <div className={styles.priceSpacer}>$59.99</div>
+                  <div className={styles.div4}>$59.99</div>
                   <div className={styles.div3}>$47.99</div>
                 </div>
               </div>
@@ -256,7 +256,7 @@ const Products1: NextPage<Products1Type> = ({ className = "" }) => {
                 <div className={styles.div13}>$49.99</div>
                 <div className={styles.faceToner5}>Face Toner</div>
                 <div className={styles.price5}>
-                  <div className={styles.priceSpacer}>$59.99</div>
+                  <div className={styles.div4}>$59.99</div>
                   <div className={styles.div3}>$47.99</div>
                 </div>
               </div>
@@ -290,7 +290,7 @@ const Products1: NextPage<Products1Type> = ({ className = "" }) => {
                 <div className={styles.div2}>$49.99</div>
                 <div className={styles.faceToner}>Face Toner</div>
                 <div className={styles.price}>
-                  <div className={styles.priceSpacer}>$59.99</div>
+                  <div className={styles.div4}>$59.99</div>
                   <div className={styles.div3}>$47.99</div>
                 </div>
               </div>
@@ -307,7 +307,7 @@ const Products1: NextPage<Products1Type> = ({ className = "" }) => {
               <div className={styles.productInfo}>
                 <div className={styles.faceToner2}>Face Toner</div>
                 <div className={styles.price2}>
-                  <div className={styles.priceSpacer}>$59.99</div>
+                  <div className={styles.div4}>$59.99</div>
                   <div className={styles.div3}>$47.99</div>
                 </div>
                 <div className={styles.bodySerum3}>Body Serum</div>
