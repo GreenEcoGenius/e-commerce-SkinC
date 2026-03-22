@@ -1,0 +1,20 @@
+.header {
+  width: 1970px;
+  border-bottom: 10px solid var(--Black);
+  box-sizing: border-box;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--padding-0) var(--padding-100);
+  text-align: left;
+  font-size: 200px;
+  color: var(--Black);
+  font-family: var(--font-inter);
+}
+.pdp {
+  flex: 1;
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}

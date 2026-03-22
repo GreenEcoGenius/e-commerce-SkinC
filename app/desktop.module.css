@@ -36,7 +36,7 @@
   align-items: flex-start;
 }
 .heroOffer {
-  width: 588px;
+  width: var(--width-588);
   gap: var(--gap-24);
 }
 .text {
@@ -202,7 +202,7 @@
   gap: var(--gap-24);
 }
 .imageWrapper {
-  height: 440px;
+  height: var(--height-440);
   flex: 1;
   display: flex;
   align-items: center;

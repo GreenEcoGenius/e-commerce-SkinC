@@ -1,0 +1,19 @@
+.skinclinicLogo {
+  width: var(--width-121);
+  height: var(--height-19);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.vectorIcon {
+  position: absolute;
+  height: 96.84%;
+  width: 100%;
+  top: 1.58%;
+  right: 0.83%;
+  bottom: 1.58%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}

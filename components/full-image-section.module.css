@@ -37,7 +37,7 @@
   align-items: flex-start;
 }
 .heroOffer {
-  width: 588px;
+  width: var(--width-588);
   gap: var(--gap-24);
   max-width: 100%;
 }

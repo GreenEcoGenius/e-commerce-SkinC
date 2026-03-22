@@ -1,5 +1,5 @@
 .globalNavigationDesktop {
-  width: 1280px;
+  width: var(--width-1280);
   height: var(--height-67);
   margin: 0 !important;
   position: absolute;
