@@ -5,6 +5,7 @@
   align-items: flex-start;
   justify-content: center;
   gap: var(--gap-16);
+  min-width: var(--min-w-288);
   text-align: left;
   font-size: var(--fs-16);
   color: var(--Black);
@@ -56,10 +57,4 @@
 }
 .viewProduct {
   color: var(--Gray-3);
-}
-@media screen and (max-width: 390px) {
-  .testimonialWrapper {
-    flex: unset;
-    align-self: stretch;
-  }
 }

@@ -21,6 +21,7 @@ body {
   --color-gray: rgba(255, 255, 255, 0.16);
 
   /* Gap */
+  --gap-0: 0px;
   --gap-4: 4px;
   --gap-8: 8px;
   --gap-16: 16px;
@@ -32,15 +33,19 @@ body {
 
   /* Padding */
   --padding-0: 0px;
+  --padding-01: 0;
   --padding-8: 8px;
   --padding-16: 16px;
+  --padding-20: 20px;
   --padding-24: 24px;
   --padding-32: 32px;
   --padding-40: 40px;
   --padding-48: 48px;
   --padding-56: 56px;
+  --padding-100: 100px;
 
   /* BorderRadius */
+  --br-6: 6px;
   --br-8: 8px;
 
   /* Font */
@@ -52,26 +57,45 @@ body {
   --fs-32: 32px;
   --fs-40: 40px;
 
+  /* Borders */
+  --border-1: 1px solid var(--Gray-2);
+  --border-11: 1px solid var(--White);
+
   /* WidthHeights */
   --height-1: 1px;
   --height-16: 16px;
   --height-19: 19px;
+  --height-24: 24px;
+  --height-67: 67px;
   --height-253: 253px;
-  --height-342: 342px;
-  --height-392_94: 392.94px;
+  --height-324: 324px;
+  --height-700: 700px;
+  --height-112_6: 112.6px;
+  --height-187_28: 187.28px;
+  --max-w-282: 282px;
+  --min-w-259: 259px;
+  --min-w-288: 288px;
   --width-16: 16px;
   --width-24: 24px;
   --width-50: 50px;
   --width-100: 100px;
   --width-121: 121px;
+  --width-223: 223px;
+  --width-232: 232px;
   --width-253: 253px;
   --width-282: 282px;
+  --width-283: 283px;
   --width-300: 300px;
   --width-342: 342px;
-  --width-588: 588px;
+  --width-384: 384px;
+  --width-auto: auto;
+  --width-calc100-10: calc(100% - 10px);
 
   /* LetterSpacings */
   --ls--0_06: -0.06;
 
+  --left-0: 0px;
+  --top-0: 0px;
   --top-16: 16px;
+  --top-16_1: 16.1px;
 }

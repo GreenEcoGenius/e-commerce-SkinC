@@ -38,7 +38,7 @@ const Products: NextPage<ProductsType> = ({ className = "" }) => {
               badgeText="Guide"
             />
           </div>
-          <h3 className={styles.tipsForA}>
+          <h3 className={styles.fromTheJournal}>
             Tips for a natural skincare routine
           </h3>
           <div className={styles.readMore}>Read more</div>
@@ -62,7 +62,7 @@ const Products: NextPage<ProductsType> = ({ className = "" }) => {
               badgeText="Science"
             />
           </div>
-          <h3 className={styles.tipsForA}>
+          <h3 className={styles.fromTheJournal}>
             Science behind effective face masks
           </h3>
           <div className={styles.readMore}>Read more</div>
@@ -93,7 +93,7 @@ const Products: NextPage<ProductsType> = ({ className = "" }) => {
               badgeText="Insight"
             />
           </div>
-          <h3 className={styles.tipsForA}>
+          <h3 className={styles.fromTheJournal}>
             Ingredients for glowing skin explained
           </h3>
           <div className={styles.readMore}>Read more</div>

@@ -1,12 +1,12 @@
 .globalNavigationDesktop {
   width: 1280px;
-  height: 67px;
+  height: var(--height-67);
   margin: 0 !important;
   position: absolute;
   top: 0;
   left: 0;
   background-color: var(--White);
-  border-bottom: 1px solid var(--Gray-2);
+  border-bottom: var(--border-1);
   box-sizing: border-box;
   flex-shrink: 0;
   display: flex;
@@ -58,9 +58,4 @@
 .bag0 {
   color: inherit;
   text-decoration: none;
-}
-@media screen and (max-width: 390px) {
-  .globalNavigationDesktop {
-    display: none;
-  }
 }

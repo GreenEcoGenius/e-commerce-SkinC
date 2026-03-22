@@ -31,12 +31,15 @@
 }
 .categoryWrapper {
   align-self: stretch;
+  flex-wrap: wrap;
+  align-content: flex-start;
   gap: var(--gap-24);
 }
 .article {
   flex: 1;
   flex-direction: column;
   gap: var(--gap-16);
+  min-width: var(--min-w-288);
   text-align: left;
   font-size: var(--fs-24);
   color: var(--Black);
@@ -55,45 +58,16 @@
   align-items: flex-start;
   gap: var(--gap-8);
 }
-.readMore,
-.tipsForA {
+.readMore {
   align-self: stretch;
   position: relative;
+  font-size: var(--fs-16);
+  text-decoration: underline;
   letter-spacing: -0.06em;
   line-height: 100%;
   font-weight: 500;
 }
-.tipsForA {
-  margin: 0;
-  font-size: inherit;
-  font-family: inherit;
-}
-.readMore {
-  font-size: var(--fs-16);
-  text-decoration: underline;
-}
 .badges2 {
   display: flex;
   align-items: flex-start;
-}
-@media screen and (max-width: 390px) {
-  .products {
-    padding-left: var(--padding-24);
-    padding-right: var(--padding-24);
-    box-sizing: border-box;
-  }
-  .fromTheJournal {
-    font-size: var(--fs-32);
-  }
-  .categoryWrapper {
-    flex-direction: column;
-    gap: var(--gap-32);
-  }
-  .article {
-    flex: unset;
-    align-self: stretch;
-  }
-  .imageIcon {
-    height: var(--height-342);
-  }
 }

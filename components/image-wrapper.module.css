@@ -5,7 +5,7 @@
 }
 .imageWrapper {
   align-self: stretch;
-  height: 700px;
+  height: var(--height-700);
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@
   font-family: var(--font-inter);
 }
 .textInput {
-  width: 384px;
+  width: var(--width-384);
   align-items: flex-start;
   gap: var(--gap-16);
 }
@@ -41,19 +41,4 @@
 }
 .getExclusiveAccess {
   font-size: var(--fs-16);
-}
-@media screen and (max-width: 390px) {
-  .imageWrapper {
-    height: 500px;
-    gap: 136px;
-    padding: var(--padding-24);
-    box-sizing: border-box;
-  }
-  .textInput {
-    align-self: stretch;
-    width: 100%;
-  }
-  .subscribeForExclusive {
-    font-size: var(--fs-32);
-  }
 }

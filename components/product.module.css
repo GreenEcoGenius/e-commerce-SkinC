@@ -4,6 +4,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap-8);
+  min-width: var(--min-w-259);
+  max-width: var(--max-w-282);
   text-align: left;
   font-size: var(--fs-16);
   color: var(--Black);
@@ -33,13 +35,4 @@
   letter-spacing: -0.06em;
   line-height: 100%;
   font-weight: 500;
-}
-@media screen and (max-width: 390px) {
-  .product {
-    flex: unset;
-    align-self: stretch;
-  }
-  .imageIcon {
-    height: var(--height-392_94);
-  }
 }

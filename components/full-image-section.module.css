@@ -1,9 +1,14 @@
-.fullImageSection {
+.fullImageSection,
+.imageWrapper {
   align-self: stretch;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.fullImageSection {
   background-color: var(--White);
   overflow: hidden;
   flex-shrink: 0;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: var(--padding-0) var(--padding-40) var(--padding-56);
@@ -14,14 +19,11 @@
   font-family: var(--font-inter);
 }
 .imageWrapper {
-  align-self: stretch;
-  height: 700px;
+  height: var(--height-700);
   border-radius: var(--br-8);
-  display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding: var(--padding-56);
-  box-sizing: border-box;
   gap: var(--gap-20);
   background-image: url(/Image-Wrapper@3x.png);
   background-size: cover;
@@ -35,8 +37,9 @@
   align-items: flex-start;
 }
 .heroOffer {
-  width: var(--width-588);
+  width: 588px;
   gap: var(--gap-24);
+  max-width: 100%;
 }
 .text {
   align-self: stretch;
@@ -111,31 +114,4 @@
 }
 .space2 {
   color: var(--White);
-}
-@media screen and (max-width: 390px) {
-  .fullImageSection {
-    padding-left: var(--padding-24);
-    padding-right: var(--padding-24);
-    box-sizing: border-box;
-  }
-  .imageWrapper {
-    height: auto;
-    flex-direction: column;
-    gap: 136px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: var(--padding-24);
-    box-sizing: border-box;
-  }
-  .heroOffer {
-    align-self: stretch;
-    width: 100%;
-  }
-  .pureHydrationIn {
-    font-size: var(--fs-32);
-  }
-  .button {
-    align-self: stretch;
-    width: 100%;
-  }
 }

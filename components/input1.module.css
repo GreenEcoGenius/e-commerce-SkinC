@@ -1,14 +1,14 @@
 .input {
   align-self: stretch;
   backdrop-filter: blur(52px);
-  border-bottom: 1px solid var(--White);
+  border-bottom: var(--border-11);
   display: flex;
   align-items: center;
   padding: var(--padding-24) var(--padding-0);
   gap: var(--gap-8);
 }
 .placeholder {
-  width: calc(100% - 10px);
+  width: var(--width-calc100-10);
   border: 0;
   outline: 0;
   font-weight: 500;

@@ -1,7 +1,4 @@
 .root {
-  position: absolute;
-  top: 16px;
-  right: 16px;
   border-radius: var(--br-8);
   background-color: var(--White);
   display: flex;

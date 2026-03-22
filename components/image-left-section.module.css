@@ -23,6 +23,7 @@
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
+  min-width: 382px;
 }
 .text,
 .textButton {
@@ -32,8 +33,10 @@
 }
 .textButton {
   flex: 0.6906;
-  padding: var(--padding-0) 102px;
+  padding: var(--padding-20) 102px;
+  box-sizing: border-box;
   gap: var(--gap-24);
+  min-width: 382px;
   text-align: left;
   font-size: var(--fs-40);
   color: var(--Black);
@@ -59,22 +62,4 @@
 .indulgeYourSkin {
   font-size: var(--fs-16);
   color: var(--Gray-3);
-}
-@media screen and (max-width: 390px) {
-  .imageLeftSection {
-    padding-left: var(--padding-24);
-    padding-right: var(--padding-24);
-    box-sizing: border-box;
-  }
-  .container {
-    flex-direction: column;
-  }
-  .imageIcon {
-    height: var(--height-342);
-    flex: unset;
-    align-self: stretch;
-  }
-  .hydrateRevitalize {
-    font-size: var(--fs-32);
-  }
 }

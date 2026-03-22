@@ -50,9 +50,9 @@ const Desktop: NextPage = () => {
             <div className={styles.image2}>
               <Badge
                 color="Dark"
-                badgePosition="absolute"
-                badgeTop="16px"
-                badgeRight="16px"
+                badgePosition="unset"
+                badgeTop="unset"
+                badgeRight="unset"
                 badgeText="New"
               />
             </div>
@@ -109,9 +109,9 @@ const Desktop: NextPage = () => {
             <div className={styles.image}>
               <Badge
                 color="Red"
-                badgePosition="absolute"
-                badgeTop="16px"
-                badgeRight="16px"
+                badgePosition="unset"
+                badgeTop="unset"
+                badgeRight="unset"
                 badgeText="-20%"
               />
             </div>
@@ -128,9 +128,9 @@ const Desktop: NextPage = () => {
             <div className={styles.image2}>
               <Badge
                 color="Dark"
-                badgePosition="absolute"
-                badgeTop="16px"
-                badgeRight="16px"
+                badgePosition="unset"
+                badgeTop="unset"
+                badgeRight="unset"
                 badgeText="New"
               />
             </div>
@@ -147,7 +147,7 @@ const Desktop: NextPage = () => {
       <section className={styles.itemsGrid}>
         <div className={styles.categoryWrapper}>
           <section className={styles.image8}>
-            <h3 className={styles.giftTheGlow}>
+            <h3 className={styles.bestSellers}>
               Glow with nature’s best essence
             </h3>
             <Button
@@ -157,7 +157,7 @@ const Desktop: NextPage = () => {
             />
           </section>
           <section className={styles.image9}>
-            <h3 className={styles.giftTheGlow}>Gift the glow</h3>
+            <h3 className={styles.bestSellers}>Gift the glow</h3>
             <Button
               color="Dark"
               buttonAlignSelf="unset"

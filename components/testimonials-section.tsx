@@ -31,7 +31,7 @@ const [testimonialWrapperItems] = useState([
   {
     saraJ: "Kim W.",
     theFaceTonerHasTransformed: ""This Face Mask is a game-changer! My skin feels rejuvenated and looks brighter—perfect for a quick self-care moment."",
-    image: "/Image12@2x.png",
+    image: "/Image121@2x.png",
     imageIconMaxHeight: "unset" as const,
     imageIconHeight: "50px" as const,
     faceToner: "Face Mask"
