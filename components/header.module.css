@@ -1,0 +1,23 @@
+.header {
+  width: 1970px;
+  border-bottom: 10px solid var(--Black);
+  box-sizing: border-box;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--padding-0) var(--padding-0) 100px;
+  text-align: left;
+  font-size: 200px;
+  color: var(--Black);
+  font-family: var(--font-inter);
+}
+.homepage {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: inherit;
+}
