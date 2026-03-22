@@ -20,7 +20,7 @@ const ImageLeftSection: NextPage<ImageLeftSectionType> = ({
           height={588}
           sizes="100vw"
           alt=""
-          src="/Image21@2x.png"
+          src="/Image2@2x.png"
         />
         <section className={styles.textButton}>
           <div className={styles.text}>

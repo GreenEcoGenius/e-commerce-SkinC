@@ -27,7 +27,7 @@ const Accordion1: NextPage<Accordion1Type> = ({
           height={16}
           sizes="100vw"
           alt=""
-          src="/add.svg"
+          src="/add1.svg"
         />
       </div>
     </div>

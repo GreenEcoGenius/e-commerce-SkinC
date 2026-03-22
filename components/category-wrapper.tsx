@@ -29,7 +29,7 @@ const CategoryWrapper: NextPage<CategoryWrapperType> = ({ className = "" }) => {
         <div className={styles.readMore}>Read more</div>
       </section>
       <Article
-        image="/Image5@2x.png"
+        image="/Image21@2x.png"
         scienceBehindEffectiveFace="Science behind effective face masks"
         color="Gray"
         badgeText="Science"
@@ -187,7 +187,7 @@ const CategoryWrapper: NextPage<CategoryWrapperType> = ({ className = "" }) => {
           height={384}
           sizes="100vw"
           alt=""
-          src="/Image511@2x.png"
+          src="/Image51@2x.png"
         />
         <div className={styles.badges}>
           <Badge3 color="Gray" badgeText="Routine" />
