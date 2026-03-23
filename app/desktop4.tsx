@@ -12,9 +12,9 @@ import ImageWrapper from "../components/image-wrapper";
 import Footer1 from "../components/footer3";
 import SkinClinicLogo1 from "../components/skin-clinic-logo3";
 import GlobalNavigationDesktop1 from "../components/global-navigation-desktop3";
-import styles from "./desktop2.module.css";
+import styles from "./desktop4.module.css";
 
-const Desktop2: NextPage = () => {
+const Desktop4: NextPage = () => {
   return (
     <div className={styles.desktop}>
       <main className={styles.hero}>
@@ -214,4 +214,4 @@ const Desktop2: NextPage = () => {
   );
 };
 
-export default Desktop2;
+export default Desktop4;

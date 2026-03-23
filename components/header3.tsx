@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
 import styles from "./header3.module.css";
 
-export type Header6Type = {
+export type Header3Type = {
   className?: string;
 };
 
-const Header6: NextPage<Header6Type> = ({ className = "" }) => {
+const Header3: NextPage<Header3Type> = ({ className = "" }) => {
   return (
     <div className={[styles.header, className].join(" ")}>
-      <div className={styles.checkoutForm}>Checkout form</div>
+      <div className={styles.orderHistory}>Order history - Empty</div>
     </div>
   );
 };
 
-export default Header6;
+export default Header3;

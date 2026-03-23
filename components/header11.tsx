@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
 import styles from "./header11.module.css";
 
-export type Header4Type = {
+export type Header5Type = {
   className?: string;
 };
 
-const Header4: NextPage<Header4Type> = ({ className = "" }) => {
+const Header5: NextPage<Header5Type> = ({ className = "" }) => {
   return (
     <div className={[styles.header, className].join(" ")}>
-      <div className={styles.plp}>PLP</div>
+      <h1 className={styles.homepage}>Homepage</h1>
     </div>
   );
 };
 
-export default Header4;
+export default Header5;

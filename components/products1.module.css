@@ -497,7 +497,6 @@
 @media screen and (max-width: 390px) {
   .products {
     gap: var(--gap-8);
-    padding-top: 88px;
   }
   .allProducts {
     font-size: var(--fs-32);

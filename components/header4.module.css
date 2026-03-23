@@ -5,24 +5,34 @@
   max-width: 100%;
   display: flex;
   align-items: center;
-  padding: var(--padding-01) var(--padding-01) var(--padding-100);
+  padding: var(--padding-01) var(--padding-01) 89px;
+  line-height: normal;
+  letter-spacing: normal;
   text-align: left;
   font-size: var(--fs-200);
   color: var(--Black);
   font-family: var(--font-inter);
 }
-.aboutUs {
-  margin: 0;
+.profileSettings {
   flex: 1;
   position: relative;
-  font-size: inherit;
   letter-spacing: -0.06em;
   line-height: 100%;
   font-weight: 500;
-  font-family: inherit;
 }
 @media screen and (max-width: 390px) {
-  .aboutUs {
+  .header {
+    display: flex;
+    height: var(--height-auto);
+    flex-direction: row;
+    gap: var(--gap-0);
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  .profileSettings {
     font-weight: 500;
     letter-spacing: -0.06em;
     line-height: 100%;

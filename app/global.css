@@ -55,10 +55,13 @@ body {
   --padding-40: 40px;
   --padding-48: 48px;
   --padding-56: 56px;
+  --padding-88: 88px;
   --padding-100: 100px;
   --padding-102: 102px;
+  --padding-104: 104px;
   --padding-112: 112px;
   --padding-124: 124px;
+  --padding-160: 160px;
 
   /* BorderRadius */
   --br-5: 5px;
@@ -104,6 +107,7 @@ body {
   --height-440: 440px;
   --height-500: 500px;
   --height-588: 588px;
+  --height-600: 600px;
   --height-700: 700px;
   --height-112_6: 112.6px;
   --height-18_4: 18.4px;
@@ -139,6 +143,7 @@ body {
   --width-7_5: 7.5px;
   --width-auto: auto;
   --width-calc100-10: calc(100% - 10px);
+  --width-calc100-61_9: calc(100% - 61.9px);
 
   /* LetterSpacings */
   --ls--0_06: -0.06;

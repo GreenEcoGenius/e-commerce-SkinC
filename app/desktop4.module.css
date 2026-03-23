@@ -294,7 +294,7 @@
   padding: var(--padding-32);
   box-sizing: border-box;
   gap: var(--gap-24);
-  background-image: url(/Image3@3x.png);
+  background-image: url(/Image31@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -400,6 +400,7 @@
 }
 @media screen and (max-width: 390px) {
   .hero {
+    height: var(--height-600);
     padding-left: var(--padding-24);
     padding-right: var(--padding-24);
   }

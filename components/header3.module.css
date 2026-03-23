@@ -11,7 +11,7 @@
   color: var(--Black);
   font-family: var(--font-inter);
 }
-.checkoutForm {
+.orderHistory {
   flex: 1;
   position: relative;
   letter-spacing: -0.06em;

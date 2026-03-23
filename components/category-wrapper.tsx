@@ -29,7 +29,7 @@ const CategoryWrapper: NextPage<CategoryWrapperType> = ({ className = "" }) => {
         <div className={styles.readMore}>Read more</div>
       </section>
       <Article
-        image="/Image@2x.png"
+        image="/Image3@2x.png"
         scienceBehindEffectiveFace="Science behind effective face masks"
         color="Gray"
         badgeText="Science"

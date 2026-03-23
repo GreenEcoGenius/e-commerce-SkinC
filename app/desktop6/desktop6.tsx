@@ -1,78 +1,87 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import ImageLeftSection2 from "../../components/image-left-section2";
-import ImageLeftSection3 from "../../components/image-left-section3";
-import InstagramSection3 from "../../components/instagram-section3";
-import ImageWrapper3 from "../../components/image-wrapper3";
-import Footer4 from "../../components/footer31";
-import SkinClinicLogo4 from "../../components/skin-clinic-logo31";
-import GlobalNavigationDesktop4 from "../../components/global-navigation-desktop31";
+import ImageLeftSection1 from "../../components/image-left-section1";
+import Products2 from "../../components/products2";
+import InstagramSection2 from "../../components/instagram-section2";
+import ImageWrapper2 from "../../components/image-wrapper2";
+import Footer3 from "../../components/footer2";
+import SkinClinicLogo3 from "../../components/skin-clinic-logo2";
+import GlobalNavigationDesktop3 from "../../components/global-navigation-desktop2";
 import styles from "./desktop6.module.css";
 
 const Desktop6: NextPage = () => {
   return (
     <div className={styles.desktop}>
-      <main className={styles.fullImageSection}>
-        <div className={styles.imageWrapper}>
-          <div className={styles.heroOffer}>
+      <ImageLeftSection1 />
+      <section className={styles.imageLeftSection}>
+        <div className={styles.container}>
+          <div className={styles.textWrapper}>
             <div className={styles.text}>
-              <div className={styles.ourStory}>Our story</div>
-              <h1 className={styles.naturesFinestFor}>
-                Nature’s finest for your skin
-              </h1>
-              <div className={styles.skinClinicWasBorn}>
-                Skin-Clinic was born from a passion for natural skincare that
-                truly works. We believe in harnessing the power of nature to
-                create products that nurture and restore your skin’s natural
-                beauty.
+              <h2 className={styles.yourDailyGlow}>Your daily glow ritual</h2>
+              <div className={styles.apply23Drops}>
+                Apply 2-3 drops of Pure Solution Essence to freshly cleansed
+                skin, then gently pat with your fingertips until fully absorbed.
+                Use this step to kickstart your morning or night routine for a
+                noticeable glow.
               </div>
             </div>
           </div>
-        </div>
-      </main>
-      <ImageLeftSection2 />
-      <ImageLeftSection3 />
-      <section className={styles.itemsGrid}>
-        <div className={styles.itemsWrapper}>
-          <section className={styles.image}>
-            <div className={styles.text2}>
-              <h2 className={styles.ourFormulationProcess}>
-                Our formulation process
-              </h2>
-              <div className={styles.atSkinClinicEvery}>
-                At Skin-Clinic, every product is developed with precision by our
-                team of skincare experts. We blend science and nature,
-                rigorously testing each formula to ensure it’s gentle,
-                effective, and safe. Our process guarantees that only the best
-                reaches your skin, delivering real results you can trust.
-              </div>
-            </div>
-          </section>
-          <section className={styles.image2}>
-            <div className={styles.text2}>
-              <h2 className={styles.ourFormulationProcess}>
-                Building a community of glow
-              </h2>
-              <div className={styles.atSkinClinicEvery}>
-                Skin-Clinic is more than a brand—it’s a community. We listen to
-                your needs, creating products that address real skin concerns
-                with natural solutions. Join us on this journey to celebrate
-                healthy skin, share tips, and inspire each other to glow
-                confidently every day.
-              </div>
-            </div>
-          </section>
-          <div className={styles.image3}>
-            <div className={styles.skinClinicWasBorn}>Gift the glow</div>
-            <div className={styles.button}>
-              <div className={styles.buttonLabel}>Get a gift card</div>
-            </div>
-          </div>
+          <Image
+            className={styles.imageIcon}
+            loading="lazy"
+            width={588}
+            height={588}
+            sizes="100vw"
+            alt=""
+            src="/Image34@2x.png"
+          />
         </div>
       </section>
-      <InstagramSection3 />
-      <ImageWrapper3 />
-      <Footer4 mobile={false} color="Dark" />
+      <section className={styles.categorySection}>
+        <h2 className={styles.yourDailyGlow}>Key ingredients</h2>
+        <div className={styles.categoryWrapper}>
+          <section className={styles.imageWrapper}>
+            <div className={styles.category}>
+              <div className={styles.image}>
+                <h3 className={styles.hyaluronicAcid}>Hyaluronic acid</h3>
+                <div className={styles.apply23Drops}>
+                  A powerful humectant that deeply hydrates and plumps the skin,
+                  helping to retain moisture and improve elasticity for a
+                  smoother complexion.
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className={styles.imageWrapper}>
+            <div className={styles.category}>
+              <div className={styles.image2}>
+                <h3 className={styles.hyaluronicAcid}>Botanical extracts</h3>
+                <div className={styles.apply23Drops}>
+                  Natural plant-based ingredients that soothe and nourish,
+                  offering antioxidant benefits to protect skin and enhance its
+                  natural radiance.
+                </div>
+              </div>
+            </div>
+          </section>
+          <section className={styles.imageWrapper}>
+            <div className={styles.category}>
+              <div className={styles.image3}>
+                <h3 className={styles.hyaluronicAcid}>Glycerin</h3>
+                <div className={styles.apply23Drops}>
+                  A gentle moisturizing agent that draws water into the skin,
+                  supporting hydration and leaving it soft and supple with
+                  regular use.
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </section>
+      <Products2 />
+      <InstagramSection2 />
+      <ImageWrapper2 />
+      <Footer3 mobile={false} color="Dark" />
       <div className={styles.globalNavigationMobile}>
         <div className={styles.leftContent}>
           <Image
@@ -83,9 +92,9 @@ const Desktop6: NextPage = () => {
             alt=""
             src="/menu.svg"
           />
-          <SkinClinicLogo4 color="Dark" />
+          <SkinClinicLogo3 color="Dark" />
         </div>
-        <button className={styles.links}>
+        <div className={styles.links}>
           <Image
             className={styles.searchIcon}
             width={24}
@@ -101,9 +110,9 @@ const Desktop6: NextPage = () => {
           >
             Bag (0)
           </a>
-        </button>
+        </div>
       </div>
-      <GlobalNavigationDesktop4 type="Default" color="Dark" />
+      <GlobalNavigationDesktop3 type="Default" color="Dark" />
     </div>
   );
 };

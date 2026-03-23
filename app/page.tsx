@@ -1,5 +1,5 @@
-import Desktop2 from "./desktop2";
+import Desktop4 from "./desktop4";
 
-    export default function Page() {
-      return <Desktop2 />;
-    }
+export default function Page() {
+  return <Desktop4 />;
+}

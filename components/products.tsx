@@ -51,7 +51,7 @@ const Products: NextPage<ProductsType> = ({ className = "" }) => {
             height={384}
             sizes="100vw"
             alt=""
-            src="/Image@2x.png"
+            src="/Image3@2x.png"
           />
           <div className={styles.badges2}>
             <Badge
