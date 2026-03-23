@@ -1,0 +1,195 @@
+.contactInfo,
+.container {
+  align-self: stretch;
+  display: flex;
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--Black);
+  font-family: var(--font-inter);
+}
+.contactInfo {
+  background-color: var(--White);
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-56) var(--padding-40);
+  gap: var(--gap-48);
+  z-index: 1;
+}
+.container {
+  align-items: flex-start;
+  gap: var(--gap-24);
+}
+.customerCare {
+  width: var(--width-486);
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-weight: 500;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.rightContent {
+  flex: 1;
+  flex-direction: column;
+  gap: var(--gap-32);
+  color: var(--Gray-3);
+}
+.rightContent,
+.row,
+.text {
+  display: flex;
+  align-items: flex-start;
+}
+.row {
+  align-self: stretch;
+  gap: var(--gap-24);
+}
+.text {
+  width: var(--width-282);
+  flex-direction: column;
+  gap: var(--gap-8);
+}
+.customerService,
+.supportexamplecom {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.supportexamplecom {
+  color: var(--Black);
+}
+.text2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+}
+.phoneDetail {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  color: var(--Black);
+}
+.text4 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+  color: var(--Black);
+}
+.workingHours {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  color: var(--Gray-3);
+}
+.container2,
+.form,
+.rightContent2 {
+  display: flex;
+  align-items: flex-start;
+}
+.container2 {
+  align-self: stretch;
+  gap: var(--gap-24);
+}
+.form,
+.rightContent2 {
+  flex-direction: column;
+}
+.rightContent2 {
+  flex: 1;
+  gap: var(--gap-24);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--Black);
+  font-family: var(--font-inter);
+}
+.form {
+  width: var(--width-486);
+  gap: var(--gap-16);
+}
+@media screen and (max-width: 390px) {
+  .contactInfo {
+    padding-left: var(--padding-24);
+    padding-right: var(--padding-24);
+  }
+  .customerCare {
+    width: 131px;
+  }
+  .rightContent {
+    gap: var(--gap-24);
+    flex: unset;
+    align-self: stretch;
+  }
+  .row {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .text {
+    align-self: stretch;
+    width: 100%;
+  }
+  .text2,
+  .text4 {
+    flex: unset;
+    align-self: stretch;
+  }
+  .container2 {
+    flex-direction: column;
+  }
+  .form,
+  .rightContent2 {
+    align-self: stretch;
+  }
+  .form {
+    width: 100%;
+    gap: var(--gap-24);
+  }
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .contactInfo,
+  .container,
+  .phoneDetail {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .phoneDetail {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+  }
+  .rightContent2 {
+    display: flex;
+    flex: 1;
+    height: var(--height-auto);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}

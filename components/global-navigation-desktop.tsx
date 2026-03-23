@@ -1,0 +1,45 @@
+import type { NextPage } from "next";
+import { type CSSProperties } from "react";
+import SkinClinicLogo from "./skin-clinic-logo";
+import styles from "./global-navigation-desktop.module.css";
+
+export type GlobalNavigationDesktopType = {
+  className?: string;
+  color?: CSSProperties["color"];
+
+  /** Variant props */
+  type?: CSSProperties["type"];
+};
+
+const GlobalNavigationDesktop: NextPage<GlobalNavigationDesktopType> = ({
+  className = "",
+  type = "Default",
+  color,
+}) => {
+  return (
+    <header
+      className={[styles.globalNavigationDesktop, className].join(" ")}
+      data-type={type}
+    >
+      <nav className={styles.leftLinks}>
+        <div className={styles.shop}>Shop</div>
+        <div className={styles.aboutUs}>About us</div>
+        <div className={styles.journal}>Journal</div>
+      </nav>
+      <SkinClinicLogo color={color} />
+      <nav className={styles.leftLinks2}>
+        <div className={styles.account}>Account</div>
+        <div className={styles.search}>Search</div>
+        <a
+          className={styles.bag0}
+          href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
+          target="_blank"
+        >
+          Bag (0)
+        </a>
+      </nav>
+    </header>
+  );
+};
+
+export default GlobalNavigationDesktop;

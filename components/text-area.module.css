@@ -1,0 +1,48 @@
+.textArea {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-8);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--Gray-3);
+  font-family: var(--font-inter);
+}
+.input,
+.label {
+  align-self: stretch;
+  flex-shrink: 0;
+}
+.label {
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  color: var(--Black);
+}
+.input {
+  height: 140px;
+  backdrop-filter: blur(52px);
+  border-radius: var(--br-8);
+  background-color: var(--White);
+  border: var(--border-1);
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--padding-24);
+}
+.hintText,
+.placeholder {
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.placeholder {
+  width: 252px;
+}
+.hintText {
+  width: var(--width-300);
+  flex-shrink: 0;
+}
