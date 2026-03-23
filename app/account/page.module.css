@@ -6,7 +6,9 @@
   flex-direction: column;
   align-items: flex-start;
 }
-.content {
+
+/* ---------- Login form (signed-out state) ---------- */
+.loginContent {
   align-self: stretch;
   padding: 120px var(--padding-40) var(--padding-56);
   font-family: var(--font-inter);
@@ -21,7 +23,7 @@
   flex-direction: column;
   gap: var(--gap-32);
 }
-.pageTitle {
+.formTitle {
   margin: 0;
   font-size: var(--fs-40);
   font-weight: 500;
@@ -96,36 +98,217 @@
   letter-spacing: -0.06em;
   color: var(--Black);
   text-align: center;
+  margin: 0;
 }
 .registerLink a {
   color: var(--Black);
 }
-.welcomeText {
-  margin: 0;
-  font-size: var(--fs-16);
+
+/* ---------- Dashboard (signed-in state) ---------- */
+.dashboard {
+  align-self: stretch;
+  padding: 104px var(--padding-40) var(--padding-56);
+  font-family: var(--font-inter);
+  min-height: 500px;
+}
+.pageTitle {
+  margin: 0 0 var(--gap-40) 0;
+  font-size: var(--fs-40);
   font-weight: 500;
   letter-spacing: -0.06em;
-  color: var(--Gray-3);
-  text-align: center;
-  line-height: 160%;
-}
-.welcomeText strong {
+  line-height: 100%;
   color: var(--Black);
 }
-.signOutButton {
-  width: 100%;
-  padding: var(--padding-14) var(--padding-16);
-  border: var(--border-3);
-  background: var(--White);
-  font-family: var(--font-inter);
+.dashboardLayout {
+  display: flex;
+  gap: var(--gap-24);
+  align-items: flex-start;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--width-282);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  flex-shrink: 0;
+}
+.sidebarLink {
   font-size: var(--fs-16);
   font-weight: 500;
   letter-spacing: -0.06em;
   color: var(--Black);
   cursor: pointer;
-  transition: background-color 0.2s, color 0.2s;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-inter);
+  text-align: left;
+  text-decoration: none;
 }
-.signOutButton:hover {
+.sidebarLinkActive {
+  composes: sidebarLink;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Right content */
+.rightContent {
+  flex: 1;
+}
+
+/* Order history empty */
+.emptyTitle {
+  margin: 0 0 var(--gap-16) 0;
+  font-size: var(--fs-32);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 120%;
+  color: var(--Black);
+}
+.emptyDescription {
+  margin: 0 0 var(--gap-32) 0;
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 160%;
+  color: var(--Gray-3);
+}
+
+/* Profile settings */
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-24);
+}
+.profileCard {
+  padding: var(--padding-32);
+  border: var(--border-1);
+  border-radius: var(--br-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+.profileCard:hover {
+  border-color: var(--Black);
+}
+.profileCardLabel {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+}
+.profileCardValue {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+}
+
+/* Edit Modal */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  background: var(--White);
+  width: 100%;
+  max-width: 480px;
+  padding: var(--padding-40);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+}
+.modalClose {
+  position: absolute;
+  top: var(--padding-16);
+  right: var(--padding-16);
+  background: none;
+  border: none;
+  font-size: var(--fs-24);
+  cursor: pointer;
+  color: var(--Black);
+  line-height: 1;
+}
+.modalTitle {
+  margin: 0;
+  font-size: var(--fs-24);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+}
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+}
+.modalInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+}
+.modalLabel {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+}
+.modalInput {
+  width: 100%;
+  padding: var(--padding-16);
+  border: var(--border-1);
+  border-radius: var(--br-8);
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+  outline: none;
+  box-sizing: border-box;
+}
+.modalInput:focus {
+  border-color: var(--Black);
+}
+.modalButtons {
+  display: flex;
+  gap: var(--gap-16);
+}
+.modalButtonPrimary {
+  flex: 1;
+  padding: var(--padding-16);
   background: var(--Black);
   color: var(--White);
+  border: none;
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  cursor: pointer;
+}
+.modalButtonSecondary {
+  flex: 1;
+  padding: var(--padding-16);
+  background: var(--White);
+  color: var(--Black);
+  border: var(--border-1);
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  cursor: pointer;
+}
+.modalError {
+  margin: 0;
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Red);
 }
