@@ -9,16 +9,18 @@ import styles from "./page.module.css";
 
 const FREE_SHIPPING_THRESHOLD = 100;
 
-const paymentMethods = ["VISA", "MC", "AMEX", "DISC", "Pay", "PP", "Shop"];
-
 export default function CartPage() {
-  const { items, updateQty, removeItem, cartCount } = useCart();
+  const { items, updateQty, removeItem } = useCart();
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
   const shippingGap = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
   const shippingPercent = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
 
   const isEmpty = items.length === 0;
+
+  function handleCheckout() {
+    window.location.href = "https://buy.stripe.com/eVq3cv0l80ms80h1B45Rm00";
+  }
 
   return (
     <div className={styles.page}>
@@ -42,9 +44,7 @@ export default function CartPage() {
               <>
                 <p className={styles.emptyText}>Your bag is empty</p>
                 <Link href="/shop">
-                  <button className={styles.checkoutButton} style={{ width: "auto", padding: "16px 32px", background: "var(--White)", color: "var(--Black)", border: "1px solid var(--Black)" }}>
-                    Shop all
-                  </button>
+                  <button className={styles.shopAllButton}>Shop all</button>
                 </Link>
               </>
             ) : (
@@ -94,15 +94,18 @@ export default function CartPage() {
               <span className={styles.totalLabel}>Estimated total</span>
               <span className={styles.totalValue}>${subtotal.toFixed(2)}</span>
             </div>
-            <button className={styles.checkoutButton}>Checkout</button>
+            <button className={styles.checkoutButton} onClick={handleCheckout}>Checkout</button>
             <p className={styles.termsText}>
-              By continuing, I confirm that I have read and accept the <Link href="#">Terms of Service</Link> and the <Link href="#">Privacy Policy</Link>.
+              By continuing, I confirm that I have read and accept the <Link href="/terms-of-service">Terms of Service</Link> and the <Link href="/privacy-policy">Privacy Policy</Link>.
             </p>
             <span className={styles.paymentLabel}>We accept</span>
             <div className={styles.paymentIcons}>
-              {paymentMethods.map((m) => (
-                <span key={m} className={styles.paymentIcon}>{m}</span>
-              ))}
+              <span className={`${styles.paymentIcon} ${styles.visa}`}>VISA</span>
+              <span className={`${styles.paymentIcon} ${styles.mc}`}>Mastercard</span>
+              <span className={`${styles.paymentIcon} ${styles.amex}`}>Amex</span>
+              <span className={styles.paymentIcon}>Discover</span>
+              <span className={`${styles.paymentIcon} ${styles.applepay}`}>Apple Pay</span>
+              <span className={`${styles.paymentIcon} ${styles.paypal}`}>PayPal</span>
             </div>
           </aside>
         </div>

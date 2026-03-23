@@ -152,6 +152,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: var(--br-8);
+  filter: brightness(0.5);
 }
 .gridCardText {
   position: relative;
@@ -167,13 +168,13 @@
   margin: 0;
   font-size: var(--fs-40);
   letter-spacing: -0.06em;
-  line-height: 100%;
+  line-height: 110%;
 }
 .gridCardDesc {
   margin: 0;
   font-size: var(--fs-16);
   letter-spacing: -0.06em;
-  line-height: 100%;
+  line-height: 160%;
 }
 
 /* Responsive */
@@ -227,12 +228,10 @@
   }
   .gridCard {
     aspect-ratio: auto;
-    min-height: 350px;
+    min-height: 400px;
   }
   .gridCardTitle {
     font-size: var(--fs-32);
-  }
-  .gridCardDesc {
-    line-height: 160%;
+    line-height: 120%;
   }
 }
