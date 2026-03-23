@@ -3,11 +3,13 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { createClient } from "../lib/supabase";
+import { useCart } from "../lib/cart-context";
 import SearchModal from "./SearchModal";
 import styles from "./Navigation.module.css";
 
 export default function Navigation() {
   const supabase = createClient();
+  const { cartCount } = useCart();
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [user, setUser] = useState<{ email?: string } | null>(null);
@@ -56,9 +58,9 @@ export default function Navigation() {
           >
             Search
           </button>
-          <Link href="/cart" className={styles.link}>Bag (0)</Link>
+          <Link href="/cart" className={styles.link}>Bag ({cartCount})</Link>
         </nav>
-        <Link href="/cart" className={styles.mobileBag}>Bag (0)</Link>
+        <Link href="/cart" className={styles.mobileBag}>Bag ({cartCount})</Link>
         {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
         {menuOpen && (
           <nav className={styles.mobileMenu}>

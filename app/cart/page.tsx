@@ -1,44 +1,22 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
 import Navigation from "../../components/Navigation";
 import ProductCard from "../../components/ProductCard";
 import Footer from "../../components/Footer";
+import { useCart } from "../../lib/cart-context";
 import styles from "./page.module.css";
-
-type CartItem = {
-  id: string;
-  name: string;
-  size: string;
-  price: number;
-  originalPrice?: number;
-  image: string;
-  qty: number;
-};
 
 const FREE_SHIPPING_THRESHOLD = 100;
 
 const paymentMethods = ["VISA", "MC", "AMEX", "DISC", "Pay", "PP", "Shop"];
 
 export default function CartPage() {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const { items, updateQty, removeItem, cartCount } = useCart();
 
   const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
   const shippingGap = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
   const shippingPercent = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
-
-  function updateQty(id: string, delta: number) {
-    setItems((prev) =>
-      prev
-        .map((item) => (item.id === id ? { ...item, qty: item.qty + delta } : item))
-        .filter((item) => item.qty > 0)
-    );
-  }
-
-  function removeItem(id: string) {
-    setItems((prev) => prev.filter((item) => item.id !== id));
-  }
 
   const isEmpty = items.length === 0;
 
