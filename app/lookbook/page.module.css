@@ -45,9 +45,6 @@
 .gridItem.wide {
   grid-column: span 2;
 }
-.gridItem.tall {
-  grid-row: span 2;
-}
 .gridItem.full {
   grid-column: span 3;
   min-height: 480px;
@@ -115,7 +112,6 @@
   .heroTitle { font-size: 44px; }
   .grid { grid-template-columns: repeat(2, 1fr); padding: 0 24px; }
   .gridItem.wide { grid-column: span 2; }
-  .gridItem.tall { grid-row: span 1; }
   .gridItem.full { grid-column: span 2; }
   .gridItem { min-height: 350px; }
   .quote { padding: 64px 24px; }
@@ -132,8 +128,7 @@
   .grid { grid-template-columns: 1fr; padding: 0 16px; gap: 2px; }
   .gridItem { min-height: 300px; }
   .gridItem.wide,
-  .gridItem.tall,
-  .gridItem.full { grid-column: span 1; grid-row: span 1; }
+  .gridItem.full { grid-column: span 1; }
   .gridCaption { opacity: 1; }
   .quote { padding: 48px 16px; }
   .quoteText { font-size: 22px; }

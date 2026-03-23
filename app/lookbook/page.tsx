@@ -14,7 +14,7 @@ const looks = [
     src: "/lookbook-2.jpg",
     alt: "ISYF — Black embroidered hoodie, urban setting",
     caption: "FEEL SOMETHING",
-    span: "tall",
+    span: "normal",
   },
   {
     src: "/lookbook-3.jpg",
@@ -57,7 +57,6 @@ export default function LookbookPage() {
             key={i}
             className={`${styles.gridItem} ${
               look.span === "wide" ? styles.wide :
-              look.span === "tall" ? styles.tall :
               look.span === "full" ? styles.full : ""
             }`}
           >
