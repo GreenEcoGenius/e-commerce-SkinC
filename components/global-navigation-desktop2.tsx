@@ -27,7 +27,7 @@ const GlobalNavigationDesktop2: NextPage<GlobalNavigationDesktop2Type> = ({
         <Link href="/our-story" className={styles.aboutUs}>About us</Link>
         <Link href="/journal" className={styles.journal}>Journal</Link>
       </nav>
-      <SkinClinicLogo2 color={color} />
+      <Link href="/"><SkinClinicLogo2 color={color} /></Link>
       <nav className={styles.leftLinks2}>
         <Link href="/account" className={styles.account}>Account</Link>
         <div className={styles.search}>Search</div>
