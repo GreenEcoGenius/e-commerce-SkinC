@@ -261,18 +261,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: var(--padding-16);
   box-sizing: border-box;
-  gap: var(--gap-8);
   min-width: 0;
-}
-.ingredientCard::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 60%);
-  pointer-events: none;
 }
 .ingredientImage {
   position: absolute;
@@ -288,20 +280,18 @@
   font-size: var(--fs-24);
   font-weight: 500;
   letter-spacing: -0.06em;
-  line-height: 120%;
-  color: var(--White);
+  line-height: 100%;
+  color: var(--Black);
   align-self: stretch;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 .ingredientDesc {
   position: relative;
   font-size: var(--fs-16);
   font-weight: 500;
   letter-spacing: -0.06em;
-  line-height: 160%;
-  color: rgba(255,255,255,0.85);
+  line-height: 100%;
+  color: var(--Gray-3);
   align-self: stretch;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 
 /* You Might Also Like */
@@ -374,10 +364,10 @@
   }
   .ingredientCard {
     aspect-ratio: auto;
-    min-height: 350px;
+    min-height: 380px;
   }
   .ingredientDesc {
-    line-height: 160%;
+    line-height: 150%;
   }
   .relatedTitle {
     font-size: var(--fs-32);
