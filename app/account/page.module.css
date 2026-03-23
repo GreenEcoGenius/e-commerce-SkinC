@@ -312,3 +312,36 @@
   letter-spacing: -0.06em;
   color: var(--Red);
 }
+
+@media (max-width: 1024px) {
+  .dashboard {
+    padding: 104px 32px var(--padding-56);
+  }
+  .loginContent {
+    padding: 120px 32px var(--padding-56);
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 104px 24px var(--padding-56);
+  }
+  .loginContent {
+    padding: 120px 24px var(--padding-56);
+  }
+  .pageTitle {
+    font-size: 32px;
+  }
+  .dashboardLayout {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .profileGrid {
+    grid-template-columns: 1fr;
+  }
+}

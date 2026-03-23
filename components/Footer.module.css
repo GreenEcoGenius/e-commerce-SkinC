@@ -95,3 +95,41 @@
   height: 100%;
   object-fit: contain;
 }
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: var(--padding-40) var(--padding-24);
+  }
+  .topContent {
+    flex-wrap: wrap;
+  }
+  .column {
+    flex: none;
+    width: calc(50% - 12px);
+    gap: var(--gap-24);
+  }
+  .brandColumn {
+    width: 100%;
+    margin-bottom: var(--gap-16);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--padding-32) var(--padding-24);
+  }
+  .topContent {
+    flex-direction: column;
+    gap: var(--gap-32);
+  }
+  .column {
+    width: 100%;
+  }
+  .bottomContent {
+    flex-direction: column;
+    gap: var(--gap-16);
+  }
+  .legalLinks {
+    flex-wrap: wrap;
+  }
+}

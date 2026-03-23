@@ -99,3 +99,33 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 120px 32px var(--padding-56);
+  }
+  .featuredTitle {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 120px 24px var(--padding-56);
+  }
+  .pageTitle {
+    font-size: 32px;
+  }
+  .featuredArticle {
+    flex-direction: column;
+  }
+  .featuredImage {
+    height: 250px;
+  }
+  .featuredTitle {
+    font-size: 24px;
+  }
+  .articlesGrid {
+    flex-direction: column;
+  }
+}

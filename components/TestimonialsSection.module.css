@@ -43,6 +43,7 @@
 .quote {
   color: var(--Black);
   align-self: stretch;
+  line-height: 150%;
 }
 .productLink {
   display: flex;
@@ -71,4 +72,16 @@
 .viewProduct {
   color: var(--Gray-3);
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 0 24px 40px;
+  }
+  .title {
+    font-size: var(--fs-32);
+  }
+  .grid {
+    flex-direction: column;
+  }
 }

@@ -100,3 +100,18 @@
 .signInLink a {
   color: var(--Black);
 }
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 120px 32px var(--padding-56);
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 120px 24px var(--padding-56);
+  }
+  .pageTitle {
+    font-size: 32px;
+  }
+}

@@ -53,3 +53,35 @@
   object-fit: cover;
   border-radius: var(--br-8);
 }
+
+@media (max-width: 1024px) {
+  .grid {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .imageWrapper {
+    flex: none;
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 0 24px 40px;
+  }
+  .title {
+    font-size: var(--fs-32);
+  }
+  .grid {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .imageWrapper {
+    flex: none;
+    width: 200px;
+    height: 200px;
+  }
+}

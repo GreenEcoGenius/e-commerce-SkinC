@@ -78,3 +78,24 @@
   background: var(--Black);
   color: var(--White);
 }
+
+@media (max-width: 1024px) {
+  .panel {
+    padding: 32px 32px var(--padding-56);
+  }
+}
+
+@media (max-width: 768px) {
+  .panel {
+    padding: 24px;
+  }
+  .resultsGrid {
+    flex-wrap: wrap;
+  }
+  .resultsGrid > * {
+    width: calc(50% - 12px);
+  }
+  .viewAllButton {
+    width: 100%;
+  }
+}

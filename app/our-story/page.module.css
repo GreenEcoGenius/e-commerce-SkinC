@@ -121,3 +121,22 @@
   line-height: 160%;
   color: var(--Gray-3);
 }
+
+@media (max-width: 1024px) {
+  .heroContent { left: 24px; right: 24px; }
+  .storySection { padding: 56px 24px; flex-direction: column; }
+  .storyImage { height: 300px; }
+  .valuesSection { padding: 56px 24px; }
+}
+
+@media (max-width: 768px) {
+  .heroSection { height: 400px; }
+  .heroTitle { font-size: var(--fs-32); }
+  .heroContent { bottom: 32px; left: 24px; right: 24px; }
+  .storySection { padding: 40px 24px; flex-direction: column; }
+  .storyTitle { font-size: var(--fs-32); }
+  .storyImage { height: 250px; }
+  .valuesSection { padding: 40px 24px; }
+  .valuesTitle { font-size: var(--fs-32); }
+  .valuesGrid { flex-direction: column; }
+}
