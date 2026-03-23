@@ -3,6 +3,7 @@ import "./global.css";
 import { ReactNode } from "react";
 import type { Viewport } from "next";
 import { CartProvider } from "../lib/cart-context";
+import CookieBanner from "../components/CookieBanner";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -31,7 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <CartProvider>{children}</CartProvider>
+        <CartProvider>
+          {children}
+          <CookieBanner />
+        </CartProvider>
       </body>
     </html>
   );

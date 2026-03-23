@@ -1,0 +1,92 @@
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--White);
+  border-top: 1px solid var(--Gray-2);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.text {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--Black);
+  flex: 1;
+}
+
+.link {
+  color: var(--Black);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.decline,
+.accept {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.decline {
+  background: transparent;
+  border: 1px solid var(--Gray-2);
+  color: var(--Black);
+}
+.decline:hover {
+  border-color: var(--Black);
+}
+
+.accept {
+  background: var(--Black);
+  border: 1px solid var(--Black);
+  color: var(--White);
+}
+.accept:hover {
+  background: transparent;
+  color: var(--Black);
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 20px 20px;
+    gap: 16px;
+    text-align: center;
+  }
+  .text { font-size: 12px; }
+  .actions { width: 100%; justify-content: center; }
+  .decline, .accept { padding: 10px 24px; font-size: 10px; }
+}
