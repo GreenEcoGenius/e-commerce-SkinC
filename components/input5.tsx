@@ -16,7 +16,7 @@ const Input7: NextPage<Input7Type> = ({
   type,
 }) => {
   return (
-    <div className={[styles.input, className].join(" ")} data-onDark={onDark}>
+    <div className={[styles.input, className].join(" ")} data-ondark={onDark}>
       <input
         className={styles.placeholder}
         placeholder="Enter your email"

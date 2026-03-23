@@ -18,7 +18,7 @@ const Input4: NextPage<Input4Type> = ({
   keyboardArrowDown,
 }) => {
   return (
-    <div className={[styles.root, className].join(" ")} data-onDark={onDark}>
+    <div className={[styles.root, className].join(" ")} data-ondark={onDark}>
       <div className={styles.placeholder}>{placeholder}</div>
       <div className={styles.chevron}>
         <Image
