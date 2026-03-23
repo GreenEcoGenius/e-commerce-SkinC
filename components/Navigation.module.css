@@ -36,6 +36,20 @@
   color: inherit;
   cursor: pointer;
 }
+.searchButton {
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+}
 .logoLink {
   display: flex;
   text-decoration: none;

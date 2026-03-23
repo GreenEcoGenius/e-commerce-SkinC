@@ -1,0 +1,121 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 120px;
+}
+.modal {
+  width: 100%;
+  max-width: 600px;
+  background: var(--White);
+  font-family: var(--font-inter);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-10);
+  padding: var(--padding-16) var(--padding-24);
+  border-bottom: var(--border-1);
+}
+.searchIcon {
+  flex-shrink: 0;
+  color: var(--Gray-3);
+}
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+  background: transparent;
+}
+.input::placeholder {
+  color: var(--Gray-3);
+}
+.closeButton {
+  padding: var(--padding-4) var(--padding-8);
+  border: var(--border-1);
+  background: var(--Gray-1);
+  font-family: var(--font-inter);
+  font-size: var(--fs-12);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+  cursor: pointer;
+  border-radius: var(--br-5);
+}
+.status {
+  margin: 0;
+  padding: var(--padding-24);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+  text-align: center;
+}
+.results {
+  max-height: 400px;
+  overflow-y: auto;
+}
+.resultItem {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-16);
+  padding: var(--padding-12) var(--padding-24);
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.15s;
+}
+.resultItem:hover {
+  background-color: var(--Gray-1);
+}
+.resultImage {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.resultInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.resultCategory {
+  font-size: var(--fs-12);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+  text-transform: uppercase;
+}
+.resultName {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+}
+.resultPriceRow {
+  display: flex;
+  gap: var(--gap-8);
+  align-items: center;
+}
+.resultPrice {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+}
+.resultOriginalPrice {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+  text-decoration: line-through;
+}
