@@ -89,11 +89,15 @@
   .panel {
     padding: 24px;
   }
+  .inputWrapper {
+    max-width: 100%;
+  }
   .resultsGrid {
     flex-wrap: wrap;
   }
   .resultsGrid > * {
     width: calc(50% - 12px);
+    flex: none;
   }
   .viewAllButton {
     width: 100%;

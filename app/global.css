@@ -1,8 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,500&display=swap");
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   line-height: normal;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+img[class] {
+  height: revert;
 }
 :root {
   /* Figma Variables */

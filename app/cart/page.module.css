@@ -23,7 +23,8 @@
 /* Shipping bar */
 .shippingBar {
   margin-bottom: var(--gap-32);
-  max-width: 500px;
+  max-width: 100%;
+  width: 500px;
 }
 .shippingText {
   font-size: var(--fs-16);
@@ -59,6 +60,7 @@
 }
 .summarySide {
   width: 380px;
+  max-width: 100%;
   flex-shrink: 0;
 }
 

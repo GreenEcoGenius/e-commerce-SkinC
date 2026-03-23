@@ -32,7 +32,8 @@
 }
 .heroContent {
   position: relative;
-  width: var(--width-588);
+  width: 100%;
+  max-width: 588px;
   display: flex;
   flex-direction: column;
   gap: var(--gap-24);
@@ -292,7 +293,8 @@
 }
 .fullImageContent {
   position: relative;
-  width: var(--width-588);
+  width: 100%;
+  max-width: 588px;
   display: flex;
   flex-direction: column;
   gap: var(--gap-24);
@@ -318,7 +320,8 @@
 }
 .fullImageProduct {
   position: relative;
-  width: var(--width-300);
+  width: 100%;
+  max-width: 300px;
   backdrop-filter: blur(52px);
   background-color: rgba(255, 255, 255, 0.16);
   border-radius: var(--br-8);

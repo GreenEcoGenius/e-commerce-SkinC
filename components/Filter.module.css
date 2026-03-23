@@ -96,3 +96,9 @@
   white-space: nowrap;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .filter {
+    width: 100%;
+  }
+}
