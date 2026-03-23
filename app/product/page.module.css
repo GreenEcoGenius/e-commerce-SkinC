@@ -319,3 +319,61 @@
   display: flex;
   gap: var(--gap-24);
 }
+
+@media (max-width: 1024px) {
+  .productSection {
+    padding: 104px 24px var(--padding-40);
+  }
+  .productContainer {
+    flex-direction: column;
+  }
+  .ritualSection {
+    padding: 0 24px var(--padding-40);
+  }
+  .ritualContainer {
+    flex-direction: column;
+  }
+  .ingredientsSection {
+    padding: 0 24px var(--padding-40);
+  }
+  .relatedSection {
+    padding: var(--padding-40) 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .productSection {
+    padding: 88px 24px var(--padding-32);
+  }
+  .productName {
+    font-size: var(--fs-32);
+  }
+  .productDescription {
+    line-height: 160%;
+  }
+  .ritualTitle {
+    font-size: var(--fs-32);
+  }
+  .ritualDescription {
+    line-height: 160%;
+  }
+  .ingredientsTitle {
+    font-size: var(--fs-32);
+  }
+  .ingredientsGrid {
+    flex-direction: column;
+  }
+  .ingredientCard {
+    aspect-ratio: auto;
+    min-height: 300px;
+  }
+  .ingredientDesc {
+    line-height: 160%;
+  }
+  .relatedTitle {
+    font-size: var(--fs-32);
+  }
+  .relatedRow {
+    flex-direction: column;
+  }
+}

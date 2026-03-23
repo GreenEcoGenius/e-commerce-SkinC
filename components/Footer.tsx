@@ -31,9 +31,9 @@ export default function Footer() {
           <span className={styles.columnTitle}>Support</span>
           <div className={styles.columnLinks}>
             <Link href="/faq" className={styles.columnLink}>FAQs</Link>
-            <span className={styles.columnLink}>Return policy</span>
-            <span className={styles.columnLink}>Shipping policy</span>
-            <span className={styles.columnLink}>Start a return</span>
+            <Link href="/return-policy" className={styles.columnLink}>Return policy</Link>
+            <Link href="/shipping-policy" className={styles.columnLink}>Shipping policy</Link>
+            <Link href="/contact" className={styles.columnLink}>Start a return</Link>
           </div>
         </div>
         <div className={styles.column}>
@@ -49,8 +49,8 @@ export default function Footer() {
       <div className={styles.bottomContent}>
         <span className={styles.copyright}>&copy; 2025 I SEE, YOU FEEL</span>
         <div className={styles.legalLinks}>
-          <span className={styles.legalLink}>Terms of service</span>
-          <span className={styles.legalLink}>Privacy policy</span>
+          <Link href="/terms-of-service" className={styles.legalLink}>Terms of service</Link>
+          <Link href="/privacy-policy" className={styles.legalLink}>Privacy policy</Link>
           <span className={styles.legalLink}>Cookies settings</span>
         </div>
       </div>
