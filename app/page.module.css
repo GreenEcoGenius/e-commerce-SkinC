@@ -34,7 +34,7 @@
   background: var(--Black);
   background-image: url(/hero-isyf.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: center top;
 }
 .heroOverlay {
   position: absolute;

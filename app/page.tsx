@@ -62,21 +62,21 @@ export default function HomePage() {
 
       <section className={styles.categoriesGrid}>
         <div className={styles.categoryCard}>
-          <div className={styles.categoryImage} style={{ backgroundImage: "url(/Image@3x.png)" }} />
+          <div className={styles.categoryImage} style={{ backgroundImage: "url(/cat-premium.jpg)" }} />
           <div className={styles.categoryOverlay}>
             <h3 className={styles.categoryTitle}>ISYF PREMIUM</h3>
             <Button label="DISCOVER" variant="bright" href="/shop" />
           </div>
         </div>
         <div className={styles.categoryCard}>
-          <div className={styles.categoryImage} style={{ backgroundImage: "url(/Image1@3x.png)" }} />
+          <div className={styles.categoryImage} style={{ backgroundImage: "url(/cat-feels.jpg)" }} />
           <div className={styles.categoryOverlay}>
             <h3 className={styles.categoryTitle}>ISYF FEELS</h3>
             <Button label="DISCOVER" variant="bright" href="/shop" />
           </div>
         </div>
         <div className={styles.categoryCard}>
-          <div className={styles.categoryImage} style={{ backgroundImage: "url(/Image2@3x.png)" }} />
+          <div className={styles.categoryImage} style={{ backgroundImage: "url(/cat-accessories.jpg)" }} />
           <div className={styles.categoryOverlay}>
             <h3 className={styles.categoryTitle}>ACCESSORIES</h3>
             <Button label="DISCOVER" variant="bright" href="/shop" />
