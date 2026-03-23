@@ -22,19 +22,19 @@
 /* Hero */
 .hero {
   align-self: stretch;
-  height: 100vh;
-  min-height: 640px;
-  max-height: 1000px;
+  aspect-ratio: 16 / 7;
+  max-height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  padding-bottom: 8%;
   text-align: center;
   position: relative;
   background: #f5f5f0;
   background-image: url(/hero-isyf.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: center top;
 }
 .heroOverlay {
   position: absolute;
@@ -325,7 +325,7 @@
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .hero { height: 65vh; min-height: 400px; max-height: 580px; }
+  .hero { aspect-ratio: 16 / 9; max-height: 70vh; }
   .heroTitle { font-size: 48px; }
   .heroContent { gap: 24px; }
 
@@ -357,7 +357,7 @@
 @media (max-width: 768px) {
   .announcementBar { font-size: 9px; letter-spacing: 0.15em; padding: 8px 12px; }
 
-  .hero { height: 60vh; min-height: 360px; max-height: 520px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-color: #f5f5f0; }
+  .hero { aspect-ratio: 4 / 3; max-height: 65vh; padding-bottom: 12%; background-size: cover; background-position: center top; }
   .heroTitle { font-size: 32px; }
   .heroSubtitle { font-size: 11px; letter-spacing: 0.2em; }
   .heroContent { gap: 20px; padding: 0 24px; }
@@ -399,7 +399,7 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .hero { height: 55vh; min-height: 300px; max-height: 420px; }
+  .hero { aspect-ratio: 3 / 2; max-height: 60vh; padding-bottom: 14%; }
   .heroTitle { font-size: 26px; }
   .heroSubtitle { font-size: 10px; }
   .collectionCard { height: 320px; }
