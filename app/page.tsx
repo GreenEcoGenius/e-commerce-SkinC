@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className={styles.heroContent}>
           <h1 className={styles.heroTitle}>I SEE, YOU FEEL.</h1>
           <span className={styles.heroSubtitle}>WEAR WHAT YOU FEEL</span>
-          <Button label="EXPLORE" variant="dark" href="/shop" />
+          <Button label="EXPLORE" variant="bright" href="/shop" />
         </div>
       </section>
 
