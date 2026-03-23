@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import { type CSSProperties } from "react";
 import Image from "next/image";
 import SkinClinicLogo6 from "./skin-clinic-logo311";
@@ -47,48 +48,48 @@ const TopContent6: NextPage<TopContent6Type> = ({ className = "", color }) => {
       <div className={styles.column2}>
         <div className={styles.products}>Products</div>
         <div className={styles.links}>
-          <div className={styles.creams}>Creams</div>
-          <div className={styles.creams}>Serums</div>
-          <div className={styles.creams}>Lotions</div>
-          <div className={styles.creams}>Shop all</div>
+          <Link href="/shop" className={styles.footerLink}>Creams</Link>
+          <Link href="/shop" className={styles.footerLink}>Serums</Link>
+          <Link href="/shop" className={styles.footerLink}>Lotions</Link>
+          <Link href="/shop" className={styles.footerLink}>Shop all</Link>
         </div>
       </div>
       <div className={styles.column2}>
         <div className={styles.company}>Company</div>
         <div className={styles.links2}>
-          <div className={styles.faqs}>FAQs</div>
-          <div className={styles.faqs}>Contact us</div>
-          <div className={styles.faqs}>Return policy</div>
-          <div className={styles.faqs}>Shipping policy</div>
-          <div className={styles.faqs}>Start a return</div>
-          <div className={styles.aboutUs}>About us</div>
-          <div className={styles.aboutUs}>Journal</div>
-          <div className={styles.aboutUs}>Contact us</div>
+          <Link href="/faq" className={styles.footerLink}>FAQs</Link>
+          <Link href="/contact" className={styles.footerLink}>Contact us</Link>
+          <Link href="/faq" className={styles.footerLink}>Return policy</Link>
+          <Link href="/faq" className={styles.footerLink}>Shipping policy</Link>
+          <Link href="/contact" className={styles.footerLink}>Start a return</Link>
+          <Link href="/our-story" className={styles.footerLink}>About us</Link>
+          <Link href="/journal" className={styles.footerLink}>Journal</Link>
+          <Link href="/contact" className={styles.footerLink}>Contact us</Link>
         </div>
         <div className={styles.support}>Support</div>
         <div className={styles.links3}>
-          <div className={styles.press}>About us</div>
-          <div className={styles.press}>Journal</div>
-          <div className={styles.press}>Press</div>
-          <div className={styles.aboutUs}>FAQs</div>
-          <div className={styles.aboutUs}>Return policy</div>
-          <div className={styles.aboutUs}>Shipping policy</div>
-          <div className={styles.aboutUs}>Start a return</div>
+          <Link href="/our-story" className={styles.footerLink}>About us</Link>
+          <Link href="/journal" className={styles.footerLink}>Journal</Link>
+          <Link href="/our-story" className={styles.footerLink}>Press</Link>
+          <Link href="/faq" className={styles.footerLink}>FAQs</Link>
+          <Link href="/faq" className={styles.footerLink}>Return policy</Link>
+          <Link href="/faq" className={styles.footerLink}>Shipping policy</Link>
+          <Link href="/contact" className={styles.footerLink}>Start a return</Link>
         </div>
       </div>
       <div className={styles.column2}>
         <div className={styles.company}>Support</div>
         <div className={styles.support}>Company</div>
         <div className={styles.links2}>
-          <div className={styles.faqs3}>FAQs</div>
-          <div className={styles.contactUs3}>Contact us</div>
-          <div className={styles.faqs3}>Return policy</div>
-          <div className={styles.press2}>Press</div>
-          <div className={styles.faqs3}>Shipping policy</div>
-          <div className={styles.faqs3}>Start a return</div>
-          <div className={styles.aboutUs3}>About us</div>
-          <div className={styles.aboutUs3}>Journal</div>
-          <div className={styles.aboutUs3}>Contact us</div>
+          <Link href="/faq" className={styles.footerLink}>FAQs</Link>
+          <Link href="/contact" className={styles.footerLink}>Contact us</Link>
+          <Link href="/faq" className={styles.footerLink}>Return policy</Link>
+          <Link href="/our-story" className={styles.footerLink}>Press</Link>
+          <Link href="/faq" className={styles.footerLink}>Shipping policy</Link>
+          <Link href="/contact" className={styles.footerLink}>Start a return</Link>
+          <Link href="/our-story" className={styles.footerLink}>About us</Link>
+          <Link href="/journal" className={styles.footerLink}>Journal</Link>
+          <Link href="/contact" className={styles.footerLink}>Contact us</Link>
         </div>
       </div>
     </div>

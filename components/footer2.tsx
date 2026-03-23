@@ -8,7 +8,7 @@ export type Footer2Type = {
   color?: CSSProperties["color"];
 
   /** Variant props */
-  mobile?: CSSProperties["mobile"];
+  mobile?: boolean;
 };
 
 const Footer2: NextPage<Footer2Type> = ({

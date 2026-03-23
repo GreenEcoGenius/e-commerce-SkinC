@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import Products1 from "../../components/products1";
 import InstagramSection3 from "../../components/instagram-section11";
@@ -143,13 +144,9 @@ const Desktop11: NextPage = () => {
             alt=""
             src="/search.svg"
           />
-          <a
-            className={styles.bag0}
-            href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
-            target="_blank"
-          >
+          <Link href="/cart" className={styles.bag0}>
             Bag (0)
-          </a>
+          </Link>
         </div>
       </div>
       <GlobalNavigationDesktop4 type="Default" color="Dark" />

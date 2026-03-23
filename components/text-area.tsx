@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import styles from "./text-area.module.css";
 
 export type TextAreaType = {
@@ -9,7 +8,7 @@ export type TextAreaType = {
   label?: boolean;
 
   /** Variant props */
-  state?: CSSProperties["state"];
+  state?: string;
 };
 
 const TextArea: NextPage<TextAreaType> = ({

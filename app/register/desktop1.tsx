@@ -1,35 +1,124 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Image from "next/image";
-import styles from "./desktop3.module.css";
+import styles from "./desktop1.module.css";
 
-const Desktop3: NextPage = () => {
+const Desktop1: NextPage = () => {
   return (
     <div className={styles.desktop}>
       <main className={styles.imageLeftSection}>
-        <div className={styles.container}>
+        <form className={styles.container}>
           <div className={styles.header}>
-            <h1 className={styles.myAccount}>My account</h1>
+            <h1 className={styles.createAnAccount}>Create an account</h1>
           </div>
-          <section className={styles.content}>
-            <div className={styles.leftTabLinks}>
-              <div className={styles.orderHistory}>Order history</div>
-              <div className={styles.profileSettings}>Profile settings</div>
-              <div className={styles.profileSettings}>Log out</div>
-            </div>
-            <div className={styles.rightContent}>
-              <div className={styles.header2}>
-                <h2 className={styles.youHaveNo}>You have no orders yet</h2>
-                <div className={styles.orderHistoryIs}>
-                  Order history is empty. Once orders are placed, all order
-                  details will be displayed here.
+          <section className={styles.inputs}>
+            <div className={styles.inputAlt}>
+              <div className={styles.label}>First name</div>
+              <div className={styles.input}>
+                <input
+                  className={styles.placeholder}
+                  placeholder="John"
+                  type="text"
+                />
+                <div className={styles.arrow}>
+                  <Image
+                    className={styles.arrowRightAltIcon}
+                    width={10}
+                    height={7.5}
+                    sizes="100vw"
+                    alt=""
+                    src="/arrow-right-alt.svg"
+                  />
                 </div>
               </div>
-              <button className={styles.button}>
-                <div className={styles.buttonLabel}>Back to shopping</div>
-              </button>
+              <div className={styles.hintText}>Hint text</div>
+            </div>
+            <div className={styles.inputAlt}>
+              <div className={styles.label}>Last name</div>
+              <div className={styles.input}>
+                <input
+                  className={styles.placeholder}
+                  placeholder="Doe"
+                  type="text"
+                />
+                <div className={styles.arrow}>
+                  <Image
+                    className={styles.arrowRightAltIcon2}
+                    width={10}
+                    height={7.5}
+                    sizes="100vw"
+                    alt=""
+                    src="/arrow-right-alt.svg"
+                  />
+                </div>
+              </div>
+              <div className={styles.hintText}>Hint text</div>
+            </div>
+            <div className={styles.inputAlt}>
+              <div className={styles.label}>Email address</div>
+              <div className={styles.input}>
+                <input
+                  className={styles.placeholder}
+                  placeholder="johndoe@example.com"
+                  type="text"
+                />
+                <div className={styles.arrow}>
+                  <Image
+                    className={styles.arrowRightAltIcon2}
+                    width={10}
+                    height={7.5}
+                    sizes="100vw"
+                    alt=""
+                    src="/arrow-right-alt.svg"
+                  />
+                </div>
+              </div>
+              <div className={styles.hintText}>Hint text</div>
+            </div>
+            <div className={styles.inputAlt}>
+              <div className={styles.label}>Password</div>
+              <div className={styles.input}>
+                <input
+                  className={styles.placeholder4}
+                  placeholder="*************************"
+                  type="text"
+                />
+                <div className={styles.visibility}>
+                  <Image
+                    className={styles.visibilityOffIcon}
+                    width={13.9}
+                    height={12.5}
+                    sizes="100vw"
+                    alt=""
+                    src="/visibility-off.svg"
+                  />
+                </div>
+              </div>
+              <div className={styles.hintText}>Hint text</div>
+            </div>
+            <div className={styles.checkbox}>
+              <input className={styles.checkboxIcon} type="checkbox" />
+              <div className={styles.checkboxLabel}>
+                {`By clicking here, I agree to the `}
+                <span className={styles.termsOfService}>Terms of service</span>
+                {` and `}
+                <span className={styles.termsOfService}>Privacy policy</span>.
+              </div>
+            </div>
+            <div className={styles.checkbox}>
+              <input className={styles.checkboxIcon} type="checkbox" />
+              <div className={styles.checkboxLabel}>
+                Subscribe for updates on products, events, and more. Unsubscribe
+                anytime.
+              </div>
             </div>
           </section>
-        </div>
+          <button className={styles.buttons} type="submit">
+            <button className={styles.button} type="submit">
+              <div className={styles.buttonLabel}>Create account</div>
+            </button>
+          </button>
+        </form>
       </main>
       <footer className={styles.footer}>
         <div className={styles.topContent}>
@@ -92,7 +181,7 @@ const Desktop3: NextPage = () => {
               <div className={styles.faqs}>Return policy</div>
               <div className={styles.faqs}>Shipping policy</div>
               <div className={styles.faqs}>Start a return</div>
-              <div className={styles.aboutUs}>About us</div>
+              <Link href="/our-story" className={styles.aboutUs}>About us</Link>
               <div className={styles.aboutUs}>Journal</div>
               <div className={styles.aboutUs}>Contact us</div>
             </div>
@@ -117,7 +206,7 @@ const Desktop3: NextPage = () => {
               <div className={styles.press2}>Press</div>
               <div className={styles.faqs3}>Shipping policy</div>
               <div className={styles.faqs3}>Start a return</div>
-              <div className={styles.aboutUs3}>About us</div>
+              <Link href="/our-story" className={styles.aboutUs}>About us</Link>
               <div className={styles.aboutUs3}>Journal</div>
               <div className={styles.aboutUs3}>Contact us</div>
             </div>
@@ -125,11 +214,11 @@ const Desktop3: NextPage = () => {
         </div>
         <div className={styles.divider} />
         <div className={styles.bottomContent}>
-          <div className={styles.profileSettings}>© 2025 Skin—Clinic</div>
+          <div className={styles.skinclinic}>© 2025 Skin—Clinic</div>
           <div className={styles.legalLinks}>
-            <div className={styles.profileSettings}>Terms of service</div>
-            <div className={styles.profileSettings}>Privacy policy</div>
-            <div className={styles.profileSettings}>Cookies settings</div>
+            <div className={styles.skinclinic}>Terms of service</div>
+            <div className={styles.skinclinic}>Privacy policy</div>
+            <div className={styles.skinclinic}>Cookies settings</div>
           </div>
         </div>
       </footer>
@@ -163,20 +252,16 @@ const Desktop3: NextPage = () => {
             alt=""
             src="/search.svg"
           />
-          <a
-            className={styles.bag0}
-            href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
-            target="_blank"
-          >
+          <Link href="/cart" className={styles.bag0}>
             Bag (0)
-          </a>
+          </Link>
         </div>
       </div>
       <header className={styles.globalNavigationDesktop}>
         <nav className={styles.leftLinks}>
-          <div className={styles.profileSettings}>Shop</div>
-          <div className={styles.profileSettings}>About us</div>
-          <div className={styles.profileSettings}>Journal</div>
+          <div className={styles.skinclinic}>Shop</div>
+          <div className={styles.skinclinic}>About us</div>
+          <div className={styles.skinclinic}>Journal</div>
         </nav>
         <div className={styles.skinclinicLogo}>
           <Image
@@ -190,19 +275,15 @@ const Desktop3: NextPage = () => {
           />
         </div>
         <nav className={styles.leftLinks2}>
-          <div className={styles.profileSettings}>Account</div>
-          <div className={styles.profileSettings}>Search</div>
-          <a
-            className={styles.bag0}
-            href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
-            target="_blank"
-          >
+          <div className={styles.skinclinic}>Account</div>
+          <div className={styles.skinclinic}>Search</div>
+          <Link href="/cart" className={styles.bag0}>
             Bag (0)
-          </a>
+          </Link>
         </nav>
       </header>
     </div>
   );
 };
 
-export default Desktop3;
+export default Desktop1;

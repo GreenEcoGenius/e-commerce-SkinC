@@ -1,13 +1,14 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Image from "next/image";
-import styles from "./desktop6.module.css";
+import styles from "./desktop7.module.css";
 
-const Desktop6: NextPage = () => {
+const Desktop7: NextPage = () => {
   return (
     <div className={styles.desktop}>
       <header className={styles.globalNavigationDesktop}>
         <nav className={styles.leftLinks}>
-          <div className={styles.shop}>Shop</div>
+          <Link href="/shop" className={styles.shop}>Shop</Link>
           <div className={styles.shop}>About us</div>
           <div className={styles.shop}>Journal</div>
         </nav>
@@ -25,13 +26,9 @@ const Desktop6: NextPage = () => {
         <nav className={styles.leftLinks2}>
           <div className={styles.shop}>Account</div>
           <div className={styles.shop}>Search</div>
-          <a
-            className={styles.bag0}
-            href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
-            target="_blank"
-          >
+          <Link href="/cart" className={styles.bag0}>
             Bag (0)
-          </a>
+          </Link>
         </nav>
       </header>
       <main className={styles.imageLeftSection}>
@@ -139,7 +136,7 @@ const Desktop6: NextPage = () => {
               <div className={styles.faqs}>Return policy</div>
               <div className={styles.faqs}>Shipping policy</div>
               <div className={styles.faqs}>Start a return</div>
-              <div className={styles.aboutUs2}>About us</div>
+              <Link href="/our-story" className={styles.aboutUs}>About us</Link>
               <div className={styles.aboutUs2}>Journal</div>
               <div className={styles.aboutUs2}>Contact us</div>
             </div>
@@ -164,7 +161,7 @@ const Desktop6: NextPage = () => {
               <div className={styles.press2}>Press</div>
               <div className={styles.faqs3}>Shipping policy</div>
               <div className={styles.faqs3}>Start a return</div>
-              <div className={styles.aboutUs4}>About us</div>
+              <Link href="/our-story" className={styles.aboutUs}>About us</Link>
               <div className={styles.aboutUs4}>Journal</div>
               <div className={styles.aboutUs4}>Contact us</div>
             </div>
@@ -211,79 +208,18 @@ const Desktop6: NextPage = () => {
             alt=""
             src="/search.svg"
           />
-          <a
-            className={styles.bag0}
-            href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
-            target="_blank"
-          >
+          <Link href="/cart" className={styles.bag0}>
             Bag (0)
-          </a>
+          </Link>
         </div>
       </div>
       <section className={styles.modalWindow}>
-        <h3 className={styles.editPassword}>Edit password</h3>
-        <div className={styles.form}>
-          <div className={styles.inputAlt}>
-            <div className={styles.label}>Current password</div>
-            <div className={styles.input}>
-              <input
-                className={styles.filledText}
-                placeholder="**************"
-                type="text"
-              />
-              <div className={styles.chevron}>
-                <Image
-                  className={styles.keyboardArrowDownIcon}
-                  width={7.5}
-                  height={4.5}
-                  sizes="100vw"
-                  alt=""
-                  src="/keyboard-arrow-down.svg"
-                />
-              </div>
-              <div className={styles.visibility}>
-                <Image
-                  className={styles.visibilityOffIcon}
-                  width={13.9}
-                  height={12.5}
-                  sizes="100vw"
-                  alt=""
-                  src="/visibility-off.svg"
-                />
-              </div>
-            </div>
-            <div className={styles.hintText}>Hint text</div>
+        <div className={styles.header2}>
+          <h3 className={styles.requestLinkSent}>Request link sent</h3>
+          <div className={styles.pleaseVerifyYour}>
+            Please verify your email. Instructions for password reset will be
+            dispatched shortly.
           </div>
-          <div className={styles.inputAlt2}>
-            <div className={styles.aboutUs2}>New password</div>
-            <div className={styles.input2}>
-              <input
-                className={styles.filledText2}
-                placeholder="****************************"
-                type="text"
-              />
-              <div className={styles.visibility2}>
-                <Image
-                  className={styles.visibilityOffIcon2}
-                  width={13.9}
-                  height={12.5}
-                  sizes="100vw"
-                  alt=""
-                  src="/visibility-off.svg"
-                />
-              </div>
-            </div>
-            <div className={styles.hintText2}>Hint text</div>
-          </div>
-          <div className={styles.forgotPassword}>Forgot password?</div>
-        </div>
-        <div className={styles.buttons}>
-          <button className={styles.button}>
-            <div className={styles.buttonLabel}>Update</div>
-          </button>
-          <button className={styles.button2}>
-            <div className={styles.buttonLabel2}>Cancel</div>
-          </button>
         </div>
         <Image
           className={styles.closeIcon}
@@ -293,10 +229,9 @@ const Desktop6: NextPage = () => {
           alt=""
           src="/close.svg"
         />
-        <div className={styles.editPhoneNumber}>Edit phone number</div>
       </section>
     </div>
   );
 };
 
-export default Desktop6;
+export default Desktop7;

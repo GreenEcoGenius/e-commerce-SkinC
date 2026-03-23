@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./desktop10.module.css";
 
@@ -242,7 +243,7 @@ const Desktop10: NextPage = () => {
               <div className={styles.faqs}>Return policy</div>
               <div className={styles.faqs}>Shipping policy</div>
               <div className={styles.faqs}>Start a return</div>
-              <div className={styles.aboutUs}>About us</div>
+              <Link href="/our-story" className={styles.aboutUs}>About us</Link>
               <div className={styles.aboutUs}>Journal</div>
               <div className={styles.aboutUs}>Contact us</div>
             </div>
@@ -267,7 +268,7 @@ const Desktop10: NextPage = () => {
               <div className={styles.press2}>Press</div>
               <div className={styles.faqs3}>Shipping policy</div>
               <div className={styles.faqs3}>Start a return</div>
-              <div className={styles.aboutUs3}>About us</div>
+              <Link href="/our-story" className={styles.aboutUs}>About us</Link>
               <div className={styles.aboutUs3}>Journal</div>
               <div className={styles.aboutUs3}>Contact us</div>
             </div>
@@ -313,13 +314,9 @@ const Desktop10: NextPage = () => {
             alt=""
             src="/search.svg"
           />
-          <a
-            className={styles.bag0}
-            href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
-            target="_blank"
-          >
+          <Link href="/cart" className={styles.bag0}>
             Bag (0)
-          </a>
+          </Link>
         </div>
       </div>
       <header className={styles.globalNavigationDesktop}>
@@ -342,13 +339,9 @@ const Desktop10: NextPage = () => {
         <nav className={styles.leftLinks2}>
           <div className={styles.termsOfService}>Account</div>
           <div className={styles.termsOfService}>Search</div>
-          <a
-            className={styles.bag0}
-            href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
-            target="_blank"
-          >
+          <Link href="/cart" className={styles.bag0}>
             Bag (0)
-          </a>
+          </Link>
         </nav>
       </header>
     </div>

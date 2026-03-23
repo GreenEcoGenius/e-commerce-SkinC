@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./desktop13.module.css";
 
@@ -19,7 +20,7 @@ const Desktop13: NextPage = () => {
         </div>
         <a
           className={styles.bag}
-          href="https://www.figma.com/design/XfNVMn9MjuEwh4RiYjLxM6?node-id=69-11395"
+          href="#"
           target="_blank"
         >
           Bag

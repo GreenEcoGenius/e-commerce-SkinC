@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import Image from "next/image";
 import styles from "./accordion.module.css";
 
@@ -7,7 +6,7 @@ export type AccordionType = {
   className?: string;
 
   /** Variant props */
-  open1?: CSSProperties["open"];
+  open1?: boolean;
 };
 
 const Accordion: NextPage<AccordionType> = ({

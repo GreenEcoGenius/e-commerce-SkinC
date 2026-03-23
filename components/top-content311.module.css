@@ -209,3 +209,13 @@
     width: 100%;
   }
 }
+
+.footerLink {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.footerLink:hover {
+  opacity: 0.7;
+}

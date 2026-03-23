@@ -8,7 +8,7 @@ export type Footer5Type = {
   color?: CSSProperties["color"];
 
   /** Variant props */
-  mobile?: CSSProperties["mobile"];
+  mobile?: boolean;
 };
 
 const Footer5: NextPage<Footer5Type> = ({

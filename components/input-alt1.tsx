@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import Arrow2 from "./arrow2";
 import styles from "./input-alt1.module.css";
 
@@ -11,11 +10,11 @@ export type InputAlt1Type = {
   label?: boolean;
   label1?: string;
   placeholder1?: string;
-  type?: CSSProperties["type"];
+  type?: string;
   showArrow?: boolean;
 
   /** Variant props */
-  state?: CSSProperties["state"];
+  state?: string;
 };
 
 const InputAlt1: NextPage<InputAlt1Type> = ({
