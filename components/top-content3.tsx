@@ -1,19 +1,19 @@
 import type { NextPage } from "next";
 import { type CSSProperties } from "react";
 import Image from "next/image";
-import SkinClinicLogo3 from "./skin-clinic-logo3";
+import SkinClinicLogo1 from "./skin-clinic-logo3";
 import styles from "./top-content3.module.css";
 
-export type TopContent3Type = {
+export type TopContent1Type = {
   className?: string;
   color?: CSSProperties["color"];
 };
 
-const TopContent3: NextPage<TopContent3Type> = ({ className = "", color }) => {
+const TopContent1: NextPage<TopContent1Type> = ({ className = "", color }) => {
   return (
     <div className={[styles.topContent, className].join(" ")}>
       <div className={styles.column}>
-        <SkinClinicLogo3 color={color} />
+        <SkinClinicLogo1 color={color} />
         <div className={styles.socialLinks}>
           <Image
             className={styles.instagramIcon}
@@ -26,7 +26,6 @@ const TopContent3: NextPage<TopContent3Type> = ({ className = "", color }) => {
           />
           <Image
             className={styles.facebookIcon}
-            loading="lazy"
             width={16}
             height={16}
             sizes="100vw"
@@ -35,7 +34,6 @@ const TopContent3: NextPage<TopContent3Type> = ({ className = "", color }) => {
           />
           <Image
             className={styles.facebookIcon}
-            loading="lazy"
             width={16}
             height={16}
             sizes="100vw"
@@ -79,7 +77,7 @@ const TopContent3: NextPage<TopContent3Type> = ({ className = "", color }) => {
       <div className={styles.column2}>
         <div className={styles.company}>Support</div>
         <div className={styles.support}>Company</div>
-        <div className={styles.links2}>
+        <div className={styles.links4}>
           <div className={styles.faqs3}>FAQs</div>
           <div className={styles.contactUs3}>Contact us</div>
           <div className={styles.faqs3}>Return policy</div>
@@ -95,4 +93,4 @@ const TopContent3: NextPage<TopContent3Type> = ({ className = "", color }) => {
   );
 };
 
-export default TopContent3;
+export default TopContent1;

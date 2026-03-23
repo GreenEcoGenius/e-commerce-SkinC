@@ -9,7 +9,7 @@
   background-color: var(--White);
   overflow: hidden;
   flex-shrink: 0;
-  padding: var(--padding-0) var(--padding-40) var(--padding-56);
+  padding: var(--padding-01) var(--padding-40) var(--padding-56);
   gap: var(--gap-32);
   z-index: 4;
   text-align: left;

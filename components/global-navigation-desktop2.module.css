@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   background-color: var(--White);
-  border-bottom: var(--border-2);
+  border-bottom: var(--border-1);
   box-sizing: border-box;
   flex-shrink: 0;
   display: flex;

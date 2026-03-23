@@ -1,19 +1,19 @@
 import type { NextPage } from "next";
 import { type CSSProperties } from "react";
 import Image from "next/image";
-import SkinClinicLogo1 from "./skin-clinic-logo1";
+import SkinClinicLogo2 from "./skin-clinic-logo1";
 import styles from "./top-content1.module.css";
 
-export type TopContent1Type = {
+export type TopContent2Type = {
   className?: string;
   color?: CSSProperties["color"];
 };
 
-const TopContent1: NextPage<TopContent1Type> = ({ className = "", color }) => {
+const TopContent2: NextPage<TopContent2Type> = ({ className = "", color }) => {
   return (
     <div className={[styles.topContent, className].join(" ")}>
       <div className={styles.column}>
-        <SkinClinicLogo1 color={color} />
+        <SkinClinicLogo2 color={color} />
         <div className={styles.socialLinks}>
           <Image
             className={styles.instagramIcon}
@@ -95,4 +95,4 @@ const TopContent1: NextPage<TopContent1Type> = ({ className = "", color }) => {
   );
 };
 
-export default TopContent1;
+export default TopContent2;

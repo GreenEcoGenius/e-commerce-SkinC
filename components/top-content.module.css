@@ -32,6 +32,13 @@
 .facebookIcon {
   max-height: 100%;
 }
+.column2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-32);
+}
 .links,
 .products {
   align-self: stretch;
@@ -63,10 +70,32 @@
 .company {
   width: var(--width-342);
   text-transform: uppercase;
+}
+.company,
+.faqs,
+.links2 {
   display: none;
   flex-shrink: 0;
 }
-.links2,
+.links2 {
+  align-self: stretch;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  color: var(--Black);
+}
+.faqs {
+  width: var(--width-282);
+}
+.aboutUs,
+.faqs {
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.aboutUs,
+.links3,
 .support {
   align-self: stretch;
   flex-shrink: 0;
@@ -78,103 +107,92 @@
   text-transform: uppercase;
   font-weight: 500;
 }
-.links2 {
+.links3 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap-16);
   color: var(--Black);
 }
-.aboutUs,
-.faqs {
+.press {
+  width: var(--width-342);
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  display: none;
+  flex-shrink: 0;
+}
+.links4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  flex-shrink: 0;
+  color: var(--Black);
+}
+.contactUs3,
+.faqs3 {
+  width: var(--width-342);
+  display: none;
+}
+.aboutUs3,
+.contactUs3,
+.faqs3,
+.press2 {
   position: relative;
   letter-spacing: -0.06em;
   line-height: 100%;
   font-weight: 500;
   flex-shrink: 0;
 }
-.aboutUs {
-  width: var(--width-342);
+.press2 {
+  width: var(--width-282);
   display: none;
 }
-.faqs {
+.aboutUs3 {
   align-self: stretch;
 }
 @media screen and (max-width: 390px) {
   .topContent {
-    align-self: stretch;
-    width: 100%;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: var(--gap-32);
   }
   .column,
-  .socialLinks,
-  .topContent {
+  .column2 {
+    flex: unset;
+    align-self: stretch;
+  }
+  .column2 {
+    gap: var(--gap-24);
+  }
+  .company {
+    display: block;
+    align-self: stretch;
+    width: 100%;
+  }
+  .links2 {
     display: flex;
-    height: var(--height-auto);
-    justify-content: flex-start;
   }
-  .column {
-    flex: 1;
-    flex-direction: column;
-    align-items: flex-start;
+  .links3,
+  .support {
+    display: none;
   }
-  .socialLinks {
-    width: var(--width-auto);
-    align-self: unset;
-    flex-direction: row;
-    align-items: center;
+  .faqs3 {
+    display: block;
+    align-self: stretch;
+    width: 100%;
   }
+  .aboutUs3 {
+    display: none;
+  }
+  .facebookIcon,
   .instagramIcon {
     display: block;
     gap: var(--gap-0);
   }
-  .links,
-  .products {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
-  }
-  .products {
-    font-weight: 500;
-    letter-spacing: -0.06em;
-    line-height: 100%;
-    text-align: left;
-    display: block;
-  }
-  .links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .creams,
-  .support {
-    font-weight: 500;
-    letter-spacing: -0.06em;
-    line-height: 100%;
-    text-align: left;
-    display: block;
-  }
-  .creams,
-  .faqs,
-  .links2,
-  .support {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
-  }
-  .links2 {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .faqs {
-    font-weight: 500;
-    letter-spacing: -0.06em;
-    line-height: 100%;
-    text-align: left;
-    display: block;
+  .facebookIcon {
+    height: var(--height-16);
   }
 }

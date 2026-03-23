@@ -16,7 +16,7 @@
   width: var(--width-24);
   border-radius: var(--br-6);
   background-color: var(--White);
-  border: var(--border-2);
+  border: var(--border-1);
   box-sizing: border-box;
   justify-content: center;
 }

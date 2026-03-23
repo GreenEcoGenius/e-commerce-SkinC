@@ -9,7 +9,7 @@
   justify-content: center;
 }
 .root[data-checked="false"] {
-  border: var(--border-2);
+  border: var(--border-1);
   background-color: var(--White);
 }
 .option {

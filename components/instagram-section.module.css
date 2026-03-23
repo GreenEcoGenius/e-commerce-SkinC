@@ -9,7 +9,7 @@
   background-color: var(--White);
   overflow: hidden;
   flex-shrink: 0;
-  padding: var(--padding-0) var(--padding-40) var(--padding-56);
+  padding: var(--padding-01) var(--padding-40) var(--padding-56);
   gap: var(--gap-32);
   z-index: 9;
   text-align: left;
@@ -41,9 +41,6 @@
   align-self: stretch;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: flex-start;
   gap: var(--gap-24);
 }
 .instagramImageIcon {
@@ -56,24 +53,30 @@
 }
 @media screen and (max-width: 390px) {
   .instagramSection {
+    padding-left: var(--padding-24);
+    padding-right: var(--padding-24);
+  }
+  .skinclinic {
+    font-size: var(--fs-32);
+  }
+  .categoryWrapper {
+    gap: var(--gap-16);
+  }
+  .instagramImageIcon {
+    width: var(--width-253);
+  }
+  .instagramSection,
+  .skinclinic {
     align-self: stretch;
     width: 100%;
     height: var(--height-auto);
-    box-sizing: border-box;
   }
-  .header,
   .instagramSection {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-  }
-  .categoryWrapper,
-  .header,
-  .skinclinic {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
+    box-sizing: border-box;
   }
   .skinclinic {
     font-weight: 500;
@@ -81,14 +84,6 @@
     line-height: 100%;
     text-align: left;
     display: block;
-  }
-  .categoryWrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    align-content: flex-start;
-    justify-content: center;
   }
   .instagramImageIcon {
     display: flex;

@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Button from "./button";
+import Button1 from "./button2";
 import styles from "./full-image-section.module.css";
 
 export type FullImageSectionType = {
@@ -22,7 +22,7 @@ const FullImageSection: NextPage<FullImageSectionType> = ({
               Pure hydration in every drop
             </h2>
           </div>
-          <Button
+          <Button1
             color="Bright"
             buttonAlignSelf="unset"
             buttonLabel="Shop now"

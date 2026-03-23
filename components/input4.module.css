@@ -1,10 +1,10 @@
 .input {
   align-self: stretch;
   backdrop-filter: blur(52px);
-  border-bottom: var(--border-11);
+  border-bottom: var(--border-21);
   display: flex;
   align-items: center;
-  padding: var(--padding-24) var(--padding-0);
+  padding: var(--padding-24) var(--padding-01);
   gap: var(--gap-8);
 }
 .placeholder {

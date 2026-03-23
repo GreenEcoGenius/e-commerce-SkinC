@@ -1,7 +1,7 @@
 .divider,
 .footer {
   align-self: stretch;
-  border-top: var(--border-2);
+  border-top: var(--border-1);
 }
 .footer {
   background-color: var(--White);

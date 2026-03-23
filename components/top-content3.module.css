@@ -70,22 +70,22 @@
 .company {
   width: var(--width-342);
   text-transform: uppercase;
+}
+.company,
+.faqs,
+.links2 {
   display: none;
   flex-shrink: 0;
 }
 .links2 {
   align-self: stretch;
-  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap-16);
-  flex-shrink: 0;
   color: var(--Black);
 }
 .faqs {
   width: var(--width-282);
-  display: none;
-  flex-shrink: 0;
 }
 .aboutUs,
 .faqs {
@@ -114,16 +114,32 @@
   gap: var(--gap-16);
   color: var(--Black);
 }
-.contactUs3,
-.faqs3,
 .press {
+  width: var(--width-342);
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  display: none;
+  flex-shrink: 0;
+}
+.links4 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-16);
+  flex-shrink: 0;
+  color: var(--Black);
+}
+.contactUs3,
+.faqs3 {
   width: var(--width-342);
   display: none;
 }
 .aboutUs3,
 .contactUs3,
 .faqs3,
-.press,
 .press2 {
   position: relative;
   letter-spacing: -0.06em;
@@ -140,55 +156,24 @@
 }
 @media screen and (max-width: 390px) {
   .topContent {
-    align-self: stretch;
-    width: 100%;
     flex-direction: column;
     gap: var(--gap-32);
   }
   .column,
-  .socialLinks,
-  .topContent {
-    height: var(--height-auto);
-  }
-  .column {
-    align-self: stretch;
-    width: 100%;
+  .column2 {
     flex: unset;
-  }
-  .socialLinks {
-    width: var(--width-auto);
-    align-self: unset;
-  }
-  .facebookIcon,
-  .instagramIcon {
-    display: block;
-    gap: var(--gap-0);
-  }
-  .facebookIcon {
-    height: var(--height-16);
+    align-self: stretch;
   }
   .column2 {
     gap: var(--gap-24);
-    flex: unset;
-  }
-  .column2,
-  .creams,
-  .links,
-  .products {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
   }
   .company {
     display: block;
-    height: var(--height-auto);
-  }
-  .links2,
-  .links3,
-  .support {
     align-self: stretch;
     width: 100%;
-    height: var(--height-auto);
+  }
+  .links2 {
+    display: flex;
   }
   .links3,
   .support {
@@ -196,16 +181,14 @@
   }
   .faqs3 {
     display: block;
-  }
-  .aboutUs3,
-  .contactUs3,
-  .faqs3,
-  .press2 {
-    height: var(--height-auto);
+    align-self: stretch;
+    width: 100%;
   }
   .aboutUs3 {
     display: none;
-    align-self: stretch;
-    width: 100%;
+  }
+  .instagramIcon {
+    display: block;
+    gap: var(--gap-0);
   }
 }

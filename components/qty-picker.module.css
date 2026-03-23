@@ -1,6 +1,6 @@
 .qtyPicker {
   border-radius: var(--br-8);
-  border: var(--border-2);
+  border: var(--border-1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@
 .tapableAreaIcon {
   cursor: pointer;
   border: 0;
-  padding: var(--padding-01);
+  padding: var(--padding-0);
   background-color: transparent;
   height: var(--height-48);
   width: var(--width-48);

@@ -1,17 +1,12 @@
-.fullImageSection,
-.imageWrapper {
-  align-self: stretch;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-}
 .fullImageSection {
+  align-self: stretch;
   background-color: var(--White);
   overflow: hidden;
   flex-shrink: 0;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--padding-0) var(--padding-40) var(--padding-56);
+  padding: var(--padding-01) var(--padding-40) var(--padding-56);
   z-index: 7;
   text-align: left;
   font-size: var(--fs-16);
@@ -19,11 +14,14 @@
   font-family: var(--font-inter);
 }
 .imageWrapper {
+  align-self: stretch;
   height: var(--height-700);
   border-radius: var(--br-8);
+  display: flex;
   align-items: flex-end;
   justify-content: space-between;
   padding: var(--padding-56);
+  box-sizing: border-box;
   gap: var(--gap-20);
   background-image: url(/Image-Wrapper@3x.png);
   background-size: cover;
@@ -39,7 +37,6 @@
 .heroOffer {
   width: var(--width-588);
   gap: var(--gap-24);
-  max-width: 100%;
 }
 .text {
   align-self: stretch;
@@ -117,47 +114,42 @@
 }
 @media screen and (max-width: 390px) {
   .fullImageSection {
+    padding-left: var(--padding-24);
+    padding-right: var(--padding-24);
+  }
+  .imageWrapper {
+    height: var(--height-auto);
+    flex-direction: column;
+    gap: var(--gap-136);
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: var(--padding-24);
+    box-sizing: border-box;
+  }
+  .heroOffer {
+    align-self: stretch;
+    width: 100%;
+  }
+  .pureHydrationIn {
+    font-size: var(--fs-32);
+  }
+  .button {
+    align-self: stretch;
+    width: 100%;
+  }
+  .fullImageSection,
+  .pureHydrationIn {
     align-self: stretch;
     width: 100%;
     height: var(--height-auto);
+  }
+  .fullImageSection {
+    display: flex;
     flex-direction: column;
     gap: var(--gap-32);
     align-items: flex-start;
     justify-content: flex-start;
     box-sizing: border-box;
-  }
-  .fullImageSection,
-  .heroOffer,
-  .imageWrapper {
-    display: flex;
-    max-width: 100%;
-  }
-  .imageWrapper {
-    align-self: stretch;
-    width: 100%;
-    flex-direction: row;
-    gap: 200px;
-    align-items: flex-end;
-    justify-content: space-between;
-    box-sizing: border-box;
-  }
-  .heroOffer {
-    height: var(--height-auto);
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
-  .pureHydrationIn,
-  .text {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
-  }
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
   }
   .pureHydrationIn {
     font-weight: 500;
@@ -166,41 +158,10 @@
     text-align: left;
     display: block;
   }
-  .button {
-    display: flex;
-    height: var(--height-auto);
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    backdrop-filter: blur(52px);
-  }
   .imageIcon {
     display: block;
     height: var(--height-100);
     gap: var(--gap-0);
-  }
-  .rightText {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .price,
-  .rightText,
-  .space,
-  .space2 {
-    width: var(--width-auto);
-    align-self: unset;
-    height: var(--height-auto);
-  }
-  .price {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
   }
   .space,
   .space2 {
@@ -209,5 +170,8 @@
     line-height: 100%;
     text-align: left;
     display: block;
+    width: var(--width-auto);
+    align-self: unset;
+    height: var(--height-auto);
   }
 }

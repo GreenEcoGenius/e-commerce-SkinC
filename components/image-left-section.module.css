@@ -9,7 +9,7 @@
   flex-shrink: 0;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--padding-0) var(--padding-40) var(--padding-56);
+  padding: var(--padding-01) var(--padding-40) var(--padding-56);
   z-index: 4;
 }
 .container {
@@ -23,7 +23,6 @@
   overflow: hidden;
   max-height: 100%;
   object-fit: cover;
-  min-width: var(--min-w-382);
 }
 .text,
 .textButton {
@@ -33,10 +32,8 @@
 }
 .textButton {
   flex: 0.6906;
-  padding: var(--padding-20) var(--padding-102);
-  box-sizing: border-box;
+  padding: var(--padding-01) var(--padding-102);
   gap: var(--gap-24);
-  min-width: var(--min-w-382);
   text-align: left;
   font-size: var(--fs-40);
   color: var(--Black);
@@ -64,30 +61,37 @@
   color: var(--Gray-3);
 }
 @media screen and (max-width: 390px) {
-  .container,
   .imageLeftSection {
+    padding-left: var(--padding-24);
+    padding-right: var(--padding-24);
+  }
+  .container {
+    flex-direction: column;
+  }
+  .imageIcon {
+    align-self: stretch;
+  }
+  .hydrateRevitalize {
+    font-size: var(--fs-32);
+  }
+  .imageIcon,
+  .imageLeftSection,
+  .textButton {
     display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .imageLeftSection {
     align-self: stretch;
     width: 100%;
     height: var(--height-auto);
-    justify-content: flex-start;
-  }
-  .imageLeftSection {
-    flex-direction: column;
     gap: var(--gap-32);
     align-items: flex-start;
-    box-sizing: border-box;
-  }
-  .container {
-    flex-direction: row;
-    align-items: center;
+    justify-content: flex-start;
   }
   .imageIcon,
   .textButton {
-    display: flex;
     flex: 1;
-    flex-direction: column;
-    box-sizing: border-box;
   }
   .imageIcon {
     height: var(--height-588);
@@ -101,23 +105,14 @@
     align-items: flex-start;
     justify-content: flex-start;
   }
-  .hydrateRevitalize,
-  .text {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
-  }
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-  }
   .hydrateRevitalize {
     font-weight: 500;
     letter-spacing: -0.06em;
     line-height: 100%;
     text-align: left;
     display: block;
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
   }
 }

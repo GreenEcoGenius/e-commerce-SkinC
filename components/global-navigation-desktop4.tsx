@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { type CSSProperties } from "react";
-import SkinClinicLogo4 from "./skin-clinic-logo4";
+import SkinClinicLogo5 from "./skin-clinic-logo4";
 import styles from "./global-navigation-desktop4.module.css";
 
-export type GlobalNavigationDesktop4Type = {
+export type GlobalNavigationDesktop5Type = {
   className?: string;
   color?: CSSProperties["color"];
 
@@ -11,7 +11,7 @@ export type GlobalNavigationDesktop4Type = {
   type?: CSSProperties["type"];
 };
 
-const GlobalNavigationDesktop4: NextPage<GlobalNavigationDesktop4Type> = ({
+const GlobalNavigationDesktop5: NextPage<GlobalNavigationDesktop5Type> = ({
   className = "",
   type = "Default",
   color,
@@ -26,7 +26,7 @@ const GlobalNavigationDesktop4: NextPage<GlobalNavigationDesktop4Type> = ({
         <div className={styles.aboutUs}>About us</div>
         <div className={styles.journal}>Journal</div>
       </nav>
-      <SkinClinicLogo4 color={color} />
+      <SkinClinicLogo5 color={color} />
       <nav className={styles.leftLinks2}>
         <div className={styles.account}>Account</div>
         <div className={styles.search}>Search</div>
@@ -42,4 +42,4 @@ const GlobalNavigationDesktop4: NextPage<GlobalNavigationDesktop4Type> = ({
   );
 };
 
-export default GlobalNavigationDesktop4;
+export default GlobalNavigationDesktop5;

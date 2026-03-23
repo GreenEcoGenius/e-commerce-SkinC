@@ -2,14 +2,14 @@ import type { NextPage } from "next";
 import { type CSSProperties } from "react";
 import styles from "./button1.module.css";
 
-export type Button1Type = {
+export type Button2Type = {
   className?: string;
 
   /** Variant props */
   color?: CSSProperties["color"];
 };
 
-const Button1: NextPage<Button1Type> = ({
+const Button2: NextPage<Button2Type> = ({
   className = "",
   color = "Bright",
 }) => {
@@ -20,4 +20,4 @@ const Button1: NextPage<Button1Type> = ({
   );
 };
 
-export default Button1;
+export default Button2;

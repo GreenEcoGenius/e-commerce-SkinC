@@ -1,7 +1,7 @@
 .divider,
 .footer {
   align-self: stretch;
-  border-top: var(--border-2);
+  border-top: var(--border-1);
 }
 .footer {
   background-color: var(--White);
@@ -12,7 +12,7 @@
   align-items: flex-start;
   padding: var(--padding-56) var(--padding-40);
   gap: var(--gap-40);
-  z-index: 11;
+  z-index: 1;
   text-align: left;
   font-size: var(--fs-16);
   color: var(--Gray-3);
@@ -50,33 +50,29 @@
   font-weight: 500;
 }
 @media screen and (max-width: 390px) {
-  .bottomContent,
-  .footer,
-  .legalLinks {
-    display: flex;
-    height: var(--height-auto);
-    align-items: flex-start;
-  }
   .footer {
-    align-self: stretch;
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
-    box-sizing: border-box;
-  }
-  .bottomContent,
-  .legalLinks {
-    flex-direction: row;
+    padding-left: var(--padding-24);
+    padding-right: var(--padding-24);
   }
   .bottomContent {
+    flex-direction: column;
+    gap: var(--gap-32);
+    justify-content: flex-start;
+  }
+  .footer,
+  .legalLinks {
     align-self: stretch;
     width: 100%;
-    gap: 709px;
-    justify-content: space-between;
   }
   .legalLinks {
-    width: var(--width-auto);
-    align-self: unset;
+    flex-wrap: wrap;
+  }
+  .footer {
+    display: flex;
+    height: var(--height-auto);
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
+    box-sizing: border-box;
   }
 }

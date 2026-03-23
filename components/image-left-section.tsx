@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Button from "./button";
+import Button1 from "./button2";
 import styles from "./image-left-section.module.css";
 
 export type ImageLeftSectionType = {
@@ -33,7 +33,7 @@ const ImageLeftSection: NextPage<ImageLeftSectionType> = ({
               minutes.
             </div>
           </div>
-          <Button
+          <Button1
             color="Dark"
             buttonAlignSelf="unset"
             buttonLabel="Shop the face mask"

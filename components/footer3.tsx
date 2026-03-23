@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import { type CSSProperties } from "react";
-import TopContent3 from "./top-content3";
+import TopContent1 from "./top-content3";
 import styles from "./footer3.module.css";
 
-export type Footer3Type = {
+export type Footer1Type = {
   className?: string;
   color?: CSSProperties["color"];
 
@@ -11,7 +11,7 @@ export type Footer3Type = {
   mobile?: CSSProperties["mobile"];
 };
 
-const Footer3: NextPage<Footer3Type> = ({
+const Footer1: NextPage<Footer1Type> = ({
   className = "",
   mobile = false,
   color,
@@ -21,7 +21,7 @@ const Footer3: NextPage<Footer3Type> = ({
       className={[styles.footer, className].join(" ")}
       data-mobile={mobile}
     >
-      <TopContent3 color="Dark" />
+      <TopContent1 color="Dark" />
       <div className={styles.divider} />
       <div className={styles.bottomContent}>
         <div className={styles.skinclinic}>© 2025 Skin—Clinic</div>
@@ -35,4 +35,4 @@ const Footer3: NextPage<Footer3Type> = ({
   );
 };
 
-export default Footer3;
+export default Footer1;

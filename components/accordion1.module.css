@@ -4,11 +4,11 @@
   display: flex;
 }
 .accordion {
-  border-bottom: var(--border-2);
+  border-bottom: var(--border-1);
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--padding-16) var(--padding-0);
+  padding: var(--padding-16) var(--padding-01);
   text-align: left;
   font-size: var(--fs-16);
   color: var(--Black);

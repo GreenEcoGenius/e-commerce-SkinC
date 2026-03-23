@@ -5,7 +5,7 @@
   max-width: 100%;
   display: flex;
   align-items: center;
-  padding: var(--padding-0) var(--padding-0) var(--padding-100);
+  padding: var(--padding-01) var(--padding-01) var(--padding-100);
   text-align: left;
   font-size: var(--fs-200);
   color: var(--Black);

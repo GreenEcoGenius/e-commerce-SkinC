@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Variant1 from "./variant1";
 import QtyPicker from "./qty-picker";
-import Button1 from "./button1";
+import Button2 from "./button1";
 import Accordion1 from "./accordion1";
 import styles from "./image-left-section1.module.css";
 
@@ -128,7 +128,7 @@ const ImageLeftSection1: NextPage<ImageLeftSection1Type> = ({
             </div>
           </div>
           <div className={styles.footer}>
-            <Button1 color="Dark" />
+            <Button2 color="Dark" />
             <div className={styles.quantity}>Free shipping over $50</div>
           </div>
           <div className={styles.accordion}>

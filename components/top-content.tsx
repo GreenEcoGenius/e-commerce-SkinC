@@ -26,6 +26,7 @@ const TopContent: NextPage<TopContentType> = ({ className = "", color }) => {
           />
           <Image
             className={styles.facebookIcon}
+            loading="lazy"
             width={16}
             height={16}
             sizes="100vw"
@@ -34,6 +35,7 @@ const TopContent: NextPage<TopContentType> = ({ className = "", color }) => {
           />
           <Image
             className={styles.facebookIcon}
+            loading="lazy"
             width={16}
             height={16}
             sizes="100vw"
@@ -42,7 +44,7 @@ const TopContent: NextPage<TopContentType> = ({ className = "", color }) => {
           />
         </div>
       </div>
-      <div className={styles.column}>
+      <div className={styles.column2}>
         <div className={styles.products}>Products</div>
         <div className={styles.links}>
           <div className={styles.creams}>Creams</div>
@@ -51,31 +53,42 @@ const TopContent: NextPage<TopContentType> = ({ className = "", color }) => {
           <div className={styles.creams}>Shop all</div>
         </div>
       </div>
-      <div className={styles.column}>
+      <div className={styles.column2}>
         <div className={styles.company}>Company</div>
-        <div className={styles.support}>Support</div>
         <div className={styles.links2}>
-          <div className={styles.aboutUs}>About us</div>
-          <div className={styles.aboutUs}>Journal</div>
-          <div className={styles.aboutUs}>Press</div>
           <div className={styles.faqs}>FAQs</div>
+          <div className={styles.faqs}>Contact us</div>
           <div className={styles.faqs}>Return policy</div>
           <div className={styles.faqs}>Shipping policy</div>
           <div className={styles.faqs}>Start a return</div>
-        </div>
-      </div>
-      <div className={styles.column}>
-        <div className={styles.company}>Support</div>
-        <div className={styles.support}>Company</div>
-        <div className={styles.links2}>
-          <div className={styles.aboutUs}>FAQs</div>
+          <div className={styles.aboutUs}>About us</div>
+          <div className={styles.aboutUs}>Journal</div>
           <div className={styles.aboutUs}>Contact us</div>
+        </div>
+        <div className={styles.support}>Support</div>
+        <div className={styles.links3}>
+          <div className={styles.press}>About us</div>
+          <div className={styles.press}>Journal</div>
+          <div className={styles.press}>Press</div>
+          <div className={styles.aboutUs}>FAQs</div>
           <div className={styles.aboutUs}>Return policy</div>
           <div className={styles.aboutUs}>Shipping policy</div>
           <div className={styles.aboutUs}>Start a return</div>
-          <div className={styles.faqs}>About us</div>
-          <div className={styles.faqs}>Journal</div>
-          <div className={styles.faqs}>Contact us</div>
+        </div>
+      </div>
+      <div className={styles.column2}>
+        <div className={styles.company}>Support</div>
+        <div className={styles.support}>Company</div>
+        <div className={styles.links4}>
+          <div className={styles.faqs3}>FAQs</div>
+          <div className={styles.contactUs3}>Contact us</div>
+          <div className={styles.faqs3}>Return policy</div>
+          <div className={styles.press2}>Press</div>
+          <div className={styles.faqs3}>Shipping policy</div>
+          <div className={styles.faqs3}>Start a return</div>
+          <div className={styles.aboutUs3}>About us</div>
+          <div className={styles.aboutUs3}>Journal</div>
+          <div className={styles.aboutUs3}>Contact us</div>
         </div>
       </div>
     </div>

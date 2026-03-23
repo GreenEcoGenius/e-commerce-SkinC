@@ -1,20 +1,14 @@
-.root {
+.button {
   cursor: pointer;
   border: 0;
   padding: var(--padding-24) var(--padding-48);
-  background-color: var(--color-gray-200);
+  background-color: var(--Black);
+  align-self: stretch;
   backdrop-filter: blur(52px);
   border-radius: var(--br-8);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.root[data-color="Dark"] {
-  border: var(--border-1);
-  background-color: transparent;
-}
-.root[data-color="Dark"] .buttonLabel {
-  color: var(--Black);
 }
 .buttonLabel {
   position: relative;
@@ -27,10 +21,10 @@
   text-align: left;
 }
 @media screen and (max-width: 390px) {
-  .root {
+  .button {
     display: flex;
-    width: var(--width-auto);
-    align-self: unset;
+    align-self: stretch;
+    width: 100%;
     height: var(--height-auto);
     flex-direction: row;
     gap: var(--gap-24);

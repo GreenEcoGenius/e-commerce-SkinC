@@ -3,14 +3,14 @@ import { type CSSProperties } from "react";
 import Image from "next/image";
 import styles from "./skin-clinic-logo2.module.css";
 
-export type SkinClinicLogo2Type = {
+export type SkinClinicLogo3Type = {
   className?: string;
 
   /** Variant props */
   color?: CSSProperties["color"];
 };
 
-const SkinClinicLogo2: NextPage<SkinClinicLogo2Type> = ({
+const SkinClinicLogo3: NextPage<SkinClinicLogo3Type> = ({
   className = "",
   color = "Dark",
 }) => {
@@ -32,4 +32,4 @@ const SkinClinicLogo2: NextPage<SkinClinicLogo2Type> = ({
   );
 };
 
-export default SkinClinicLogo2;
+export default SkinClinicLogo3;
