@@ -1,14 +1,15 @@
 const nextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**",
-        pathname: "/**",
-      },
-    ],
-  },
-};
+    reactStrictMode: true,
+    images: {
+      remotePatterns: [
+        {
+          protocol: "https",
+          hostname: "**",
+          pathname: "/**",
+        },
+      ],
+    },
+    
+  };
 
-module.exports = nextConfig;
+  module.exports = nextConfig;

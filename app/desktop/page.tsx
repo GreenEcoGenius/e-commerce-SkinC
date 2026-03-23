@@ -1,5 +1,5 @@
 import Desktop from "./desktop";
 
-export default function Page() {
-  return <Desktop />;
-}
+    export default function Page() {
+      return <Desktop />;
+    }

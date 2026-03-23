@@ -25,7 +25,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 160px var(--padding-40) 112px;
+  padding: 160px var(--padding-40) var(--padding-112);
   z-index: 0;
 }
 .globalNavigationMobile {
@@ -96,7 +96,7 @@
     gap: var(--gap-32);
     align-items: center;
     justify-content: flex-start;
-    padding: 160px var(--padding-40) 112px;
+    padding: 160px var(--padding-40) var(--padding-112);
     box-sizing: border-box;
   }
   .menuIcon,

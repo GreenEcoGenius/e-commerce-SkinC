@@ -12,148 +12,20 @@
   color: var(--Black);
   font-family: var(--font-inter);
 }
-.container,
-.imageLeftSection {
-  align-self: stretch;
-  display: flex;
-}
-.imageLeftSection {
+.filterMobile,
+.globalNavigationMobile {
   background-color: var(--White);
-  overflow: hidden;
+  box-sizing: border-box;
   flex-shrink: 0;
+  display: none;
+  padding: var(--padding-24);
+}
+.filterMobile {
+  width: 330px;
   flex-direction: column;
   align-items: flex-start;
-  padding: var(--padding-01) var(--padding-40) var(--padding-56);
-  z-index: 1;
-  text-align: left;
-  font-size: var(--fs-40);
-  color: var(--Black);
-  font-family: var(--font-inter);
-}
-.container {
-  align-items: center;
-  gap: var(--gap-24);
-}
-.text,
-.textWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.textWrapper {
-  flex: 0.8741;
-  padding: var(--padding-01) var(--padding-102) var(--padding-01)
-    var(--padding-01);
-}
-.text {
-  align-self: stretch;
-  gap: var(--gap-16);
-}
-.apply23Drops,
-.yourDailyGlow {
-  align-self: stretch;
-  position: relative;
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  font-weight: 500;
-}
-.yourDailyGlow {
-  margin: 0;
-  font-size: inherit;
-  font-family: inherit;
-}
-.apply23Drops {
-  font-size: var(--fs-16);
-  color: var(--Gray-3);
-}
-.imageIcon {
-  flex: 1;
-  border-radius: var(--br-8);
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: cover;
-}
-.categorySection,
-.categoryWrapper {
-  align-self: stretch;
-  display: flex;
-  align-items: flex-start;
-}
-.categorySection {
-  background-color: var(--White);
-  overflow: hidden;
-  flex-shrink: 0;
-  flex-direction: column;
-  padding: var(--padding-01) var(--padding-40) var(--padding-56);
-  gap: var(--gap-32);
-  z-index: 2;
-  text-align: left;
-  font-size: var(--fs-40);
-  color: var(--Black);
-  font-family: var(--font-inter);
-}
-.categoryWrapper {
-  gap: var(--gap-24);
-}
-.imageWrapper {
-  height: var(--height-440);
-  flex: 1;
-  display: flex;
-  align-items: center;
-  text-align: left;
-  font-size: var(--fs-24);
-  color: var(--Black);
-  font-family: var(--font-inter);
-}
-.category,
-.image {
-  align-self: stretch;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.image {
-  border-radius: var(--br-8);
-  overflow: hidden;
-  justify-content: space-between;
-  padding: var(--padding-16);
-  gap: var(--gap-0);
-  background-image: url(/Image121@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.hyaluronicAcid {
-  margin: 0;
-  align-self: stretch;
-  position: relative;
-  font-size: inherit;
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  font-weight: 500;
-  font-family: inherit;
-}
-.image2,
-.image3 {
-  align-self: stretch;
-  flex: 1;
-  border-radius: var(--br-8);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  padding: var(--padding-16);
-  gap: var(--gap-0);
-  background-image: url(/Image151@3x.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.image3 {
-  background-image: url(/Image161@3x.png);
+  justify-content: center;
+  z-index: 3;
 }
 .globalNavigationMobile {
   width: var(--width-390);
@@ -162,16 +34,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--White);
   border-bottom: var(--border-1);
-  box-sizing: border-box;
-  flex-shrink: 0;
-  display: none;
   align-items: center;
   justify-content: space-between;
-  padding: var(--padding-24);
   gap: var(--gap-20);
-  z-index: 7;
+  z-index: 5;
 }
 .leftContent {
   display: flex;
@@ -213,93 +80,8 @@
   text-decoration: none;
 }
 @media screen and (max-width: 390px) {
-  .imageLeftSection {
-    padding-left: var(--padding-24);
-    padding-right: var(--padding-24);
-  }
-  .container {
-    flex-direction: column;
-  }
-  .yourDailyGlow {
-    font-size: var(--fs-32);
-  }
-  .imageIcon {
-    align-self: stretch;
-  }
-  .categorySection {
-    padding-left: var(--padding-24);
-    padding-right: var(--padding-24);
-  }
-  .categoryWrapper {
-    flex-direction: column;
-  }
-  .imageWrapper {
-    height: var(--height-392);
-    align-self: stretch;
-  }
   .globalNavigationMobile {
     display: flex;
-  }
-  .imageLeftSection,
-  .yourDailyGlow {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
-  }
-  .imageLeftSection {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-32);
-    align-items: flex-start;
-    justify-content: flex-start;
-    box-sizing: border-box;
-  }
-  .yourDailyGlow {
-    font-weight: 500;
-    letter-spacing: -0.06em;
-    line-height: 100%;
-    text-align: left;
-    display: block;
-  }
-  .imageIcon {
-    display: flex;
-    flex: 1;
-    height: var(--height-588);
-    flex-direction: column;
-    gap: var(--gap-8);
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding: var(--padding-16);
-    box-sizing: border-box;
-  }
-  .categorySection,
-  .imageWrapper {
-    display: flex;
-    justify-content: flex-start;
-  }
-  .categorySection {
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
-    flex-direction: column;
-    align-items: flex-start;
-    box-sizing: border-box;
-  }
-  .imageWrapper {
-    flex: 1;
-    flex-direction: row;
-    gap: var(--gap-0);
-    align-items: center;
-  }
-  .hyaluronicAcid {
-    font-weight: 500;
-    letter-spacing: -0.06em;
-    line-height: 100%;
-    text-align: left;
-    display: block;
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
   }
   .menuIcon,
   .searchIcon {

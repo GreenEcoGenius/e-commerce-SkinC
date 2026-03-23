@@ -1,25 +1,78 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import CategoryWrapper from "../../components/category-wrapper";
-import InstagramSection4 from "../../components/instagram-section4";
-import ImageWrapper4 from "../../components/image-wrapper4";
-import Footer5 from "../../components/footer4";
-import SkinClinicLogo5 from "../../components/skin-clinic-logo4";
-import GlobalNavigationDesktop5 from "../../components/global-navigation-desktop4";
+import ImageLeftSection2 from "../../components/image-left-section2";
+import ImageLeftSection3 from "../../components/image-left-section3";
+import InstagramSection3 from "../../components/instagram-section3";
+import ImageWrapper3 from "../../components/image-wrapper3";
+import Footer4 from "../../components/footer31";
+import SkinClinicLogo4 from "../../components/skin-clinic-logo31";
+import GlobalNavigationDesktop4 from "../../components/global-navigation-desktop31";
 import styles from "./desktop6.module.css";
 
 const Desktop6: NextPage = () => {
   return (
     <div className={styles.desktop}>
-      <main className={styles.products}>
-        <h1 className={styles.yourGuideTo}>
-          Your guide to natural skincare wisdom
-        </h1>
-        <CategoryWrapper />
+      <main className={styles.fullImageSection}>
+        <div className={styles.imageWrapper}>
+          <div className={styles.heroOffer}>
+            <div className={styles.text}>
+              <div className={styles.ourStory}>Our story</div>
+              <h1 className={styles.naturesFinestFor}>
+                Nature’s finest for your skin
+              </h1>
+              <div className={styles.skinClinicWasBorn}>
+                Skin-Clinic was born from a passion for natural skincare that
+                truly works. We believe in harnessing the power of nature to
+                create products that nurture and restore your skin’s natural
+                beauty.
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
-      <InstagramSection4 />
-      <ImageWrapper4 />
-      <Footer5 mobile={false} color="Dark" />
+      <ImageLeftSection2 />
+      <ImageLeftSection3 />
+      <section className={styles.itemsGrid}>
+        <div className={styles.itemsWrapper}>
+          <section className={styles.image}>
+            <div className={styles.text2}>
+              <h2 className={styles.ourFormulationProcess}>
+                Our formulation process
+              </h2>
+              <div className={styles.atSkinClinicEvery}>
+                At Skin-Clinic, every product is developed with precision by our
+                team of skincare experts. We blend science and nature,
+                rigorously testing each formula to ensure it’s gentle,
+                effective, and safe. Our process guarantees that only the best
+                reaches your skin, delivering real results you can trust.
+              </div>
+            </div>
+          </section>
+          <section className={styles.image2}>
+            <div className={styles.text2}>
+              <h2 className={styles.ourFormulationProcess}>
+                Building a community of glow
+              </h2>
+              <div className={styles.atSkinClinicEvery}>
+                Skin-Clinic is more than a brand—it’s a community. We listen to
+                your needs, creating products that address real skin concerns
+                with natural solutions. Join us on this journey to celebrate
+                healthy skin, share tips, and inspire each other to glow
+                confidently every day.
+              </div>
+            </div>
+          </section>
+          <div className={styles.image3}>
+            <div className={styles.skinClinicWasBorn}>Gift the glow</div>
+            <div className={styles.button}>
+              <div className={styles.buttonLabel}>Get a gift card</div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <InstagramSection3 />
+      <ImageWrapper3 />
+      <Footer4 mobile={false} color="Dark" />
       <div className={styles.globalNavigationMobile}>
         <div className={styles.leftContent}>
           <Image
@@ -30,9 +83,9 @@ const Desktop6: NextPage = () => {
             alt=""
             src="/menu.svg"
           />
-          <SkinClinicLogo5 color="Dark" />
+          <SkinClinicLogo4 color="Dark" />
         </div>
-        <div className={styles.links}>
+        <button className={styles.links}>
           <Image
             className={styles.searchIcon}
             width={24}
@@ -48,9 +101,9 @@ const Desktop6: NextPage = () => {
           >
             Bag (0)
           </a>
-        </div>
+        </button>
       </div>
-      <GlobalNavigationDesktop5 type="Default" color="Dark" />
+      <GlobalNavigationDesktop4 type="Default" color="Dark" />
     </div>
   );
 };

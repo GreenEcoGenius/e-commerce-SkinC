@@ -1,16 +1,16 @@
 import type { NextPage } from "next";
 import styles from "./header2.module.css";
 
-export type Header3Type = {
+export type Header2Type = {
   className?: string;
 };
 
-const Header3: NextPage<Header3Type> = ({ className = "" }) => {
+const Header2: NextPage<Header2Type> = ({ className = "" }) => {
   return (
     <div className={[styles.header, className].join(" ")}>
-      <div className={styles.pdp}>PDP</div>
+      <h1 className={styles.resetPassword}>Reset password</h1>
     </div>
   );
 };
 
-export default Header3;
+export default Header2;

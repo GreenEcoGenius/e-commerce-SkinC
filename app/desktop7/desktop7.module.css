@@ -1,31 +1,38 @@
-.desktop {
-  width: 100%;
-  position: relative;
+.desktop,
+.products {
   background-color: var(--White);
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  isolation: isolate;
   text-align: left;
-  font-size: var(--fs-16);
   color: var(--Black);
   font-family: var(--font-inter);
 }
-.filterMobile,
-.globalNavigationMobile {
-  background-color: var(--White);
-  box-sizing: border-box;
-  flex-shrink: 0;
-  display: none;
-  padding: var(--padding-24);
+.desktop {
+  width: 100%;
+  position: relative;
+  overflow-y: auto;
+  isolation: isolate;
+  font-size: var(--fs-16);
 }
-.filterMobile {
-  width: 330px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  z-index: 3;
+.products {
+  align-self: stretch;
+  overflow: hidden;
+  flex-shrink: 0;
+  padding: 128px var(--padding-40) var(--padding-56);
+  gap: var(--gap-32);
+  z-index: 0;
+  font-size: var(--fs-40);
+}
+.yourGuideTo {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+  font-family: inherit;
 }
 .globalNavigationMobile {
   width: var(--width-390);
@@ -34,11 +41,16 @@
   position: absolute;
   top: 0;
   left: 0;
+  background-color: var(--White);
   border-bottom: var(--border-1);
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: none;
   align-items: center;
   justify-content: space-between;
+  padding: var(--padding-24);
   gap: var(--gap-20);
-  z-index: 5;
+  z-index: 4;
 }
 .leftContent {
   display: flex;
@@ -80,8 +92,32 @@
   text-decoration: none;
 }
 @media screen and (max-width: 390px) {
+  .yourGuideTo {
+    font-size: var(--fs-32);
+  }
   .globalNavigationMobile {
     display: flex;
+  }
+  .products,
+  .yourGuideTo {
+    align-self: stretch;
+    width: 100%;
+    height: var(--height-auto);
+  }
+  .products {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 128px var(--padding-40) var(--padding-56);
+    box-sizing: border-box;
+  }
+  .yourGuideTo {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
   }
   .menuIcon,
   .searchIcon {

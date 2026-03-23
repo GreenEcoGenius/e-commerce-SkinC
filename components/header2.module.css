@@ -1,5 +1,5 @@
 .header {
-  width: var(--width-1970);
+  width: 7110px;
   border-bottom: var(--border-31);
   box-sizing: border-box;
   max-width: 100%;
@@ -11,10 +11,24 @@
   color: var(--Black);
   font-family: var(--font-inter);
 }
-.pdp {
+.resetPassword {
+  margin: 0;
   flex: 1;
   position: relative;
+  font-size: inherit;
   letter-spacing: -0.06em;
   line-height: 100%;
   font-weight: 500;
+  font-family: inherit;
+}
+@media screen and (max-width: 390px) {
+  .resetPassword {
+    font-weight: 500;
+    letter-spacing: -0.06em;
+    line-height: 100%;
+    text-align: left;
+    display: block;
+    flex: 1;
+    height: var(--height-auto);
+  }
 }
