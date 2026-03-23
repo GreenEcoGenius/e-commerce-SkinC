@@ -4,7 +4,7 @@
   background: var(--Black);
   background-image: url(/our-story-hero.jpg);
   background-size: cover;
-  background-position: center center;
+  background-position: center 15%;
   display: flex;
   flex-direction: column;
   align-items: center;
