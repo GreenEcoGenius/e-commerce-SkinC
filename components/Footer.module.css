@@ -84,7 +84,7 @@
 }
 .logo {
   height: var(--height-19);
-  width: var(--width-121);
+  width: 200px;
   position: relative;
   overflow: hidden;
 }

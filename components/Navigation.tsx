@@ -11,7 +11,7 @@ export default function Navigation() {
       </nav>
       <Link href="/" className={styles.logoLink}>
         <div className={styles.logo}>
-          <img className={styles.logoImg} alt="Skin—Clinic" src="/Logo.svg" />
+          <img className={styles.logoImg} alt="I SEE, YOU FEEL" src="/Logo.svg" />
         </div>
       </Link>
       <nav className={styles.linksRight}>

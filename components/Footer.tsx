@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.brandColumn}>
           <Link href="/">
             <div className={styles.logo}>
-              <img className={styles.logoImg} alt="Skin—Clinic" src="/Logo.svg" />
+              <img className={styles.logoImg} alt="I SEE, YOU FEEL" src="/Logo.svg" />
             </div>
           </Link>
           <div className={styles.socialLinks}>
@@ -47,7 +47,7 @@ export default function Footer() {
       </div>
       <div className={styles.divider} />
       <div className={styles.bottomContent}>
-        <span className={styles.copyright}>&copy; 2025 Skin—Clinic</span>
+        <span className={styles.copyright}>&copy; 2025 I SEE, YOU FEEL</span>
         <div className={styles.legalLinks}>
           <span className={styles.legalLink}>Terms of service</span>
           <span className={styles.legalLink}>Privacy policy</span>

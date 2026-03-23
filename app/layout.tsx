@@ -3,7 +3,7 @@ import "./global.css";
 import { ReactNode } from "react";
 
 export const metadata = {
-  title: `Skin—Clinic _ Figma Design E-commerce Template`,
+  title: `I SEE, YOU FEEL`,
 };
 
 export default function RootLayout({
