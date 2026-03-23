@@ -31,15 +31,15 @@
   justify-content: center;
   text-align: center;
   position: relative;
-  background: var(--Black);
+  background: #f5f5f0;
   background-image: url(/hero-isyf.jpg);
   background-size: cover;
-  background-position: center 20%;
+  background-position: center center;
 }
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.15);
   pointer-events: none;
 }
 .heroContent {
@@ -52,14 +52,14 @@
 .heroTitle {
   margin: 0;
   font-size: 64px;
-  color: var(--White);
+  color: var(--Black);
 }
 .heroSubtitle {
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 400;
   letter-spacing: 0.3em;
-  color: var(--White);
+  color: var(--Black);
 }
 
 /* Collections Grid */
@@ -357,7 +357,7 @@
 @media (max-width: 768px) {
   .announcementBar { font-size: 9px; letter-spacing: 0.15em; padding: 8px 12px; }
 
-  .hero { height: 55vh; min-height: 320px; max-height: 480px; background-size: cover; background-position: center 30%; }
+  .hero { height: 60vh; min-height: 360px; max-height: 520px; background-size: contain; background-repeat: no-repeat; background-position: center center; background-color: #f5f5f0; }
   .heroTitle { font-size: 32px; }
   .heroSubtitle { font-size: 11px; letter-spacing: 0.2em; }
   .heroContent { gap: 20px; padding: 0 24px; }
@@ -399,7 +399,7 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .hero { height: 50vh; min-height: 280px; max-height: 400px; background-position: center 25%; }
+  .hero { height: 55vh; min-height: 300px; max-height: 420px; }
   .heroTitle { font-size: 26px; }
   .heroSubtitle { font-size: 10px; }
   .collectionCard { height: 320px; }
