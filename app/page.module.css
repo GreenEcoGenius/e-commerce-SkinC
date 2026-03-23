@@ -368,8 +368,8 @@
   .heroContent { gap: 20px; padding: 0 24px; }
 
   .collectionsGrid { flex-direction: row; gap: 1px; }
-  .collectionCard { height: 280px; }
-  .collectionTitle { font-size: 20px; }
+  .collectionCard { height: 380px; }
+  .collectionTitle { font-size: 22px; }
 
   .brandStory { flex-direction: column; min-height: auto; }
   .brandStoryImage { min-height: 280px; flex: none; }
@@ -408,8 +408,8 @@
   .hero { height: 50vh; min-height: 280px; max-height: 400px; background-position: center 25%; }
   .heroTitle { font-size: 26px; }
   .heroSubtitle { font-size: 10px; }
-  .collectionCard { height: 220px; }
-  .collectionTitle { font-size: 16px; }
+  .collectionCard { height: 320px; }
+  .collectionTitle { font-size: 18px; }
   .productsRow { gap: 8px; }
   .categoryCard { height: 240px; }
   .fullBanner { height: 280px; }
