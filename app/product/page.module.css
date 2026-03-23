@@ -28,13 +28,22 @@
 
 @media (max-width: 1024px) {
   .productSection { padding: 88px 24px 64px; }
-  .productContainer { flex-direction: column; }
+  .productContainer { flex-direction: column; gap: 32px; }
   .relatedSection { padding: 0 24px 64px; }
   .relatedRow { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .productSection { padding: 72px 24px 48px; }
+  .productSection { padding: 72px 16px 48px; }
+  .productContainer { gap: 24px; }
   .productName { font-size: 24px; }
-  .relatedRow { grid-template-columns: 1fr; }
-  .relatedTitle { font-size: 24px; }
+  .productPrice { font-size: 16px; }
+  .productDescription { font-size: 14px; }
+  .relatedSection { padding: 0 16px 48px; }
+  .relatedRow { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .relatedTitle { font-size: 22px; }
+  .sizeOptions { gap: 6px; }
+  .sizeOption { padding: 8px 14px; font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .relatedRow { gap: 8px; }
 }

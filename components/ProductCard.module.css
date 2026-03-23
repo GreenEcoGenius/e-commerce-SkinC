@@ -58,3 +58,14 @@
   color: var(--Gray-3);
   text-decoration: line-through;
 }
+
+@media (max-width: 768px) {
+  .info { gap: 2px; }
+  .name { font-size: 11px; letter-spacing: 0.05em; }
+  .price { font-size: 12px; }
+  .originalPrice { font-size: 12px; }
+}
+@media (max-width: 480px) {
+  .name { font-size: 10px; }
+  .price { font-size: 11px; }
+}

@@ -106,12 +106,14 @@
   min-height: 500px;
 }
 .brandStoryImage {
-  flex: 3;
+  flex: 1;
   background: var(--Gray-1);
+  background-size: cover;
+  background-position: center;
   min-height: 400px;
 }
 .brandStoryContent {
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -326,29 +328,89 @@
   padding: 0;
 }
 
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
-  .section { padding: 64px 24px; }
-  .valuesSection { padding: 64px 24px; }
-  .newsletter { padding: 64px 24px; }
+  .hero { height: 80vh; min-height: 480px; max-height: 700px; }
+  .heroTitle { font-size: 48px; }
+  .heroContent { gap: 24px; }
+
+  .collectionsGrid { gap: 1px; }
+  .collectionCard { height: 480px; }
+  .collectionTitle { font-size: 28px; }
+
   .brandStoryContent { padding: 48px 32px; }
+  .brandStoryTitle { font-size: 30px; }
+
+  .section { padding: 64px 24px; }
   .productsRow { grid-template-columns: repeat(2, 1fr); }
+  .sectionTitle { font-size: 28px; }
+
+  .categoriesGrid { flex-direction: row; }
+  .categoryCard { height: 420px; }
+
+  .fullBanner { height: 400px; }
+  .fullBannerTitle { font-size: 40px; }
+
+  .valuesSection { padding: 64px 24px; }
+  .valuesSectionTitle { font-size: 28px; }
+
+  .newsletter { padding: 64px 24px; }
+  .newsletterTitle { font-size: 28px; }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
-  .heroTitle { font-size: 40px; }
-  .collectionCard { height: 400px; }
+  .announcementBar { font-size: 9px; letter-spacing: 0.15em; padding: 8px 12px; }
+
+  .hero { height: 70vh; min-height: 400px; max-height: 600px; }
+  .heroTitle { font-size: 32px; }
+  .heroSubtitle { font-size: 11px; letter-spacing: 0.2em; }
+  .heroContent { gap: 20px; padding: 0 24px; }
+
   .collectionsGrid { flex-direction: column; gap: 0; }
-  .brandStory { flex-direction: column; }
-  .brandStoryImage { min-height: 300px; }
-  .brandStoryContent { padding: 40px 24px; }
-  .brandStoryTitle { font-size: 28px; }
-  .productsRow { grid-template-columns: 1fr; }
-  .sectionTitle { font-size: 24px; }
+  .collectionCard { height: 360px; }
+  .collectionTitle { font-size: 24px; }
+
+  .brandStory { flex-direction: column; min-height: auto; }
+  .brandStoryImage { min-height: 280px; flex: none; }
+  .brandStoryContent { padding: 40px 24px; flex: none; }
+  .brandStoryTitle { font-size: 26px; }
+  .brandStoryText { font-size: 14px; }
+  .textLink { font-size: 12px; }
+
+  .section { padding: 48px 16px; }
+  .sectionTitle { font-size: 22px; }
+  .sectionSubtitle { margin: 6px 0 32px; font-size: 13px; }
+  .productsRow { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
   .categoriesGrid { flex-direction: column; }
-  .categoryCard { height: 350px; }
-  .fullBannerTitle { font-size: 32px; }
-  .valuesGrid { flex-direction: column; gap: 32px; }
-  .valuesSectionTitle { font-size: 24px; }
-  .newsletterTitle { font-size: 24px; }
+  .categoryCard { height: 300px; }
+  .categoryTitle { font-size: 12px; }
+
+  .fullBanner { height: 340px; }
+  .fullBannerTitle { font-size: 28px; }
+  .fullBannerSubtitle { font-size: 11px; }
+
+  .valuesSection { padding: 48px 16px; }
+  .valuesSectionTitle { font-size: 22px; margin: 0 0 32px; }
+  .valuesGrid { flex-direction: column; gap: 24px; }
+  .valueTitle { font-size: 12px; }
+  .valueText { font-size: 13px; }
+
+  .newsletter { padding: 48px 16px; }
+  .newsletterTitle { font-size: 22px; }
+  .newsletterText { font-size: 13px; }
+  .newsletterInput { max-width: 100%; }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .heroTitle { font-size: 26px; }
+  .heroSubtitle { font-size: 10px; }
+  .collectionCard { height: 300px; }
+  .collectionTitle { font-size: 20px; }
+  .productsRow { gap: 8px; }
+  .categoryCard { height: 240px; }
+  .fullBanner { height: 280px; }
+  .fullBannerTitle { font-size: 24px; }
 }

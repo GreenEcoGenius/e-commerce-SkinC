@@ -10,7 +10,12 @@
 .faqIcon { font-size: 20px; color: var(--Black); flex-shrink: 0; margin-left: 16px; }
 .faqAnswer { padding: 0 0 20px; margin: 0; font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--Gray-3); }
 
+@media (max-width: 1024px) {
+  .content { padding: 100px 24px 64px; }
+}
 @media (max-width: 768px) {
-  .content { padding: 88px 24px 48px; }
-  .pageTitle { font-size: 28px; }
+  .content { padding: 88px 16px 48px; }
+  .pageTitle { font-size: 24px; margin: 0 0 32px; }
+  .faqQuestion { font-size: 14px; padding: 16px 0; }
+  .faqAnswer { font-size: 13px; }
 }

@@ -6,10 +6,17 @@
 .gridItem { overflow: hidden; }
 .ctaSection { padding: 64px 40px; text-align: center; display: flex; justify-content: center; }
 
+@media (max-width: 1024px) {
+  .hero { padding: 100px 32px 48px; }
+  .heroTitle { font-size: 40px; }
+  .grid { grid-template-columns: repeat(2, 1fr); padding: 0 24px; }
+  .ctaSection { padding: 48px 24px; }
+}
 @media (max-width: 768px) {
   .hero { padding: 88px 24px 40px; }
-  .heroTitle { font-size: 32px; }
-  .grid { grid-template-columns: 1fr; padding: 0 24px; }
+  .heroTitle { font-size: 28px; }
+  .heroSubtitle { font-size: 13px; }
+  .grid { grid-template-columns: 1fr; padding: 0 16px; gap: 2px; }
   .gridItem { grid-column: span 1 !important; min-height: 250px; }
-  .ctaSection { padding: 40px 24px; }
+  .ctaSection { padding: 40px 16px; }
 }

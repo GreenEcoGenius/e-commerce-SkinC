@@ -15,11 +15,25 @@
 .valueText { margin: 0; font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--Gray-3); }
 .ctaSection { padding: 0 40px 80px; text-align: center; display: flex; justify-content: center; }
 
+@media (max-width: 1024px) {
+  .hero { height: 400px; }
+  .heroTitle { font-size: 40px; }
+  .storySection { padding: 64px 32px; }
+  .valuesSection { padding: 64px 32px; }
+}
 @media (max-width: 768px) {
-  .heroTitle { font-size: 32px; }
+  .hero { height: 320px; }
+  .heroTitle { font-size: 28px; }
+  .heroSubtitle { font-size: 11px; }
   .storySection { padding: 48px 24px; }
+  .storyTitle { font-size: 26px; }
+  .storyText { font-size: 14px; }
   .collectionsSection { flex-direction: column; }
   .collectionBlock { padding: 48px 24px; }
-  .valuesSection { flex-direction: column; gap: 32px; padding: 48px 24px; }
+  .collectionName { font-size: 12px; }
+  .collectionDesc { font-size: 14px; }
+  .valuesSection { flex-direction: column; gap: 24px; padding: 48px 24px; }
+  .valueTitle { font-size: 12px; }
+  .valueText { font-size: 13px; }
   .ctaSection { padding: 0 24px 48px; }
 }
