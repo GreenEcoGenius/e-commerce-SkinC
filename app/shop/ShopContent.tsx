@@ -28,6 +28,13 @@ const collectionSubFilters = [
   { label: "Men", value: "men" },
 ];
 
+const accessorySubFilters = [
+  { label: "All", value: "all" },
+  { label: "Women", value: "women" },
+  { label: "Men", value: "men" },
+  { label: "Unisex", value: "unisex" },
+];
+
 function buildLabel(p: Product): string {
   const gender = p.category === "women" ? "Women" : p.category === "men" ? "Men" : "";
   const col = p.collection === "premium" ? "Premium" : p.collection === "feels" ? "FEELS" : "";
@@ -78,17 +85,27 @@ export default function ShopContent() {
 
   const isGenderFilter = primary === "women" || primary === "men";
   const isCollectionFilter = primary === "premium" || primary === "feels";
-  const hasSubFilters = isGenderFilter || isCollectionFilter;
+  const isAccessoryFilter = primary === "accessories";
+  const hasSubFilters = isGenderFilter || isCollectionFilter || isAccessoryFilter;
 
   const currentSubFilters = isGenderFilter
     ? genderSubFilters
     : isCollectionFilter
       ? collectionSubFilters
-      : [];
+      : isAccessoryFilter
+        ? accessorySubFilters
+        : [];
 
   const filtered = useMemo(() => {
     if (primary === "all") return products;
-    if (primary === "accessories") return products.filter((p) => p.category === "accessories");
+
+    if (isAccessoryFilter) {
+      let result = products.filter((p) => p.category === "accessories");
+      if (sub === "women" || sub === "men" || sub === "unisex") {
+        result = result.filter((p) => p.gender === sub);
+      }
+      return result;
+    }
 
     if (isGenderFilter) {
       let result = products.filter((p) => p.category === primary);
@@ -109,13 +126,19 @@ export default function ShopContent() {
     }
 
     return products;
-  }, [primary, sub, isGenderFilter, isCollectionFilter]);
+  }, [primary, sub, isGenderFilter, isCollectionFilter, isAccessoryFilter]);
 
   const title = useMemo(() => {
     const parts: string[] = [];
 
     if (primary === "all") return "Shop";
-    if (primary === "accessories") return "Accessories";
+
+    if (isAccessoryFilter) {
+      if (sub === "women") return "Accessories — Women";
+      if (sub === "men") return "Accessories — Men";
+      if (sub === "unisex") return "Accessories — Unisex";
+      return "Accessories";
+    }
 
     if (isGenderFilter) {
       parts.push(primary === "women" ? "Women" : "Men");
@@ -130,7 +153,7 @@ export default function ShopContent() {
     }
 
     return parts.join(" — ");
-  }, [primary, sub, isGenderFilter, isCollectionFilter]);
+  }, [primary, sub, isGenderFilter, isCollectionFilter, isAccessoryFilter]);
 
   return (
     <section className={styles.content}>

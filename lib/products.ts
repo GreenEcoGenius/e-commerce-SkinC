@@ -6,6 +6,7 @@ export type Product = {
   category: "women" | "men" | "accessories";
   collection?: "premium" | "feels";
   type?: "sweats" | "tshirts" | "limited" | "new";
+  gender?: "women" | "men" | "unisex";
   label: string;
   description: string;
 };
@@ -149,7 +150,8 @@ export const products: Product[] = [
     price: 39,
     image: "/product-cap.jpg",
     category: "accessories",
-    label: "Accessories",
+    gender: "unisex",
+    label: "Accessories — Unisex",
     description: "The finishing touch. Unstructured six-panel cap in washed cotton with tonal embroidered ISYF logo. Adjustable strap for a perfect fit.",
   },
   {
@@ -158,8 +160,49 @@ export const products: Product[] = [
     price: 25,
     image: "/product-tote.jpg",
     category: "accessories",
-    label: "Accessories",
+    gender: "unisex",
+    label: "Accessories — Unisex",
     description: "Carry the feeling. Heavyweight organic cotton canvas tote with screen-printed ISYF branding. Spacious interior, reinforced handles, built to last.",
+  },
+  {
+    slug: "isyf-silk-scarf-women",
+    name: "ISYF Silk Scarf",
+    price: 45,
+    image: "/p-scarf-w.jpg",
+    category: "accessories",
+    gender: "women",
+    label: "Accessories — Women",
+    description: "A touch of elegance. Black silk scarf with subtle geometric pattern and ISYF branding. Versatile enough to wear as a headscarf, necktie, or bag accent.",
+  },
+  {
+    slug: "isyf-crossbody-bag-women",
+    name: "ISYF Crossbody Bag",
+    price: 69,
+    image: "/p-pochette-w.jpg",
+    category: "accessories",
+    gender: "women",
+    label: "Accessories — Women",
+    description: "Minimal luxury. Smooth leather crossbody bag with gold hardware and magnetic clasp. Compact design with interior pocket. Adjustable strap.",
+  },
+  {
+    slug: "isyf-leather-belt-men",
+    name: "ISYF Leather Belt",
+    price: 49,
+    image: "/p-belt-m.jpg",
+    category: "accessories",
+    gender: "men",
+    label: "Accessories — Men",
+    description: "Understated refinement. Full-grain leather belt with matte silver buckle and tonal ISYF embossing. Built to age beautifully.",
+  },
+  {
+    slug: "isyf-beanie-men",
+    name: "ISYF Beanie",
+    price: 35,
+    image: "/p-beanie-m.jpg",
+    category: "accessories",
+    gender: "men",
+    label: "Accessories — Men",
+    description: "Essential warmth. Fine-knit merino wool beanie with subtle embroidered ISYF logo. Clean silhouette, comfortable fit. One size fits most.",
   },
 ];
 
