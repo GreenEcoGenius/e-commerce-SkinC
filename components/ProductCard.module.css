@@ -32,6 +32,14 @@
   gap: 4px;
   text-align: center;
 }
+.label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--Gray-3);
+}
 .name {
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
@@ -61,11 +69,13 @@
 
 @media (max-width: 768px) {
   .info { gap: 2px; }
+  .label { font-size: 9px; letter-spacing: 0.12em; }
   .name { font-size: 11px; letter-spacing: 0.05em; }
   .price { font-size: 12px; }
   .originalPrice { font-size: 12px; }
 }
 @media (max-width: 480px) {
+  .label { font-size: 8px; }
   .name { font-size: 10px; }
   .price { font-size: 11px; }
 }

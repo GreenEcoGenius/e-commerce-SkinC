@@ -1,10 +1,35 @@
 .page { width: 100%; background: var(--White); display: flex; flex-direction: column; }
 .content { padding: 120px 40px 80px; }
 .title { margin: 0 0 32px; font-size: 36px; text-align: center; }
-.filterBar { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+
+.filterBar { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
 .filterBtn { padding: 10px 24px; border: 1px solid var(--Gray-2); background: transparent; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--Black); cursor: pointer; transition: all 0.3s; }
 .filterBtn:hover { border-color: var(--Black); }
 .filterBtnActive { composes: filterBtn; background: var(--Black); color: var(--White); border-color: var(--Black); }
+
+.subFilterBar { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.subFilterBtn {
+  padding: 6px 18px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--Gray-3);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.subFilterBtn:hover { color: var(--Black); }
+.subFilterBtnActive {
+  composes: subFilterBtn;
+  color: var(--Black);
+  border-bottom-color: var(--Black);
+  font-weight: 500;
+}
+
 .productGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .emptyText { grid-column: 1 / -1; text-align: center; font-size: 15px; font-weight: 300; color: var(--Gray-3); padding: 64px 0; }
 
@@ -16,11 +41,14 @@
 @media (max-width: 768px) {
   .content { padding: 80px 16px 48px; }
   .title { font-size: 24px; margin: 0 0 24px; }
-  .filterBar { gap: 6px; margin-bottom: 32px; }
+  .filterBar { gap: 6px; margin-bottom: 12px; }
   .filterBtn { padding: 8px 16px; font-size: 11px; letter-spacing: 0.1em; }
+  .subFilterBar { margin-bottom: 32px; gap: 4px; }
+  .subFilterBtn { padding: 5px 12px; font-size: 10px; letter-spacing: 0.08em; }
   .productGrid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 }
 @media (max-width: 480px) {
   .productGrid { gap: 8px; }
   .filterBtn { padding: 7px 12px; font-size: 10px; }
+  .subFilterBtn { padding: 4px 10px; font-size: 9px; }
 }
