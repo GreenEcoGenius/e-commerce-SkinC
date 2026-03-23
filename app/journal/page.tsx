@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navigation from "../../components/Navigation";
 import Badge from "../../components/Badge";
 import SubscribeSection from "../../components/SubscribeSection";
@@ -10,7 +11,7 @@ export default function JournalPage() {
       <main className={styles.content}>
         <h1 className={styles.pageTitle}>Journal</h1>
 
-        <div className={styles.featuredArticle}>
+        <Link href="/journal/tips-natural-skincare-routine" className={styles.featuredArticle}>
           <img className={styles.featuredImage} alt="" src="/Image8@2x.png" />
           <div className={styles.featuredContent}>
             <div className={styles.featuredBadges}>
@@ -23,18 +24,18 @@ export default function JournalPage() {
             </p>
             <span className={styles.featuredLink}>Read more</span>
           </div>
-        </div>
+        </Link>
 
         <div className={styles.articlesGrid}>
-          <article className={styles.article}>
+          <Link href="/journal/science-behind-face-masks" className={styles.article}>
             <img className={styles.articleImage} alt="" src="/Image3@2x.png" />
             <div className={styles.articleBadges}>
               <Badge text="Science" variant="gray" />
             </div>
             <h3 className={styles.articleTitle}>Science behind effective face masks</h3>
             <span className={styles.articleLink}>Read more</span>
-          </article>
-          <article className={styles.article}>
+          </Link>
+          <Link href="/journal/ingredients-glowing-skin" className={styles.article}>
             <img className={styles.articleImage} alt="" src="/Image9@2x.png" />
             <div className={styles.articleBadges}>
               <Badge text="Guide" variant="gray" />
@@ -42,15 +43,15 @@ export default function JournalPage() {
             </div>
             <h3 className={styles.articleTitle}>Ingredients for glowing skin explained</h3>
             <span className={styles.articleLink}>Read more</span>
-          </article>
-          <article className={styles.article}>
+          </Link>
+          <Link href="/journal/tips-natural-skincare-routine" className={styles.article}>
             <img className={styles.articleImage} alt="" src="/Image34@2x.png" />
             <div className={styles.articleBadges}>
               <Badge text="Wellness" variant="gray" />
             </div>
             <h3 className={styles.articleTitle}>How hydration transforms your complexion</h3>
             <span className={styles.articleLink}>Read more</span>
-          </article>
+          </Link>
         </div>
       </main>
       <SubscribeSection />

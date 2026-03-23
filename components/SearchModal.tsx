@@ -42,7 +42,7 @@ export default function SearchModal({ onClose }: { onClose: () => void }) {
       const { data } = await supabase
         .from("products")
         .select("*")
-        .ilike("name", `%${query}%`)
+        .or(`name.ilike.%${query}%,category.ilike.%${query}%,description.ilike.%${query}%`)
         .limit(4);
       setResults(data || []);
       setSearched(true);
