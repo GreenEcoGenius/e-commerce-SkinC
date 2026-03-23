@@ -45,7 +45,7 @@ export default function Footer() {
         <div className={styles.legalLinks}>
           <Link href="/terms-of-service" className={styles.legalLink}>Terms of service</Link>
           <Link href="/privacy-policy" className={styles.legalLink}>Privacy policy</Link>
-          <span className={styles.legalLink}>Cookies settings</span>
+          <Link href="/cookies" className={styles.legalLink}>Cookies settings</Link>
         </div>
       </div>
     </footer>
