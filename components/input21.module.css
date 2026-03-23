@@ -1,0 +1,37 @@
+.root {
+  align-self: stretch;
+  backdrop-filter: blur(52px);
+  border-bottom: var(--border-3);
+  display: flex;
+  align-items: center;
+  padding: var(--padding-24) var(--padding-01);
+  gap: var(--gap-8);
+  text-align: left;
+  font-size: var(--fs-16);
+  color: var(--Black);
+  font-family: var(--font-inter);
+}
+.placeholder {
+  flex: 1;
+  position: relative;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  font-weight: 500;
+}
+.chevron {
+  height: var(--height-16);
+  width: var(--width-16);
+  position: relative;
+}
+.keyboardArrowDownIcon {
+  position: absolute;
+  height: 28.13%;
+  width: 46.88%;
+  top: 35%;
+  right: 26.88%;
+  bottom: 36.88%;
+  left: 26.25%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
