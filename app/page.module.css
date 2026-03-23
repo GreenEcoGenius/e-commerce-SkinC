@@ -32,6 +32,9 @@
   text-align: center;
   position: relative;
   background: var(--Black);
+  background-image: url(/hero-isyf.jpg);
+  background-size: cover;
+  background-position: center;
 }
 .heroOverlay {
   position: absolute;
@@ -74,7 +77,13 @@
 .collectionImage {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.7);
+  transition: transform 0.6s;
+}
+.collectionCard:hover .collectionImage {
+  transform: scale(1.04);
 }
 .collectionOverlay {
   position: absolute;

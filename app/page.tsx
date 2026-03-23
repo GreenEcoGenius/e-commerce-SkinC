@@ -23,14 +23,14 @@ export default function HomePage() {
 
       <section className={styles.collectionsGrid}>
         <div className={styles.collectionCard}>
-          <div className={styles.collectionImage} />
+          <div className={styles.collectionImage} style={{ backgroundImage: "url(/collection-women.jpg)" }} />
           <div className={styles.collectionOverlay}>
             <h2 className={styles.collectionTitle}>WOMEN</h2>
             <Button label="SHOP WOMEN" variant="bright" href="/shop?category=women" />
           </div>
         </div>
         <div className={styles.collectionCard}>
-          <div className={styles.collectionImage} />
+          <div className={styles.collectionImage} style={{ backgroundImage: "url(/collection-men.jpg)" }} />
           <div className={styles.collectionOverlay}>
             <h2 className={styles.collectionTitle}>MEN</h2>
             <Button label="SHOP MEN" variant="bright" href="/shop?category=men" />
@@ -53,10 +53,10 @@ export default function HomePage() {
         <h2 className={styles.sectionTitle}>THE SELECTION</h2>
         <p className={styles.sectionSubtitle}>Our curated picks</p>
         <div className={styles.productsRow}>
-          <ProductCard name="ISYF Essential Tee" price="€35.00" image="/Image6@2x.png" />
-          <ProductCard name="ISYF Embroidered Hoodie" price="€89.00" image="/Image13@3x.png" />
-          <ProductCard name="ISYF FEELS Message Tee" price="€29.90" image="/Image14@3x.png" />
-          <ProductCard name="ISYF Cap" price="€39.00" image="/Image10@2x.png" />
+          <ProductCard name="ISYF Essential Tee" price="€35.00" image="/product-tshirt.jpg" />
+          <ProductCard name="ISYF Embroidered Hoodie" price="€89.00" image="/product-hoodie.jpg" />
+          <ProductCard name="ISYF FEELS Message Tee" price="€29.90" image="/product-feels-tee.jpg" />
+          <ProductCard name="ISYF Cap" price="€39.00" image="/product-cap.jpg" />
         </div>
       </section>
 

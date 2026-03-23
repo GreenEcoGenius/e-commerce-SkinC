@@ -7,14 +7,14 @@ import Footer from "../../components/Footer";
 import styles from "./page.module.css";
 
 const allProducts = [
-  { name: "ISYF Essential Tee", price: "€35.00", image: "/Image6@2x.png", categories: ["women", "premium"] },
-  { name: "ISYF Embroidered Hoodie", price: "€89.00", image: "/Image13@3x.png", categories: ["women", "premium"] },
-  { name: "ISYF FEELS Message Tee", price: "€29.90", image: "/Image14@3x.png", categories: ["men", "feels"] },
-  { name: "ISYF Cap", price: "€39.00", image: "/Image10@2x.png", categories: ["accessories"] },
-  { name: "ISYF Premium Sweater", price: "€95.00", image: "/Image19@3x.png", categories: ["men", "premium"] },
-  { name: "ISYF Oversized Tee", price: "€42.00", image: "/Image22@2x.png", categories: ["women", "feels"] },
-  { name: "ISYF FEELS Graphic Hoodie", price: "€69.00", image: "/Image23@2x.png", categories: ["men", "feels"] },
-  { name: "ISYF Tote Bag", price: "€25.00", image: "/Image34@2x.png", categories: ["accessories"] },
+  { name: "ISYF Essential Tee", price: "€35.00", image: "/product-tshirt.jpg", categories: ["women", "premium"] },
+  { name: "ISYF Embroidered Hoodie", price: "€89.00", image: "/product-hoodie.jpg", categories: ["women", "premium"] },
+  { name: "ISYF FEELS Message Tee", price: "€29.90", image: "/product-feels-tee.jpg", categories: ["men", "feels"] },
+  { name: "ISYF Cap", price: "€39.00", image: "/product-cap.jpg", categories: ["accessories"] },
+  { name: "ISYF Premium Sweater", price: "€95.00", image: "/product-hoodie.jpg", categories: ["men", "premium"] },
+  { name: "ISYF Oversized Tee", price: "€42.00", image: "/product-tshirt.jpg", categories: ["women", "feels"] },
+  { name: "ISYF FEELS Graphic Hoodie", price: "€69.00", image: "/product-feels-tee.jpg", categories: ["men", "feels"] },
+  { name: "ISYF Tote Bag", price: "€25.00", image: "/product-tote.jpg", categories: ["accessories"] },
 ];
 
 const filters = [

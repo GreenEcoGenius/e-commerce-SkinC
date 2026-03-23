@@ -18,7 +18,7 @@ export default function ProductPage() {
 
   function handleAddToBag() {
     for (let i = 0; i < qty; i++) {
-      addItem({ id: `isyf-essential-tee-${selectedSize}`, name: "ISYF Essential Tee", size: selectedSize, price: 35, image: "/Image6@2x.png" });
+      addItem({ id: `isyf-essential-tee-${selectedSize}`, name: "ISYF Essential Tee", size: selectedSize, price: 35, image: "/product-tshirt.jpg" });
     }
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
@@ -29,7 +29,7 @@ export default function ProductPage() {
       <section className={styles.productSection}>
         <div className={styles.productContainer}>
           <div className={styles.thumbnails}>
-            <div className={styles.mainImage}><img className={styles.mainImg} alt="ISYF Essential Tee" src="/Image6@2x.png" /></div>
+            <div className={styles.mainImage}><img className={styles.mainImg} alt="ISYF Essential Tee" src="/product-tshirt.jpg" /></div>
           </div>
           <div className={styles.details}>
             <span className={styles.productCategory}>ISYF Premium</span>
@@ -68,10 +68,10 @@ export default function ProductPage() {
       <section className={styles.relatedSection}>
         <h2 className={styles.relatedTitle}>You might also like</h2>
         <div className={styles.relatedRow}>
-          <ProductCard name="ISYF Embroidered Hoodie" price="€89.00" image="/Image13@3x.png" />
-          <ProductCard name="ISYF FEELS Message Tee" price="€29.90" image="/Image14@3x.png" />
-          <ProductCard name="ISYF Cap" price="€39.00" image="/Image10@2x.png" />
-          <ProductCard name="ISYF Premium Sweater" price="€95.00" image="/Image19@3x.png" />
+          <ProductCard name="ISYF Embroidered Hoodie" price="€89.00" image="/product-hoodie.jpg" />
+          <ProductCard name="ISYF FEELS Message Tee" price="€29.90" image="/product-feels-tee.jpg" />
+          <ProductCard name="ISYF Cap" price="€39.00" image="/product-cap.jpg" />
+          <ProductCard name="ISYF Tote Bag" price="€25.00" image="/product-tote.jpg" />
         </div>
       </section>
 

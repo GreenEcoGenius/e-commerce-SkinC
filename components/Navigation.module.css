@@ -16,17 +16,16 @@
 .links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
 }
 .linksRight {
   display: flex;
   align-items: center;
-  gap: 28px;
-  justify-content: flex-end;
+  gap: 24px;
 }
 .link {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -37,32 +36,73 @@
   background: none;
   border: none;
   padding: 0;
+  white-space: nowrap;
 }
-.link:hover {
-  opacity: 0.6;
-}
-.searchBtn {
-  composes: link;
-}
-.searchActive {
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
+.link:hover { opacity: 0.5; }
+.searchBtn { composes: link; }
 .logoLink {
-  display: flex;
-  text-decoration: none;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  text-decoration: none;
 }
 .logoText {
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 400;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--Black);
   white-space: nowrap;
 }
+
+/* Mega menu */
+.menuItem { position: relative; }
+.megaMenu {
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  background: var(--White);
+  border: var(--border-1);
+  padding: 32px;
+  display: flex;
+  gap: 40px;
+  z-index: 200;
+  min-width: 420px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+}
+.megaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.megaTitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--Gray-3);
+  margin-bottom: 4px;
+}
+.megaLink {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--Black);
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+.megaLink:hover { opacity: 0.5; }
+.megaLinkBold {
+  composes: megaLink;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -77,15 +117,14 @@
   width: 22px;
   height: 1px;
   background-color: var(--Black);
-  display: block;
 }
-.mobileMenu {
-  display: none;
-}
+
+/* Mobile */
+.mobileMenu { display: none; }
 .mobileBag {
   display: none;
   font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -96,7 +135,7 @@
   font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--Black);
@@ -106,20 +145,47 @@
   cursor: pointer;
   text-align: left;
 }
-.mobileDivider {
-  height: 0;
-  border-bottom: var(--border-1);
+.mobileGroup { display: flex; flex-direction: column; }
+.mobileGroupBtn {
+  composes: mobileLink;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
+.mobileSubMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 16px 0 8px 16px;
+}
+.mobileSubGroup { display: flex; flex-direction: column; gap: 8px; }
+.mobileSubTitle {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--Gray-3);
+}
+.mobileSubLink {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--Black);
+  text-decoration: none;
+}
+.mobileDivider { height: 0; border-bottom: var(--border-1); }
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.2);
   z-index: 98;
 }
 
 @media (max-width: 1024px) {
   .nav { padding: 0 24px; }
-  .links { gap: 20px; }
+  .links { gap: 16px; }
 }
 
 @media (max-width: 768px) {
@@ -127,7 +193,7 @@
   .linksRight { display: none; }
   .hamburger { display: flex; }
   .mobileBag { display: block; }
-  .logoText { font-size: 15px; }
+  .logoText { font-size: 14px; }
   .mobileMenu {
     display: flex;
     position: absolute;
@@ -136,9 +202,11 @@
     right: 0;
     background: var(--White);
     flex-direction: column;
-    padding: 32px 24px;
-    gap: 24px;
+    padding: 28px 24px;
+    gap: 20px;
     border-bottom: var(--border-1);
     z-index: 99;
+    max-height: 80vh;
+    overflow-y: auto;
   }
 }
