@@ -1,0 +1,100 @@
+.page {
+  width: 100%;
+  position: relative;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.content {
+  align-self: stretch;
+  padding: 120px var(--padding-40) var(--padding-56);
+  font-family: var(--font-inter);
+  display: flex;
+  justify-content: center;
+  min-height: 500px;
+}
+.formContainer {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-32);
+}
+.pageTitle {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+  text-align: center;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-20);
+}
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+}
+.label {
+  font-size: var(--fs-12);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+  text-transform: uppercase;
+}
+.input {
+  width: 100%;
+  padding: var(--padding-14) var(--padding-16);
+  border: var(--border-1);
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+  outline: none;
+  box-sizing: border-box;
+}
+.input:focus {
+  border-color: var(--Black);
+}
+.forgotLink {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: flex-end;
+}
+.dividerRow {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-16);
+}
+.dividerLine {
+  flex: 1;
+  height: 0;
+  border-bottom: var(--border-1);
+}
+.dividerText {
+  font-size: var(--fs-12);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Gray-3);
+  text-transform: uppercase;
+}
+.registerLink {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
+  text-align: center;
+}
+.registerLink a {
+  color: var(--Black);
+}
