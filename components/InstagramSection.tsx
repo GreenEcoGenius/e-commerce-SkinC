@@ -1,11 +1,11 @@
 import styles from "./InstagramSection.module.css";
 
 const images = [
-  "/Instagram-Image@2x.png",
-  "/Instagram-Image4@2x.png",
-  "/Instagram-Image1@2x.png",
-  "/Instagram-Image3@2x.png",
-  "/Instagram-Image2@2x.png",
+  "/insta-1.jpg",
+  "/insta-2.jpg",
+  "/insta-3.jpg",
+  "/insta-4.jpg",
+  "/insta-5.jpg",
 ];
 
 export default function InstagramSection() {
