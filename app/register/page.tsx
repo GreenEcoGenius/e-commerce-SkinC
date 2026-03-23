@@ -1,5 +1,5 @@
-import Desktop1 from "./desktop1";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop1 />;
+export default function RegisterPage() {
+  return <PageLayout title="Create account" />;
 }

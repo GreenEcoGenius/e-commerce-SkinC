@@ -1,78 +1,97 @@
-.divider,
 .footer {
   align-self: stretch;
-  border-top: var(--border-1);
-}
-.footer {
   background-color: var(--White);
-  overflow: hidden;
-  flex-shrink: 0;
+  border-top: var(--border-1);
   display: flex;
   flex-direction: column;
+  gap: var(--gap-40);
   align-items: flex-start;
   padding: var(--padding-56) var(--padding-40);
-  gap: var(--gap-40);
-  z-index: 1;
-  text-align: left;
-  font-size: var(--fs-16);
-  color: var(--Gray-3);
   font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+}
+.topContent {
+  align-self: stretch;
+  display: flex;
+  gap: var(--gap-24);
+  align-items: flex-start;
+}
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-32);
+  align-items: flex-start;
+}
+.brandColumn {
+  composes: column;
+}
+.socialLinks {
+  display: flex;
+  gap: var(--gap-16);
+  align-items: center;
+}
+.socialIcon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+.columnTitle {
+  color: var(--Gray-3);
+  text-transform: uppercase;
+  align-self: stretch;
+}
+.columnLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  align-items: flex-start;
+  align-self: stretch;
+  color: var(--Black);
+}
+.columnLink {
+  text-decoration: none;
+  color: inherit;
+  align-self: stretch;
 }
 .divider {
-  height: var(--height-1);
-  position: relative;
-  box-sizing: border-box;
+  align-self: stretch;
+  height: 0;
+  border-bottom: var(--border-1);
 }
 .bottomContent {
   align-self: stretch;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: var(--gap-20);
+  color: var(--Gray-3);
 }
-.skinclinic {
-  position: relative;
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  font-weight: 500;
+.copyright {
+  white-space: nowrap;
 }
 .legalLinks {
   display: flex;
-  align-items: flex-start;
   gap: var(--gap-16);
+  align-items: flex-start;
+  white-space: nowrap;
 }
-.cookiesSettings,
-.privacyPolicy,
-.termsOfService {
+.legalLink {
+  text-decoration: none;
+  color: inherit;
+}
+.logo {
+  height: var(--height-19);
+  width: var(--width-121);
   position: relative;
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  font-weight: 500;
+  overflow: hidden;
 }
-@media screen and (max-width: 390px) {
-  .footer {
-    padding-left: var(--padding-24);
-    padding-right: var(--padding-24);
-  }
-  .bottomContent {
-    flex-direction: column;
-    gap: var(--gap-32);
-    justify-content: flex-start;
-  }
-  .footer,
-  .legalLinks {
-    align-self: stretch;
-    width: 100%;
-  }
-  .legalLinks {
-    flex-wrap: wrap;
-  }
-  .footer {
-    display: flex;
-    height: var(--height-auto);
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    box-sizing: border-box;
-  }
+.logoImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }

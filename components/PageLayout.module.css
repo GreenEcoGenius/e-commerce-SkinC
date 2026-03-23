@@ -1,0 +1,22 @@
+.page {
+  width: 100%;
+  position: relative;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.content {
+  align-self: stretch;
+  padding: 120px var(--padding-40) var(--padding-56);
+  font-family: var(--font-inter);
+  min-height: 400px;
+}
+.pageTitle {
+  margin: 0 0 var(--gap-32) 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+}

@@ -1,5 +1,5 @@
-import Desktop2 from "./desktop2";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop2 />;
+export default function ResetPasswordPage() {
+  return <PageLayout title="Reset password" />;
 }

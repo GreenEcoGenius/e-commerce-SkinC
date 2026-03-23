@@ -1,5 +1,5 @@
-import Desktop3 from "./desktop3";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop3 />;
+export default function AccountPage() {
+  return <PageLayout title="Account" />;
 }

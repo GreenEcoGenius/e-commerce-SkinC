@@ -1,5 +1,5 @@
-import Desktop13 from "./desktop13";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop13 />;
+export default function CheckoutPage() {
+  return <PageLayout title="Checkout" />;
 }

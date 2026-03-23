@@ -1,0 +1,55 @@
+.section {
+  align-self: stretch;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-32);
+  align-items: flex-start;
+  padding: 0 var(--padding-40) var(--padding-56);
+  font-family: var(--font-inter);
+}
+.header {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  align-items: flex-start;
+}
+.subtitle {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Gray-3);
+  text-transform: uppercase;
+}
+.title {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+}
+.grid {
+  align-self: stretch;
+  display: flex;
+  gap: var(--gap-24);
+  align-items: flex-start;
+}
+.imageWrapper {
+  flex: 1;
+  aspect-ratio: 1;
+  position: relative;
+  border-radius: var(--br-8);
+  overflow: hidden;
+  min-width: 0;
+}
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--br-8);
+}

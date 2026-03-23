@@ -1,5 +1,5 @@
-import Desktop4 from "./desktop4";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop4 />;
+export default function OrdersPage() {
+  return <PageLayout title="Orders" />;
 }

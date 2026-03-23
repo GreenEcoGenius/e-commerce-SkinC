@@ -1,5 +1,5 @@
-import Desktop7 from "./desktop7";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop7 />;
+export default function ProfilePage() {
+  return <PageLayout title="Profile" />;
 }

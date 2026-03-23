@@ -1,24 +1,18 @@
-import type { NextPage } from "next";
-import { type CSSProperties } from "react";
-import styles from "./button.module.css";
+import styles from "./Button.module.css";
 
-export type ButtonType = {
+type ButtonProps = {
+  label: string;
+  variant?: "bright" | "dark" | "solid";
+  fullWidth?: boolean;
   className?: string;
-
-  /** Variant props */
-  color?: CSSProperties["color"];
 };
 
-const Button: NextPage<ButtonType> = ({ className = "", color = "Bright" }) => {
+export default function Button({ label, variant = "bright", fullWidth = false, className = "" }: ButtonProps) {
+  const variantClass = styles[variant];
+  const widthClass = fullWidth ? styles.fullWidth : "";
   return (
-    <button
-      className={[styles.button, className].join(" ")}
-      type="submit"
-      data-color={color}
-    >
-      <div className={styles.buttonLabel}>Log in</div>
+    <button className={[variantClass, widthClass, className].join(" ")}>
+      {label}
     </button>
   );
-};
-
-export default Button;
+}

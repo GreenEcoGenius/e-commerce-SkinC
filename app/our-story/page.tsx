@@ -1,5 +1,5 @@
-import Desktop14 from "./desktop14";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop14 />;
+export default function OurStoryPage() {
+  return <PageLayout title="Our story" />;
 }

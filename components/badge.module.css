@@ -1,32 +1,34 @@
-.root {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  border-radius: var(--br-8);
-  background-color: var(--White);
+.badge {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--padding-8) var(--padding-16);
-  text-align: left;
-  font-size: var(--fs-16);
-  color: var(--Red);
+  border-radius: var(--br-8);
   font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  white-space: nowrap;
 }
-.root[data-color="Gray"] {
-  background-color: var(--Gray-2);
-  border: 0;
+.red {
+  composes: badge;
+  background-color: var(--White);
+  color: var(--Red);
 }
-.root[data-color="Dark"] .badgeText {
+.dark {
+  composes: badge;
+  background-color: var(--White);
   color: var(--Black);
 }
-.root[data-color="Gray"] .badgeText {
+.gray {
+  composes: badge;
+  background-color: var(--Gray-2);
   color: var(--Black);
   text-transform: uppercase;
 }
-.badgeText {
-  position: relative;
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  font-weight: 500;
+.floating {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }

@@ -1,5 +1,5 @@
-import Desktop9 from "./desktop9";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop9 />;
+export default function ContactPage() {
+  return <PageLayout title="Contact us" />;
 }

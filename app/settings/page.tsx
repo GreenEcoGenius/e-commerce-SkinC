@@ -1,5 +1,5 @@
-import Desktop6 from "./desktop6";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop6 />;
+export default function SettingsPage() {
+  return <PageLayout title="Settings" />;
 }

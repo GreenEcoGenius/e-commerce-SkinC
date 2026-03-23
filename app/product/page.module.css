@@ -1,0 +1,321 @@
+.page {
+  width: 100%;
+  position: relative;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Product Top */
+.productSection {
+  align-self: stretch;
+  padding: 104px var(--padding-40) var(--padding-56);
+}
+.productContainer {
+  display: flex;
+  gap: var(--gap-24);
+}
+.thumbnails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+  min-width: 0;
+}
+.mainImage {
+  align-self: stretch;
+  aspect-ratio: 1;
+  border-radius: var(--br-8);
+  object-fit: cover;
+}
+.thumbRow {
+  display: flex;
+  gap: var(--gap-8);
+}
+.thumb {
+  width: var(--width-78);
+  height: var(--height-78);
+  border-radius: var(--br-8);
+  object-fit: cover;
+  cursor: pointer;
+  border: var(--border-1);
+}
+.details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-24);
+  min-width: 0;
+  font-family: var(--font-inter);
+}
+
+/* Heading */
+.productCategory {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Gray-3);
+}
+.productName {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+}
+.productPrice {
+  font-size: var(--fs-24);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+}
+.productDescription {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Gray-3);
+  align-self: stretch;
+}
+
+/* Size / Qty */
+.optionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+  align-self: stretch;
+}
+.optionLabel {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+}
+.sizeOptions {
+  display: flex;
+  gap: var(--gap-8);
+}
+.sizeOption {
+  padding: var(--padding-8) var(--padding-16);
+  border-radius: var(--br-8);
+  border: var(--border-1);
+  background: var(--White);
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+  cursor: pointer;
+}
+.sizeOptionActive {
+  composes: sizeOption;
+  border: var(--border-3);
+}
+.qtyPicker {
+  display: flex;
+  align-items: center;
+  border: var(--border-1);
+  border-radius: var(--br-8);
+  width: var(--width-120);
+  height: var(--height-48);
+}
+.qtyButton {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  cursor: pointer;
+  color: var(--Black);
+}
+.qtyValue {
+  flex: 1;
+  text-align: center;
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  color: var(--Black);
+}
+
+/* Footer */
+.addToBag {
+  align-self: stretch;
+}
+.freeShipping {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Gray-3);
+  align-self: stretch;
+}
+
+/* Accordions */
+.accordionList {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+.accordion {
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-16) 0;
+  border-bottom: var(--border-1);
+  cursor: pointer;
+}
+.accordionLabel {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+}
+.accordionIcon {
+  font-size: var(--fs-16);
+  color: var(--Black);
+}
+
+/* Ritual Section */
+.ritualSection {
+  align-self: stretch;
+  padding: 0 var(--padding-40) var(--padding-56);
+}
+.ritualContainer {
+  display: flex;
+  gap: var(--gap-24);
+  align-items: center;
+}
+.ritualText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  padding: 0 0 0 0;
+  font-family: var(--font-inter);
+  min-width: 0;
+}
+.ritualTitle {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+}
+.ritualDescription {
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Gray-3);
+}
+.ritualImage {
+  flex: 1;
+  aspect-ratio: 1;
+  border-radius: var(--br-8);
+  object-fit: cover;
+  min-width: 0;
+}
+
+/* Key Ingredients */
+.ingredientsSection {
+  align-self: stretch;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-32);
+  padding: 0 var(--padding-40) var(--padding-56);
+  font-family: var(--font-inter);
+}
+.ingredientsTitle {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+  align-self: stretch;
+}
+.ingredientsGrid {
+  align-self: stretch;
+  display: flex;
+  gap: var(--gap-24);
+}
+.ingredientCard {
+  flex: 1;
+  aspect-ratio: 384 / 440;
+  position: relative;
+  border-radius: var(--br-8);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-16);
+  box-sizing: border-box;
+  gap: var(--gap-8);
+  min-width: 0;
+}
+.ingredientImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--br-8);
+}
+.ingredientName {
+  position: relative;
+  margin: 0;
+  font-size: var(--fs-24);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+  align-self: stretch;
+}
+.ingredientDesc {
+  position: relative;
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Gray-3);
+  align-self: stretch;
+}
+
+/* You Might Also Like */
+.relatedSection {
+  align-self: stretch;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-32);
+  padding: var(--padding-56) var(--padding-40);
+  font-family: var(--font-inter);
+}
+.relatedTitle {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+  align-self: stretch;
+}
+.relatedRow {
+  align-self: stretch;
+  display: flex;
+  gap: var(--gap-24);
+}

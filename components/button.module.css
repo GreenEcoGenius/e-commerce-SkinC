@@ -1,36 +1,38 @@
 .button {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-24) var(--padding-48);
-  background-color: var(--Black);
-  align-self: stretch;
-  backdrop-filter: blur(52px);
-  border-radius: var(--br-8);
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.buttonLabel {
-  position: relative;
+  padding: var(--padding-24) var(--padding-48);
+  border-radius: var(--br-8);
+  font-family: var(--font-inter);
   font-size: var(--fs-16);
+  font-weight: 500;
   letter-spacing: -0.06em;
   line-height: 100%;
-  font-weight: 500;
-  font-family: var(--font-inter);
-  color: var(--White);
-  text-align: left;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+  text-decoration: none;
 }
-@media screen and (max-width: 390px) {
-  .button {
-    display: flex;
-    align-self: stretch;
-    width: 100%;
-    height: var(--height-auto);
-    flex-direction: row;
-    gap: var(--gap-24);
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    backdrop-filter: blur(52px);
-  }
+.bright {
+  composes: button;
+  backdrop-filter: blur(52px);
+  background-color: rgba(255, 255, 255, 0.16);
+  color: var(--White);
+}
+.dark {
+  composes: button;
+  backdrop-filter: blur(52px);
+  background-color: transparent;
+  border: var(--border-2);
+  color: var(--Black);
+}
+.solid {
+  composes: button;
+  background-color: var(--Black);
+  color: var(--White);
+}
+.fullWidth {
+  align-self: stretch;
+  width: 100%;
 }

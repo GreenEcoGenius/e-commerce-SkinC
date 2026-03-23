@@ -1,5 +1,5 @@
-import Desktop8 from "./desktop8";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop8 />;
+export default function AboutPage() {
+  return <PageLayout title="About" />;
 }

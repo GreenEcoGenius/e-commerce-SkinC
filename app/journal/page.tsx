@@ -1,5 +1,5 @@
-import Desktop15 from "./desktop15";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop15 />;
+export default function JournalPage() {
+  return <PageLayout title="Journal" />;
 }

@@ -1,5 +1,5 @@
-import Desktop10 from "./desktop10";
+import PageLayout from "../../components/PageLayout";
 
-export default function Page() {
-  return <Desktop10 />;
+export default function FAQPage() {
+  return <PageLayout title="Frequently asked questions" />;
 }

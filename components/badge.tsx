@@ -1,46 +1,15 @@
-"use client";
-import type { NextPage } from "next";
-import { useMemo, type CSSProperties } from "react";
-import styles from "./badge.module.css";
+import styles from "./Badge.module.css";
 
-export type BadgeType = {
-  className?: string;
-  badgeText?: string;
-
-  /** Variant props */
-  color?: CSSProperties["color"];
-
-  /** Style props */
-  badgePosition?: CSSProperties["position"];
-  badgeTop?: CSSProperties["top"];
-  badgeRight?: CSSProperties["right"];
+type BadgeProps = {
+  text: string;
+  variant?: "red" | "dark" | "gray";
+  floating?: boolean;
 };
 
-const Badge: NextPage<BadgeType> = ({
-  className = "",
-  color = "Red",
-  badgePosition,
-  badgeTop,
-  badgeRight,
-  badgeText,
-}) => {
-  const badgeStyle: CSSProperties = useMemo(() => {
-    return {
-      position: badgePosition,
-      top: badgeTop,
-      right: badgeRight,
-    };
-  }, [badgePosition, badgeTop, badgeRight]);
-
+export default function Badge({ text, variant = "dark", floating = false }: BadgeProps) {
+  const variantClass = styles[variant];
+  const floatingClass = floating ? styles.floating : "";
   return (
-    <div
-      className={[styles.root, className].join(" ")}
-      data-color={color}
-      style={badgeStyle}
-    >
-      <div className={styles.badgeText}>{badgeText}</div>
-    </div>
+    <span className={[variantClass, floatingClass].join(" ")}>{text}</span>
   );
-};
-
-export default Badge;
+}

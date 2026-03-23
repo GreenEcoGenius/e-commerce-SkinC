@@ -1,0 +1,74 @@
+.section {
+  align-self: stretch;
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-32);
+  align-items: flex-start;
+  padding: 0 var(--padding-40) var(--padding-56);
+  font-family: var(--font-inter);
+}
+.title {
+  margin: 0;
+  font-size: var(--fs-40);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+  color: var(--Black);
+  align-self: stretch;
+}
+.grid {
+  align-self: stretch;
+  display: flex;
+  gap: var(--gap-24);
+  align-items: flex-start;
+}
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-16);
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 100%;
+}
+.author {
+  color: var(--Gray-3);
+  align-self: stretch;
+}
+.quote {
+  color: var(--Black);
+  align-self: stretch;
+}
+.productLink {
+  display: flex;
+  gap: var(--gap-16);
+  align-items: center;
+  align-self: stretch;
+  border-radius: var(--br-8);
+  text-decoration: none;
+}
+.productImage {
+  width: var(--width-50);
+  height: var(--height-50);
+  border-radius: var(--br-8);
+  object-fit: cover;
+}
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-8);
+  align-items: flex-start;
+}
+.productName {
+  color: var(--Black);
+  white-space: nowrap;
+}
+.viewProduct {
+  color: var(--Gray-3);
+  white-space: nowrap;
+}
