@@ -1,155 +1,127 @@
 import Navigation from "../components/Navigation";
 import Button from "../components/Button";
-import Badge from "../components/Badge";
 import ProductCard from "../components/ProductCard";
-import TestimonialsSection from "../components/TestimonialsSection";
 import InstagramSection from "../components/InstagramSection";
-import SubscribeSection from "../components/SubscribeSection";
 import Footer from "../components/Footer";
 import styles from "./page.module.css";
 
 export default function HomePage() {
   return (
     <div className={styles.page}>
-      {/* Hero */}
+      <div className={styles.announcementBar}>
+        FREE WORLDWIDE SHIPPING ON ORDERS OVER &euro;100
+      </div>
+
       <section className={styles.hero}>
         <div className={styles.heroOverlay} />
         <div className={styles.heroContent}>
-          <span className={styles.heroSubtitle}>Discover Nature&apos;s Finest Ingredients</span>
-          <h1 className={styles.heroTitle}>Glow with nature&apos;s finest, every single day</h1>
-          <Button label="Shop now" variant="bright" />
+          <h1 className={styles.heroTitle}>I SEE, YOU FEEL.</h1>
+          <span className={styles.heroSubtitle}>WEAR WHAT YOU FEEL</span>
+          <Button label="EXPLORE" variant="bright" href="/shop" />
         </div>
       </section>
 
-      {/* Best Sellers */}
+      <section className={styles.collectionsGrid}>
+        <div className={styles.collectionCard}>
+          <div className={styles.collectionImage} />
+          <div className={styles.collectionOverlay}>
+            <h2 className={styles.collectionTitle}>WOMEN</h2>
+            <Button label="SHOP WOMEN" variant="bright" href="/shop?category=women" />
+          </div>
+        </div>
+        <div className={styles.collectionCard}>
+          <div className={styles.collectionImage} />
+          <div className={styles.collectionOverlay}>
+            <h2 className={styles.collectionTitle}>MEN</h2>
+            <Button label="SHOP MEN" variant="bright" href="/shop?category=men" />
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.brandStory}>
+        <div className={styles.brandStoryImage} />
+        <div className={styles.brandStoryContent}>
+          <h2 className={styles.brandStoryTitle}>What I see, you feel.</h2>
+          <p className={styles.brandStoryText}>
+            Every piece we create carries an emotion. Every design tells a story. I SEE, YOU FEEL. is more than a brand &mdash; it&apos;s a way to express what words cannot.
+          </p>
+          <a href="/our-story" className={styles.textLink}>Read our story &rarr;</a>
+        </div>
+      </section>
+
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Best sellers</h2>
+        <h2 className={styles.sectionTitle}>THE SELECTION</h2>
+        <p className={styles.sectionSubtitle}>Our curated picks</p>
         <div className={styles.productsRow}>
-          <ProductCard name="Face Toner" price="$47.99" originalPrice="$59.99" image="/Image14@3x.png" badge={{ text: "-20%", variant: "red" }} />
-          <ProductCard name="Body Wash" price="$49.99" image="/Image6@2x.png" />
-          <ProductCard name="Body Serum" price="$49.99" image="/Image13@3x.png" badge={{ text: "New", variant: "dark" }} />
-          <ProductCard name="Face Mask" price="$49.99" image="/Image10@2x.png" />
+          <ProductCard name="ISYF Essential Tee" price="€35.00" image="/Image6@2x.png" />
+          <ProductCard name="ISYF Embroidered Hoodie" price="€89.00" image="/Image13@3x.png" />
+          <ProductCard name="ISYF FEELS Message Tee" price="€29.90" image="/Image14@3x.png" />
+          <ProductCard name="ISYF Cap" price="€39.00" image="/Image10@2x.png" />
         </div>
       </section>
 
-      {/* Shop by Category */}
-      <section className={styles.sectionFlush}>
-        <h2 className={styles.sectionTitle}>Shop by category</h2>
-        <div className={styles.categoryGrid}>
-          <div className={styles.categoryCard}>
-            <img className={styles.categoryImage} alt="Creams" src="/Image@3x.png" />
-            <div className={styles.categoryButton}><Button label="Creams" variant="bright" fullWidth /></div>
-          </div>
-          <div className={styles.categoryCard}>
-            <img className={styles.categoryImage} alt="Serums" src="/Image1@3x.png" />
-            <div className={styles.categoryButton}><Button label="Serums" variant="bright" fullWidth /></div>
-          </div>
-          <div className={styles.categoryCard}>
-            <img className={styles.categoryImage} alt="Lotion" src="/Image2@3x.png" />
-            <div className={styles.categoryButton}><Button label="Lotion" variant="bright" fullWidth /></div>
+      <section className={styles.categoriesGrid}>
+        <div className={styles.categoryCard}>
+          <div className={styles.categoryImage} style={{ backgroundImage: "url(/Image@3x.png)" }} />
+          <div className={styles.categoryOverlay}>
+            <h3 className={styles.categoryTitle}>ISYF PREMIUM</h3>
+            <Button label="DISCOVER" variant="bright" href="/shop" />
           </div>
         </div>
-      </section>
-
-      {/* Featured Products */}
-      <section className={styles.sectionFlush}>
-        <h2 className={styles.sectionTitle}>Featured products</h2>
-        <div className={styles.productsRow}>
-          <ProductCard name="Face Toner" price="$47.99" originalPrice="$59.99" image="/Image14@3x.png" badge={{ text: "-20%", variant: "red" }} />
-          <ProductCard name="Body Wash" price="$49.99" image="/Image6@2x.png" />
-          <ProductCard name="Body Serum" price="$49.99" image="/Image13@3x.png" badge={{ text: "New", variant: "dark" }} />
-          <ProductCard name="Face Mask" price="$49.99" image="/Image10@2x.png" />
+        <div className={styles.categoryCard}>
+          <div className={styles.categoryImage} style={{ backgroundImage: "url(/Image1@3x.png)" }} />
+          <div className={styles.categoryOverlay}>
+            <h3 className={styles.categoryTitle}>ISYF FEELS</h3>
+            <Button label="DISCOVER" variant="bright" href="/shop" />
+          </div>
         </div>
-      </section>
-
-      {/* Face Mask Promo */}
-      <section className={styles.splitSection}>
-        <div className={styles.splitContainer}>
-          <img className={styles.splitImage} alt="Face mask" src="/Image21@2x.png" />
-          <div className={styles.splitContent}>
-            <h2 className={styles.splitTitle}>Hydrate &amp; revitalize with our pure face mask</h2>
-            <p className={styles.splitDescription}>
-              Indulge your skin with natural botanical extracts and oils. This mask hydrates, soothes, and restores glow for all skin types in minutes.
-            </p>
-            <Button label="Shop the face mask" variant="dark" />
+        <div className={styles.categoryCard}>
+          <div className={styles.categoryImage} style={{ backgroundImage: "url(/Image2@3x.png)" }} />
+          <div className={styles.categoryOverlay}>
+            <h3 className={styles.categoryTitle}>ACCESSORIES</h3>
+            <Button label="DISCOVER" variant="bright" href="/shop" />
           </div>
         </div>
       </section>
 
-      {/* From the Journal */}
-      <section className={styles.sectionFlush}>
-        <h2 className={styles.sectionTitle}>From the journal</h2>
-        <div className={styles.articleGrid}>
-          <article className={styles.article}>
-            <img className={styles.articleImage} alt="" src="/Image8@2x.png" />
-            <div className={styles.articleBadges}>
-              <Badge text="Tips" variant="gray" />
-              <Badge text="Guide" variant="gray" />
-            </div>
-            <span className={styles.articleTitle}>Tips for a natural skincare routine</span>
-            <span className={styles.articleLink}>Read more</span>
-          </article>
-          <article className={styles.article}>
-            <img className={styles.articleImage} alt="" src="/Image3@2x.png" />
-            <div className={styles.articleBadges}>
-              <Badge text="Science" variant="gray" />
-            </div>
-            <span className={styles.articleTitle}>Science behind effective face masks</span>
-            <span className={styles.articleLink}>Read more</span>
-          </article>
-          <article className={styles.article}>
-            <img className={styles.articleImage} alt="" src="/Image9@2x.png" />
-            <div className={styles.articleBadges}>
-              <Badge text="Guide" variant="gray" />
-              <Badge text="Insight" variant="gray" />
-            </div>
-            <span className={styles.articleTitle}>Ingredients for glowing skin explained</span>
-            <span className={styles.articleLink}>Read more</span>
-          </article>
+      <section className={styles.fullBanner}>
+        <div className={styles.fullBannerOverlay} />
+        <div className={styles.fullBannerContent}>
+          <span className={styles.fullBannerSubtitle}>Every design carries a message</span>
+          <h2 className={styles.fullBannerTitle}>FEEL SOMETHING</h2>
+          <Button label="SHOP NOW" variant="bright" href="/shop" />
         </div>
       </section>
 
-      {/* 2 Items Grid */}
-      <section className={styles.sectionFlush}>
-        <div className={styles.twoItemsGrid}>
-          <div className={styles.gridItem}>
-            <img className={styles.gridItemImage} alt="" src="/Image31@3x.png" />
-            <h3 className={styles.gridItemTitleWhite}>Glow with nature&apos;s best essence</h3>
-            <Button label="Shop the essence" variant="bright" />
+      <section className={styles.valuesSection}>
+        <h2 className={styles.valuesSectionTitle}>OUR COMMITMENTS</h2>
+        <div className={styles.valuesGrid}>
+          <div className={styles.valueCard}>
+            <h3 className={styles.valueTitle}>Crafted with emotion</h3>
+            <p className={styles.valueText}>Each piece tells a story. Our designs are born from real feelings and meaningful messages.</p>
           </div>
-          <div className={styles.gridItem}>
-            <img className={styles.gridItemImage} alt="" src="/Image4@3x.png" />
-            <h3 className={styles.gridItemTitleBlack}>Gift the glow</h3>
-            <Button label="Get a gift card" variant="dark" />
+          <div className={styles.valueCard}>
+            <h3 className={styles.valueTitle}>Eco-conscious</h3>
+            <p className={styles.valueText}>We partner with responsible suppliers and choose sustainable materials whenever possible.</p>
+          </div>
+          <div className={styles.valueCard}>
+            <h3 className={styles.valueTitle}>Worldwide delivery</h3>
+            <p className={styles.valueText}>Free shipping on orders over &euro;100. We deliver to Europe, North America, and beyond.</p>
           </div>
         </div>
       </section>
 
-      {/* Full Image Section */}
-      <section className={styles.fullImageSection}>
-        <div className={styles.fullImageWrapper}>
-          <img className={styles.fullImageBg} alt="" src="/Image-Wrapper@3x.png" />
-          <div className={styles.fullImageContent}>
-            <span className={styles.fullImageSubtitle}>Essence for a brighter complexion</span>
-            <h2 className={styles.fullImageTitle}>Pure hydration in every drop</h2>
-            <Button label="Shop now" variant="bright" />
-          </div>
-          <div className={styles.fullImageProduct}>
-            <img className={styles.fullImageProductImg} alt="Face Toner" src="/Image16@2x.png" />
-            <div className={styles.fullImageProductInfo}>
-              <span>Face Toner</span>
-              <div className={styles.fullImageProductPrice}>
-                <span className={styles.fullImageProductOldPrice}>$59.99</span>
-                <span>$47.99</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <TestimonialsSection />
       <InstagramSection />
-      <SubscribeSection />
+
+      <section className={styles.newsletter}>
+        <h2 className={styles.newsletterTitle}>JOIN THE FEELING</h2>
+        <p className={styles.newsletterText}>Subscribe to receive exclusive drops, early access, and stories from the ISYF universe.</p>
+        <div className={styles.newsletterInput}>
+          <input type="email" placeholder="Enter your email" className={styles.emailField} />
+          <button className={styles.emailSubmit}>&rarr;</button>
+        </div>
+      </section>
+
       <Footer />
       <Navigation />
     </div>

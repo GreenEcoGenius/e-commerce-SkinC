@@ -1,47 +1,38 @@
 .section {
   align-self: stretch;
-  background-color: var(--White);
   display: flex;
   flex-direction: column;
   gap: var(--gap-32);
   align-items: flex-start;
-  padding: 0 var(--padding-40) var(--padding-56);
-  font-family: var(--font-inter);
+  padding: var(--padding-80) var(--padding-40);
 }
 .header {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  gap: var(--gap-16);
-  align-items: flex-start;
+  gap: 8px;
 }
 .subtitle {
-  font-size: var(--fs-16);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  color: var(--Gray-3);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--Gray-3);
 }
 .title {
   margin: 0;
-  font-size: var(--fs-40);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  color: var(--Black);
+  font-size: 32px;
 }
 .grid {
   align-self: stretch;
   display: flex;
-  gap: var(--gap-24);
-  align-items: flex-start;
+  gap: var(--gap-16);
 }
 .imageWrapper {
   flex: 1;
   aspect-ratio: 1;
   position: relative;
-  border-radius: var(--br-8);
   overflow: hidden;
   min-width: 0;
 }
@@ -51,37 +42,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--br-8);
 }
 
 @media (max-width: 1024px) {
-  .grid {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  .imageWrapper {
-    flex: none;
-    width: 180px;
-    height: 180px;
-  }
+  .section { padding: 64px 24px; }
+  .grid { overflow-x: auto; flex-wrap: nowrap; -webkit-overflow-scrolling: touch; }
+  .imageWrapper { flex: none; width: 180px; height: 180px; }
 }
 
 @media (max-width: 768px) {
-  .section {
-    padding: 0 24px 40px;
-  }
-  .title {
-    font-size: var(--fs-32);
-  }
-  .grid {
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    -webkit-overflow-scrolling: touch;
-  }
-  .imageWrapper {
-    flex: none;
-    width: 200px;
-    height: 200px;
-  }
+  .section { padding: 48px 24px; }
+  .title { font-size: 24px; }
+  .imageWrapper { width: 160px; height: 160px; }
 }

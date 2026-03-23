@@ -1,0 +1,15 @@
+.page { width: 100%; background: var(--White); display: flex; flex-direction: column; }
+.hero { padding: 120px 40px 64px; text-align: center; }
+.heroTitle { margin: 0 0 12px; font-size: 48px; }
+.heroSubtitle { margin: 0; font-size: 15px; font-weight: 300; color: var(--Gray-3); letter-spacing: 0.05em; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 0 40px; }
+.gridItem { overflow: hidden; }
+.ctaSection { padding: 64px 40px; text-align: center; display: flex; justify-content: center; }
+
+@media (max-width: 768px) {
+  .hero { padding: 88px 24px 40px; }
+  .heroTitle { font-size: 32px; }
+  .grid { grid-template-columns: 1fr; padding: 0 24px; }
+  .gridItem { grid-column: span 1 !important; min-height: 250px; }
+  .ctaSection { padding: 40px 24px; }
+}

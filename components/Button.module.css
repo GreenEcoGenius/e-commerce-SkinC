@@ -1,38 +1,49 @@
 .button {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--padding-24) var(--padding-48);
-  border-radius: var(--br-8);
-  font-family: var(--font-inter);
-  font-size: var(--fs-16);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  line-height: 100%;
+  padding: 16px 40px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   cursor: pointer;
   border: none;
   white-space: nowrap;
   text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s;
 }
 .bright {
   composes: button;
-  backdrop-filter: blur(52px);
-  background-color: rgba(255, 255, 255, 0.16);
+  background-color: transparent;
+  border: 1px solid var(--White);
   color: var(--White);
+}
+.bright:hover {
+  background-color: var(--White);
+  color: var(--Black);
 }
 .dark {
   composes: button;
-  backdrop-filter: blur(52px);
   background-color: transparent;
-  border: var(--border-2);
+  border: 1px solid var(--Black);
   color: var(--Black);
+}
+.dark:hover {
+  background-color: var(--Black);
+  color: var(--White);
 }
 .solid {
   composes: button;
   background-color: var(--Black);
   color: var(--White);
+  border: 1px solid var(--Black);
+}
+.solid:hover {
+  background-color: transparent;
+  color: var(--Black);
 }
 .fullWidth {
-  align-self: stretch;
   width: 100%;
 }

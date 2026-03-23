@@ -1,237 +1,25 @@
-.page {
-  width: 100%;
-  position: relative;
-  background-color: var(--White);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-/* Hero */
-.heroWrapper {
-  align-self: stretch;
-  padding: 96px var(--padding-40) var(--padding-56);
-  background-color: var(--White);
-}
-.hero {
-  width: 100%;
-  height: 700px;
-  position: relative;
-  border-radius: var(--br-8);
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  padding: var(--padding-56);
-  box-sizing: border-box;
-}
-.heroImage {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--br-8);
-}
-.heroContent {
-  position: relative;
-  width: 100%;
-  max-width: 588px;
-}
-.heroText {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-16);
-  font-family: var(--font-inter);
-  font-weight: 500;
-  color: var(--White);
-}
-.heroSubtitle {
-  font-size: var(--fs-16);
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  text-transform: uppercase;
-}
-.heroTitle {
-  margin: 0;
-  font-size: var(--fs-40);
-  letter-spacing: -0.06em;
-  line-height: 100%;
-}
-.heroDescription {
-  margin: 0;
-  font-size: var(--fs-16);
-  letter-spacing: -0.06em;
-  line-height: 100%;
-}
-
-/* Split sections */
-.splitSection {
-  align-self: stretch;
-  padding: 0 var(--padding-40) var(--padding-56);
-  background-color: var(--White);
-}
-.splitContainer {
-  display: flex;
-  gap: var(--gap-24);
-  align-items: center;
-}
-.splitImageWrap {
-  flex: 1;
-  min-width: 0;
-  min-height: 1px;
-}
-.splitImage {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: var(--br-8);
-  object-fit: cover;
-  display: block;
-}
-.splitTextWrap {
-  flex: 1;
-  min-width: 0;
-  min-height: 1px;
-  padding: 0 102px;
-}
-.splitTextInner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap-16);
-  font-family: var(--font-inter);
-  font-weight: 500;
-}
-.splitSubtitle {
-  font-size: var(--fs-16);
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  text-transform: uppercase;
-  color: var(--Black);
-}
-.splitTitle {
-  margin: 0;
-  font-size: var(--fs-40);
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  color: var(--Black);
-}
-.splitDescription {
-  margin: 0;
-  font-size: var(--fs-16);
-  letter-spacing: -0.06em;
-  line-height: 100%;
-  color: var(--Gray-3);
-}
-
-/* Grid section */
-.gridSection {
-  align-self: stretch;
-  padding: 0 var(--padding-40) var(--padding-56);
-  background-color: var(--White);
-}
-.gridContainer {
-  display: flex;
-  gap: var(--gap-24);
-}
-.gridCard {
-  flex: 1;
-  aspect-ratio: 1;
-  position: relative;
-  border-radius: var(--br-8);
-  overflow: hidden;
-  min-width: 0;
-  min-height: 1px;
-  padding: var(--padding-32);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-.gridCardImage {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: var(--br-8);
-  filter: brightness(0.5);
-}
-.gridCardText {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-family: var(--font-inter);
-  font-weight: 500;
-  color: var(--White);
-}
-.gridCardTitle {
-  margin: 0;
-  font-size: var(--fs-40);
-  letter-spacing: -0.06em;
-  line-height: 110%;
-}
-.gridCardDesc {
-  margin: 0;
-  font-size: var(--fs-16);
-  letter-spacing: -0.06em;
-  line-height: 160%;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .heroWrapper {
-    padding: 88px 24px var(--padding-40);
-  }
-  .hero {
-    height: 500px;
-    padding: var(--padding-32);
-  }
-  .heroContent {
-    width: 100%;
-  }
-  .splitSection {
-    padding: 0 24px var(--padding-40);
-  }
-  .splitContainer {
-    flex-direction: column;
-  }
-  .splitTextWrap {
-    padding: 0;
-  }
-  .gridSection {
-    padding: 0 24px var(--padding-40);
-  }
-}
+.page { width: 100%; background: var(--White); display: flex; flex-direction: column; }
+.hero { height: 500px; background: var(--Black); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; }
+.heroSubtitle { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--Gray-3); }
+.heroTitle { margin: 0; font-size: 48px; color: var(--White); }
+.storySection { padding: 80px 40px; max-width: 700px; margin: 0 auto; text-align: center; }
+.storyTitle { margin: 0 0 32px; font-size: 32px; font-style: italic; }
+.storyText { margin: 0 0 16px; font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--Gray-3); }
+.collectionsSection { display: flex; gap: 2px; }
+.collectionBlock { flex: 1; padding: 80px 48px; background: var(--Gray-1); text-align: center; }
+.collectionName { margin: 0 0 16px; font-size: 14px; letter-spacing: 0.3em; }
+.collectionDesc { margin: 0; font-size: 15px; font-weight: 300; line-height: 1.8; color: var(--Gray-3); max-width: 400px; margin: 0 auto; }
+.valuesSection { display: flex; gap: 48px; padding: 80px 40px; }
+.valueCard { flex: 1; text-align: center; }
+.valueTitle { margin: 0 0 12px; font-size: 13px; letter-spacing: 0.2em; }
+.valueText { margin: 0; font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--Gray-3); }
+.ctaSection { padding: 0 40px 80px; text-align: center; display: flex; justify-content: center; }
 
 @media (max-width: 768px) {
-  .heroWrapper {
-    padding: 80px 24px var(--padding-32);
-  }
-  .hero {
-    height: 400px;
-    padding: 24px;
-  }
-  .heroTitle {
-    font-size: var(--fs-32);
-  }
-  .heroDescription {
-    line-height: 160%;
-  }
-  .splitTitle {
-    font-size: var(--fs-32);
-  }
-  .splitDescription {
-    line-height: 160%;
-  }
-  .gridContainer {
-    flex-direction: column;
-  }
-  .gridCard {
-    aspect-ratio: auto;
-    min-height: 400px;
-  }
-  .gridCardTitle {
-    font-size: var(--fs-32);
-    line-height: 120%;
-  }
+  .heroTitle { font-size: 32px; }
+  .storySection { padding: 48px 24px; }
+  .collectionsSection { flex-direction: column; }
+  .collectionBlock { padding: 48px 24px; }
+  .valuesSection { flex-direction: column; gap: 32px; padding: 48px 24px; }
+  .ctaSection { padding: 0 24px 48px; }
 }

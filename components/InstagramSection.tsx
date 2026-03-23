@@ -12,7 +12,7 @@ export default function InstagramSection() {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <span className={styles.subtitle}>Follow us on instagram</span>
+        <span className={styles.subtitle}>Follow us on Instagram</span>
         <h2 className={styles.title}>@ISEEYOUFEEL</h2>
       </div>
       <div className={styles.grid}>

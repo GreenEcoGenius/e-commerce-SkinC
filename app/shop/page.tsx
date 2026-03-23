@@ -1,56 +1,49 @@
 "use client";
-
 import { useState } from "react";
 import Navigation from "../../components/Navigation";
 import ProductCard from "../../components/ProductCard";
 import InstagramSection from "../../components/InstagramSection";
-import SubscribeSection from "../../components/SubscribeSection";
 import Footer from "../../components/Footer";
 import styles from "./page.module.css";
 
 const allProducts = [
-  { name: "Face Toner", price: "$47.99", originalPrice: "$59.99", image: "/Image14@3x.png", badge: { text: "-20%" as const, variant: "red" as const }, category: "Face" },
-  { name: "Body Wash", price: "$49.99", image: "/Image6@2x.png", category: "Body" },
-  { name: "Body Serum", price: "$49.99", image: "/Image13@3x.png", badge: { text: "New" as const, variant: "dark" as const }, category: "Body" },
-  { name: "Face Mask", price: "$49.99", image: "/Image10@2x.png", category: "Face" },
-  { name: "Pure Solution Essence", price: "$49.99", image: "/Image19@3x.png", category: "Face" },
-  { name: "Hydrating Cream", price: "$54.99", image: "/Image22@2x.png", badge: { text: "New" as const, variant: "dark" as const }, category: "Face" },
-  { name: "Body Lotion", price: "$39.99", image: "/Image23@2x.png", category: "Body" },
-  { name: "Cleansing Oil", price: "$44.99", originalPrice: "$54.99", image: "/Image34@2x.png", badge: { text: "-18%" as const, variant: "red" as const }, category: "Face" },
+  { name: "ISYF Essential Tee", price: "€35.00", image: "/Image6@2x.png", categories: ["women", "premium"] },
+  { name: "ISYF Embroidered Hoodie", price: "€89.00", image: "/Image13@3x.png", categories: ["women", "premium"] },
+  { name: "ISYF FEELS Message Tee", price: "€29.90", image: "/Image14@3x.png", categories: ["men", "feels"] },
+  { name: "ISYF Cap", price: "€39.00", image: "/Image10@2x.png", categories: ["accessories"] },
+  { name: "ISYF Premium Sweater", price: "€95.00", image: "/Image19@3x.png", categories: ["men", "premium"] },
+  { name: "ISYF Oversized Tee", price: "€42.00", image: "/Image22@2x.png", categories: ["women", "feels"] },
+  { name: "ISYF FEELS Graphic Hoodie", price: "€69.00", image: "/Image23@2x.png", categories: ["men", "feels"] },
+  { name: "ISYF Tote Bag", price: "€25.00", image: "/Image34@2x.png", categories: ["accessories"] },
 ];
 
-const categories = ["All", "Face", "Body"];
+const filters = [
+  { label: "All", value: "all" },
+  { label: "Women", value: "women" },
+  { label: "Men", value: "men" },
+  { label: "Accessories", value: "accessories" },
+  { label: "ISYF Premium", value: "premium" },
+  { label: "ISYF FEELS", value: "feels" },
+];
 
 export default function ShopPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filtered = activeCategory === "All"
-    ? allProducts
-    : allProducts.filter((p) => p.category === activeCategory);
+  const [active, setActive] = useState("all");
+  const filtered = active === "all" ? allProducts : allProducts.filter((p) => p.categories.includes(active));
 
   return (
     <div className={styles.page}>
-      <section className={styles.products}>
-        <h1 className={styles.title}>All products</h1>
+      <section className={styles.content}>
+        <h1 className={styles.title}>Shop</h1>
         <div className={styles.filterBar}>
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={cat === activeCategory ? styles.filterBtnActive : styles.filterBtn}
-              onClick={() => setActiveCategory(cat)}
-            >
-              {cat}
-            </button>
+          {filters.map((f) => (
+            <button key={f.value} className={f.value === active ? styles.filterBtnActive : styles.filterBtn} onClick={() => setActive(f.value)}>{f.label}</button>
           ))}
         </div>
         <div className={styles.productGrid}>
-          {filtered.map((product, i) => (
-            <ProductCard key={i} name={product.name} price={product.price} originalPrice={product.originalPrice} image={product.image} badge={product.badge} />
-          ))}
+          {filtered.map((p, i) => <ProductCard key={i} name={p.name} price={p.price} image={p.image} />)}
         </div>
       </section>
       <InstagramSection />
-      <SubscribeSection />
       <Footer />
       <Navigation />
     </div>
