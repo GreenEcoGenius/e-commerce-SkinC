@@ -5,7 +5,7 @@ export default function SubscribeSection() {
   return (
     <section className={styles.section}>
       <div className={styles.bg}>
-        <img className={styles.bgImage} alt="" src="/Image-Wrapper@3x.png" />
+        <img className={styles.bgImage} alt="" src="/Image-Wrapper2@3x.png" />
         <div className={styles.overlay} />
       </div>
       <div className={styles.content}>
