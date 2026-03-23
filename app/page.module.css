@@ -360,7 +360,7 @@
 @media (max-width: 768px) {
   .announcementBar { font-size: 9px; letter-spacing: 0.15em; padding: 8px 12px; }
 
-  .hero { height: 60vh; min-height: 380px; max-height: 520px; padding-bottom: 8%; }
+  .hero { height: 75vh; min-height: 480px; max-height: 640px; padding-bottom: 0; justify-content: center; background-position: center 15%; }
   .heroTitle { font-size: 32px; }
   .heroSubtitle { font-size: 11px; letter-spacing: 0.2em; }
   .heroContent { gap: 20px; padding: 0 24px; }
@@ -402,7 +402,7 @@
 
 /* Small mobile */
 @media (max-width: 480px) {
-  .hero { height: 55vh; min-height: 320px; max-height: 440px; padding-bottom: 10%; }
+  .hero { height: 70vh; min-height: 420px; max-height: 560px; padding-bottom: 0; justify-content: center; background-position: center 15%; }
   .heroTitle { font-size: 26px; }
   .heroSubtitle { font-size: 10px; }
   .collectionCard { height: 320px; }
