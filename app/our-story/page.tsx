@@ -14,7 +14,7 @@ export default function OurStoryPage() {
 
       <section className={styles.storySection}>
         <div className={styles.storyContent}>
-          <h2 className={styles.storyTitle}>Founded in 2026, born from emotion</h2>
+          <h2 className={styles.storyTitle}>Timeless by design, born from emotion</h2>
           <p className={styles.storyText}>I SEE, YOU FEEL. was born in Tallinn, Estonia from a simple belief: fashion should make you feel something. Every piece we create carries a message, a mood, an emotion that connects the wearer to something deeper.</p>
           <p className={styles.storyText}>What started as a creative vision by GreenEcoGenius O&Uuml; has grown into a brand with two distinct collections &mdash; each speaking to a different side of self-expression.</p>
         </div>
