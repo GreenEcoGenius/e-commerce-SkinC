@@ -14,7 +14,7 @@ const TestimonialsSection: NextPage<TestimonialsSectionType> = ({ className="" }
 const [testimonialWrapperItems] = useState([
   {
     saraJ: "Sara J.",
-    theFaceTonerHasTransformed: "“The Face Toner has transformed my morning routine with its natural hydration. Highly recommend!"",
+    theFaceTonerHasTransformed: `“The Face Toner has transformed my morning routine with its natural hydration. Highly recommend!”`,
     image: "/Image16@2x.png",
     imageIconMaxHeight: "100%" as const,
     imageIconHeight: undefined,
@@ -22,7 +22,7 @@ const [testimonialWrapperItems] = useState([
   },
   {
     saraJ: "Helen D.",
-    theFaceTonerHasTransformed: ""The Body Serum left my skin silky smooth after just one use. It’s become my go-to for a natural glow every day!"",
+    theFaceTonerHasTransformed: `“The Body Serum left my skin silky smooth after just one use. It’s become my go-to for a natural glow every day!”`,
     image: "/Image15@2x.png",
     imageIconMaxHeight: undefined,
     imageIconHeight: undefined,
@@ -30,7 +30,7 @@ const [testimonialWrapperItems] = useState([
   },
   {
     saraJ: "Kim W.",
-    theFaceTonerHasTransformed: ""This Face Mask is a game-changer! My skin feels rejuvenated and looks brighter—perfect for a quick self-care moment."",
+    theFaceTonerHasTransformed: `“This Face Mask is a game-changer! My skin feels rejuvenated and looks brighter—perfect for a quick self-care moment.”`,
     image: "/Image12@2x.png",
     imageIconMaxHeight: "unset" as const,
     imageIconHeight: "50px" as const,

@@ -1,14 +1,13 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import Arrow3 from "./arrow2";
 import styles from "./input3.module.css";
 
 export type Input4Type = {
   className?: string;
-  type?: CSSProperties["type"];
+  type?: string;
 
   /** Variant props */
-  onDark?: CSSProperties["onDark"];
+  onDark?: boolean;
 };
 
 const Input4: NextPage<Input4Type> = ({

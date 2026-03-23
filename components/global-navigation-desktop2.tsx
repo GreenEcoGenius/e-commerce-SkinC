@@ -8,7 +8,7 @@ export type GlobalNavigationDesktop2Type = {
   color?: CSSProperties["color"];
 
   /** Variant props */
-  type?: CSSProperties["type"];
+  type?: string;
 };
 
 const GlobalNavigationDesktop2: NextPage<GlobalNavigationDesktop2Type> = ({

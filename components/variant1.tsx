@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import styles from "./variant1.module.css";
 
 export type Variant1Type = {
@@ -7,7 +6,7 @@ export type Variant1Type = {
   option?: string;
 
   /** Variant props */
-  checked?: CSSProperties["checked"];
+  checked?: boolean;
 };
 
 const Variant1: NextPage<Variant1Type> = ({

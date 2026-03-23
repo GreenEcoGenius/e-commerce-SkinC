@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import Image from "next/image";
 import styles from "./arrow4.module.css";
 
@@ -7,7 +6,7 @@ export type Arrow5Type = {
   className?: string;
 
   /** Variant props */
-  type?: CSSProperties["type"];
+  type?: string;
 };
 
 const Arrow5: NextPage<Arrow5Type> = ({ className = "", type = "Left" }) => {

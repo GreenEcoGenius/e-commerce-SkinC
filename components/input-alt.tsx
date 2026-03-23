@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import Image from "next/image";
 import styles from "./input-alt.module.css";
 
@@ -13,7 +12,7 @@ export type InputAltType = {
   placeholder1?: string;
 
   /** Variant props */
-  state?: CSSProperties["state"];
+  state?: string;
 };
 
 const InputAlt: NextPage<InputAltType> = ({

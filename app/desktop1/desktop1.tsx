@@ -249,6 +249,7 @@ const Desktop1: NextPage = () => {
             height={24}
             sizes="100vw"
             alt=""
+            src="/search.svg"
           />
           <a
             className={styles.bag0}

@@ -9,7 +9,7 @@ export type CheckboxType = {
   checkboxLabel?: string;
 
   /** Variant props */
-  checked?: CSSProperties["checked"];
+  checked?: boolean;
 
   /** Style props */
   checkboxIconBackgroundColor?: CSSProperties["backgroundColor"];

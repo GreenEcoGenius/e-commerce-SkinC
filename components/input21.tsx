@@ -1,5 +1,4 @@
 import type { NextPage } from "next";
-import { type CSSProperties } from "react";
 import Image from "next/image";
 import styles from "./input21.module.css";
 
@@ -9,7 +8,7 @@ export type Input3Type = {
   keyboardArrowDown: string;
 
   /** Variant props */
-  onDark?: CSSProperties["onDark"];
+  onDark?: boolean;
 };
 
 const Input3: NextPage<Input3Type> = ({
