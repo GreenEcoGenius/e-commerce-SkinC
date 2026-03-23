@@ -56,7 +56,11 @@
 }
 
 /* Mega menu */
-.menuItem { position: relative; }
+.menuItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
 .megaMenu {
   position: absolute;
   top: 100%;
