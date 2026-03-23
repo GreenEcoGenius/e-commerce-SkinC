@@ -1,11 +1,147 @@
-import PageLayout from "../../components/PageLayout";
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+import Navigation from "../../components/Navigation";
+import ProductCard from "../../components/ProductCard";
+import Footer from "../../components/Footer";
+import styles from "./page.module.css";
+
+type CartItem = {
+  id: string;
+  name: string;
+  size: string;
+  price: number;
+  originalPrice?: number;
+  image: string;
+  qty: number;
+};
+
+const FREE_SHIPPING_THRESHOLD = 100;
+
+const paymentMethods = ["VISA", "MC", "AMEX", "DISC", "Pay", "PP", "Shop"];
 
 export default function CartPage() {
+  const [items, setItems] = useState<CartItem[]>([]);
+
+  const subtotal = items.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const shippingGap = Math.max(0, FREE_SHIPPING_THRESHOLD - subtotal);
+  const shippingPercent = Math.min(100, (subtotal / FREE_SHIPPING_THRESHOLD) * 100);
+
+  function updateQty(id: string, delta: number) {
+    setItems((prev) =>
+      prev
+        .map((item) => (item.id === id ? { ...item, qty: item.qty + delta } : item))
+        .filter((item) => item.qty > 0)
+    );
+  }
+
+  function removeItem(id: string) {
+    setItems((prev) => prev.filter((item) => item.id !== id));
+  }
+
+  const isEmpty = items.length === 0;
+
   return (
-    <PageLayout title="Your bag">
-      <p style={{ fontFamily: "var(--font-inter)", fontSize: "var(--fs-16)", color: "var(--Gray-3)", letterSpacing: "-0.06em", fontWeight: 500 }}>
-        Your bag is empty.
-      </p>
-    </PageLayout>
+    <div className={styles.page}>
+      <main className={styles.content}>
+        <h1 className={styles.pageTitle}>Your bag</h1>
+
+        <div className={styles.shippingBar}>
+          <p className={styles.shippingText}>
+            {shippingGap > 0
+              ? `You're $${shippingGap.toFixed(2)} away from free shipping`
+              : "You've unlocked free shipping!"}
+          </p>
+          <div className={styles.shippingTrack}>
+            <div className={styles.shippingProgress} style={{ width: `${shippingPercent}%` }} />
+          </div>
+        </div>
+
+        <div className={styles.layout}>
+          <div className={styles.cartSide}>
+            {isEmpty ? (
+              <>
+                <p className={styles.emptyText}>Your bag is empty</p>
+                <Link href="/shop">
+                  <button className={styles.checkoutButton} style={{ width: "auto", padding: "16px 32px", background: "var(--White)", color: "var(--Black)", border: "1px solid var(--Black)" }}>
+                    Shop all
+                  </button>
+                </Link>
+              </>
+            ) : (
+              items.map((item) => (
+                <div key={item.id} className={styles.cartItem}>
+                  <img className={styles.itemImage} alt={item.name} src={item.image} />
+                  <div className={styles.itemDetails}>
+                    <span className={styles.itemName}>{item.name}</span>
+                    <span className={styles.itemSize}>Size: {item.size}</span>
+                    <div className={styles.itemActions}>
+                      <div className={styles.qtyPicker}>
+                        <button className={styles.qtyButton} onClick={() => updateQty(item.id, -1)}>&ndash;</button>
+                        <span className={styles.qtyValue}>{item.qty}</span>
+                        <button className={styles.qtyButton} onClick={() => updateQty(item.id, 1)}>+</button>
+                      </div>
+                      <button className={styles.deleteButton} onClick={() => removeItem(item.id)}>&#128465;</button>
+                    </div>
+                  </div>
+                  <div className={styles.itemPriceCol}>
+                    {item.originalPrice && <span className={styles.itemOriginalPrice}>${item.originalPrice.toFixed(2)}</span>}
+                    <span className={styles.itemPrice}>${item.price.toFixed(2)}</span>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+
+          <aside className={styles.summarySide}>
+            <h2 className={styles.summaryTitle}>Order summary</h2>
+            <div className={styles.summaryRow}>
+              <span className={styles.summaryLabel}>Subtotal ({items.reduce((s, i) => s + i.qty, 0)} items)</span>
+              <span className={styles.summaryValue}>${subtotal.toFixed(2)}</span>
+            </div>
+            <div className={styles.summaryRow}>
+              <div>
+                <span className={styles.summaryLabel}>Shipping</span>
+                {shippingGap > 0 && <span className={styles.summarySubtext}>You&apos;re ${shippingGap.toFixed(2)} away from free shipping</span>}
+              </div>
+              <span className={styles.summaryValue} style={{ color: "var(--Gray-3)" }}>Calculated in checkout</span>
+            </div>
+            <div className={styles.summaryRow}>
+              <span className={styles.summaryLabel}>Tax</span>
+              <span className={styles.summaryValue} style={{ color: "var(--Gray-3)" }}>Calculated in checkout</span>
+            </div>
+            <div className={styles.summaryDivider} />
+            <div className={styles.summaryTotal}>
+              <span className={styles.totalLabel}>Estimated total</span>
+              <span className={styles.totalValue}>${subtotal.toFixed(2)}</span>
+            </div>
+            <button className={styles.checkoutButton}>Checkout</button>
+            <p className={styles.termsText}>
+              By continuing, I confirm that I have read and accept the <Link href="#">Terms of Service</Link> and the <Link href="#">Privacy Policy</Link>.
+            </p>
+            <span className={styles.paymentLabel}>We accept</span>
+            <div className={styles.paymentIcons}>
+              {paymentMethods.map((m) => (
+                <span key={m} className={styles.paymentIcon}>{m}</span>
+              ))}
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <section className={styles.productsSection}>
+        <h2 className={styles.productsSectionTitle}>{isEmpty ? "Best sellers" : "You might also like"}</h2>
+        <div className={styles.productsRow}>
+          <ProductCard name="Face Toner" price="$47.99" originalPrice="$59.99" image="/Image14@3x.png" badge={{ text: "-20%", variant: "red" }} />
+          <ProductCard name="Body Wash" price="$49.99" image="/Image6@2x.png" />
+          <ProductCard name="Body Serum" price="$49.99" image="/Image13@3x.png" badge={{ text: "New", variant: "dark" }} />
+          <ProductCard name="Face Mask" price="$49.99" image="/Image10@2x.png" />
+        </div>
+      </section>
+
+      <Footer />
+      <Navigation />
+    </div>
   );
 }
