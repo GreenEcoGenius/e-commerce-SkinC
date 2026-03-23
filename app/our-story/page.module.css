@@ -1,7 +1,26 @@
 .page { width: 100%; background: var(--White); display: flex; flex-direction: column; }
-.hero { height: 500px; background: var(--Black); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; }
-.heroSubtitle { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--Gray-3); }
-.heroTitle { margin: 0; font-size: 48px; color: var(--White); }
+.hero {
+  height: 600px;
+  background: var(--Black);
+  background-image: url(/our-story-hero.jpg);
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+.heroSubtitle { position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+.heroTitle { position: relative; z-index: 1; margin: 0; font-size: 48px; color: var(--White); }
 .storySection { padding: 80px 40px; max-width: 700px; margin: 0 auto; text-align: center; }
 .storyTitle { margin: 0 0 32px; font-size: 32px; font-style: italic; }
 .storyText { margin: 0 0 16px; font-size: 16px; font-weight: 300; line-height: 1.8; color: var(--Gray-3); }
@@ -16,13 +35,13 @@
 .ctaSection { padding: 0 40px 80px; text-align: center; display: flex; justify-content: center; }
 
 @media (max-width: 1024px) {
-  .hero { height: 400px; }
+  .hero { height: 480px; }
   .heroTitle { font-size: 40px; }
   .storySection { padding: 64px 32px; }
   .valuesSection { padding: 64px 32px; }
 }
 @media (max-width: 768px) {
-  .hero { height: 320px; }
+  .hero { height: 380px; background-position: center top; }
   .heroTitle { font-size: 28px; }
   .heroSubtitle { font-size: 11px; }
   .storySection { padding: 48px 24px; }
