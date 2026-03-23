@@ -39,7 +39,6 @@ export default function HomePage() {
       </section>
 
       <section className={styles.brandStory}>
-        <div className={styles.brandStoryImage} style={{ backgroundImage: "url(/brand-story.jpg)" }} />
         <div className={styles.brandStoryContent}>
           <h2 className={styles.brandStoryTitle}>What I see, you feel.</h2>
           <p className={styles.brandStoryText}>

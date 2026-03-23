@@ -103,20 +103,15 @@
 /* Brand Story */
 .brandStory {
   display: flex;
-  min-height: 500px;
-}
-.brandStoryImage {
-  flex: 1;
-  background: var(--Gray-1);
-  background-size: cover;
-  background-position: center;
-  min-height: 400px;
+  justify-content: center;
 }
 .brandStoryContent {
-  flex: 1;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   gap: 24px;
   padding: var(--padding-80) 64px;
 }
@@ -338,7 +333,7 @@
   .collectionCard { height: 480px; }
   .collectionTitle { font-size: 28px; }
 
-  .brandStoryContent { padding: 48px 32px; }
+  .brandStoryContent { padding: 48px 32px; text-align: center; align-items: center; }
   .brandStoryTitle { font-size: 30px; }
 
   .section { padding: 64px 24px; }
@@ -371,9 +366,8 @@
   .collectionCard { height: 380px; }
   .collectionTitle { font-size: 22px; }
 
-  .brandStory { flex-direction: column; min-height: auto; }
-  .brandStoryImage { min-height: 280px; flex: none; }
-  .brandStoryContent { padding: 40px 24px; flex: none; }
+  .brandStory { min-height: auto; }
+  .brandStoryContent { padding: 40px 24px; text-align: center; align-items: center; }
   .brandStoryTitle { font-size: 26px; }
   .brandStoryText { font-size: 14px; }
   .textLink { font-size: 12px; }
@@ -383,9 +377,9 @@
   .sectionSubtitle { margin: 6px 0 32px; font-size: 13px; }
   .productsRow { grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
-  .categoriesGrid { flex-direction: column; }
-  .categoryCard { height: 300px; }
-  .categoryTitle { font-size: 12px; }
+  .categoriesGrid { flex-direction: row; gap: 1px; }
+  .categoryCard { height: 260px; }
+  .categoryTitle { font-size: 10px; }
 
   .fullBanner { height: 340px; }
   .fullBannerTitle { font-size: 28px; }
