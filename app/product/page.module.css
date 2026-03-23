@@ -21,7 +21,9 @@
 .addToBag { cursor: pointer; }
 .freeShipping { margin: 0; font-size: 13px; font-weight: 300; color: var(--Gray-3); }
 .accordionList { display: flex; flex-direction: column; }
-.accordion { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: var(--border-1); cursor: pointer; font-size: 14px; font-weight: 400; color: var(--Black); }
+.accordion { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: var(--border-1); cursor: pointer; font-size: 14px; font-weight: 400; color: var(--Black); transition: opacity 0.3s; }
+.accordion:hover { opacity: 0.6; }
+.accordionContent { padding: 0 0 16px; font-size: 14px; font-weight: 300; line-height: 1.8; color: var(--Gray-3); border-bottom: var(--border-1); }
 .relatedSection { padding: 0 40px 80px; }
 .relatedTitle { margin: 0 0 32px; font-size: 28px; text-align: center; }
 .relatedRow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }

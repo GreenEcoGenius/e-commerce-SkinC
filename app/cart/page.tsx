@@ -114,10 +114,10 @@ export default function CartPage() {
       <section className={styles.productsSection}>
         <h2 className={styles.productsSectionTitle}>{isEmpty ? "Best sellers" : "You might also like"}</h2>
         <div className={styles.productsRow}>
-          <ProductCard name="Face Toner" price="$47.99" originalPrice="$59.99" image="/Image14@3x.png" badge={{ text: "-20%", variant: "red" }} />
-          <ProductCard name="Body Wash" price="$49.99" image="/Image6@2x.png" />
-          <ProductCard name="Body Serum" price="$49.99" image="/Image13@3x.png" badge={{ text: "New", variant: "dark" }} />
-          <ProductCard name="Face Mask" price="$49.99" image="/Image10@2x.png" />
+          <ProductCard slug="isyf-essential-tee-women" name="ISYF Essential Tee" price="€35.00" image="/product-tshirt.jpg" />
+          <ProductCard slug="isyf-embroidered-hoodie-women" name="ISYF Embroidered Hoodie" price="€89.00" image="/product-hoodie.jpg" />
+          <ProductCard slug="isyf-feels-message-tee-men" name="ISYF FEELS Message Tee" price="€29.90" image="/product-feels-tee.jpg" />
+          <ProductCard slug="isyf-cap" name="ISYF Cap" price="€39.00" image="/product-cap.jpg" />
         </div>
       </section>
 

@@ -2,16 +2,18 @@ import Link from "next/link";
 import styles from "./ProductCard.module.css";
 
 type ProductCardProps = {
+  slug?: string;
   name: string;
   price: string;
   originalPrice?: string;
   image: string;
-  badge?: { text: string; variant: "red" | "dark" | "gray" };
 };
 
-export default function ProductCard({ name, price, originalPrice, image }: ProductCardProps) {
+export default function ProductCard({ slug, name, price, originalPrice, image }: ProductCardProps) {
+  const href = slug ? `/product/${slug}` : "/shop";
+
   return (
-    <Link href="/product" className={styles.product}>
+    <Link href={href} className={styles.product}>
       <div className={styles.imageWrapper}>
         <img className={styles.image} alt={name} src={image} />
       </div>

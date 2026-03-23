@@ -6,6 +6,7 @@
 .filterBtn:hover { border-color: var(--Black); }
 .filterBtnActive { composes: filterBtn; background: var(--Black); color: var(--White); border-color: var(--Black); }
 .productGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.emptyText { grid-column: 1 / -1; text-align: center; font-size: 15px; font-weight: 300; color: var(--Gray-3); padding: 64px 0; }
 
 @media (max-width: 1024px) {
   .content { padding: 100px 24px 64px; }

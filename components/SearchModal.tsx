@@ -87,10 +87,9 @@ export default function SearchModal({ onClose }: { onClose: () => void }) {
               <ProductCard
                 key={product.id}
                 name={product.name}
-                price={`$${product.price.toFixed(2)}`}
-                originalPrice={product.original_price ? `$${product.original_price.toFixed(2)}` : undefined}
+                price={`€${product.price.toFixed(2)}`}
+                originalPrice={product.original_price ? `€${product.original_price.toFixed(2)}` : undefined}
                 image={product.image}
-                badge={product.badge_text && product.badge_variant ? { text: product.badge_text, variant: product.badge_variant } : undefined}
               />
             ))}
           </div>

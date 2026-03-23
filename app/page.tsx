@@ -53,10 +53,10 @@ export default function HomePage() {
         <h2 className={styles.sectionTitle}>THE SELECTION</h2>
         <p className={styles.sectionSubtitle}>Our curated picks</p>
         <div className={styles.productsRow}>
-          <ProductCard name="ISYF Essential Tee" price="€35.00" image="/product-tshirt.jpg" />
-          <ProductCard name="ISYF Embroidered Hoodie" price="€89.00" image="/product-hoodie.jpg" />
-          <ProductCard name="ISYF FEELS Message Tee" price="€29.90" image="/product-feels-tee.jpg" />
-          <ProductCard name="ISYF Cap" price="€39.00" image="/product-cap.jpg" />
+          <ProductCard slug="isyf-essential-tee-women" name="ISYF Essential Tee" price="€35.00" image="/product-tshirt.jpg" />
+          <ProductCard slug="isyf-embroidered-hoodie-women" name="ISYF Embroidered Hoodie" price="€89.00" image="/product-hoodie.jpg" />
+          <ProductCard slug="isyf-feels-message-tee-men" name="ISYF FEELS Message Tee" price="€29.90" image="/product-feels-tee.jpg" />
+          <ProductCard slug="isyf-cap" name="ISYF Cap" price="€39.00" image="/product-cap.jpg" />
         </div>
       </section>
 
