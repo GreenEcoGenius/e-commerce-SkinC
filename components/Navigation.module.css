@@ -50,6 +50,16 @@
   font-family: var(--font-inter);
   font-size: var(--fs-16);
 }
+.searchActive {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 98;
+}
 .logoLink {
   display: flex;
   text-decoration: none;

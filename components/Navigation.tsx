@@ -40,13 +40,17 @@ export default function Navigation() {
           <Link href="/account" className={styles.link}>
             {user ? "My account" : "Account"}
           </Link>
-          <button className={styles.searchButton} onClick={() => setSearchOpen(true)}>
+          <button
+            className={`${styles.searchButton} ${searchOpen ? styles.searchActive : ""}`}
+            onClick={() => setSearchOpen(!searchOpen)}
+          >
             Search
           </button>
           <Link href="/cart" className={styles.link}>Bag (0)</Link>
         </nav>
+        {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
       </header>
-      {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
+      {searchOpen && <div className={styles.overlay} onClick={() => setSearchOpen(false)} />}
     </>
   );
 }

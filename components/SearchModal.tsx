@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import ProductCard from "./ProductCard";
 import { createClient } from "../lib/supabase";
 import styles from "./SearchModal.module.css";
 
@@ -14,6 +15,7 @@ type Product = {
   original_price: number | null;
   image: string;
   badge_text: string | null;
+  badge_variant: "red" | "dark" | null;
 };
 
 export default function SearchModal({ onClose }: { onClose: () => void }) {
@@ -21,6 +23,7 @@ export default function SearchModal({ onClose }: { onClose: () => void }) {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -30,6 +33,7 @@ export default function SearchModal({ onClose }: { onClose: () => void }) {
   useEffect(() => {
     if (query.trim().length === 0) {
       setResults([]);
+      setSearched(false);
       return;
     }
 
@@ -39,8 +43,9 @@ export default function SearchModal({ onClose }: { onClose: () => void }) {
         .from("products")
         .select("*")
         .ilike("name", `%${query}%`)
-        .limit(6);
+        .limit(4);
       setResults(data || []);
+      setSearched(true);
       setLoading(false);
     }, 300);
 
@@ -56,55 +61,46 @@ export default function SearchModal({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   return (
-    <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <div className={styles.inputRow}>
-          <svg className={styles.searchIcon} width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <circle cx="8.5" cy="8.5" r="6" stroke="currentColor" strokeWidth="1.5" />
-            <line x1="13" y1="13" x2="18" y2="18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-          </svg>
-          <input
-            ref={inputRef}
-            className={styles.input}
-            type="text"
-            placeholder="Search products..."
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <button className={styles.closeButton} onClick={onClose}>Esc</button>
-        </div>
+    <div className={styles.panel}>
+      <div className={styles.inputWrapper}>
+        <input
+          ref={inputRef}
+          className={styles.input}
+          type="text"
+          placeholder="Search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button className={styles.closeButton} onClick={onClose} aria-label="Close search">
+          &times;
+        </button>
+      </div>
 
-        {loading && <p className={styles.status}>Searching...</p>}
+      {searched && !loading && results.length === 0 && (
+        <p className={styles.noResults}>No matches found for &ldquo;{query}&rdquo;</p>
+      )}
 
-        {!loading && query.trim().length > 0 && results.length === 0 && (
-          <p className={styles.status}>No products found for &ldquo;{query}&rdquo;</p>
-        )}
-
-        {results.length > 0 && (
-          <div className={styles.results}>
+      {results.length > 0 && (
+        <>
+          <div className={styles.resultsGrid}>
             {results.map((product) => (
-              <Link
+              <ProductCard
                 key={product.id}
-                href="/product"
-                className={styles.resultItem}
-                onClick={onClose}
-              >
-                <img className={styles.resultImage} alt={product.name} src={product.image} />
-                <div className={styles.resultInfo}>
-                  <span className={styles.resultCategory}>{product.category}</span>
-                  <span className={styles.resultName}>{product.name}</span>
-                  <div className={styles.resultPriceRow}>
-                    <span className={styles.resultPrice}>${product.price.toFixed(2)}</span>
-                    {product.original_price && (
-                      <span className={styles.resultOriginalPrice}>${product.original_price.toFixed(2)}</span>
-                    )}
-                  </div>
-                </div>
-              </Link>
+                name={product.name}
+                price={`$${product.price.toFixed(2)}`}
+                originalPrice={product.original_price ? `$${product.original_price.toFixed(2)}` : undefined}
+                image={product.image}
+                badge={product.badge_text && product.badge_variant ? { text: product.badge_text, variant: product.badge_variant } : undefined}
+              />
             ))}
           </div>
-        )}
-      </div>
+          <div className={styles.viewAllWrapper}>
+            <Link href="/shop" className={styles.viewAllButton} onClick={onClose}>
+              View all
+            </Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }

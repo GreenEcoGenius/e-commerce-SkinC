@@ -1,30 +1,22 @@
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 200;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 120px;
-}
-.modal {
-  width: 100%;
-  max-width: 600px;
+.panel {
+  position: absolute;
+  top: var(--height-67);
+  left: 0;
+  right: 0;
   background: var(--White);
+  z-index: 99;
+  padding: var(--padding-40) var(--padding-40) var(--padding-56);
   font-family: var(--font-inter);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-.inputRow {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-10);
-  padding: var(--padding-16) var(--padding-24);
   border-bottom: var(--border-1);
 }
-.searchIcon {
-  flex-shrink: 0;
-  color: var(--Gray-3);
+.inputWrapper {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--gap-16);
+  border-bottom: var(--border-3);
+  padding-bottom: var(--padding-8);
 }
 .input {
   flex: 1;
@@ -41,81 +33,48 @@
   color: var(--Gray-3);
 }
 .closeButton {
-  padding: var(--padding-4) var(--padding-8);
-  border: var(--border-1);
-  background: var(--Gray-1);
-  font-family: var(--font-inter);
-  font-size: var(--fs-12);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  color: var(--Gray-3);
+  background: none;
+  border: none;
+  font-size: var(--fs-24);
+  color: var(--Black);
   cursor: pointer;
-  border-radius: var(--br-5);
+  padding: 0;
+  line-height: 1;
 }
-.status {
-  margin: 0;
-  padding: var(--padding-24);
+.noResults {
+  max-width: 480px;
+  margin: var(--gap-16) auto 0;
   font-size: var(--fs-16);
   font-weight: 500;
   letter-spacing: -0.06em;
   color: var(--Gray-3);
-  text-align: center;
 }
-.results {
-  max-height: 400px;
-  overflow-y: auto;
-}
-.resultItem {
+.resultsGrid {
   display: flex;
+  gap: var(--gap-24);
+  margin-top: var(--gap-40);
+}
+.viewAllWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--gap-32);
+}
+.viewAllButton {
+  display: inline-flex;
   align-items: center;
-  gap: var(--gap-16);
-  padding: var(--padding-12) var(--padding-24);
+  justify-content: center;
+  padding: var(--padding-16) var(--padding-48);
+  border: var(--border-3);
+  font-family: var(--font-inter);
+  font-size: var(--fs-16);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  color: var(--Black);
   text-decoration: none;
-  color: inherit;
-  transition: background-color 0.15s;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
 }
-.resultItem:hover {
-  background-color: var(--Gray-1);
-}
-.resultImage {
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-.resultInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.resultCategory {
-  font-size: var(--fs-12);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  color: var(--Gray-3);
-  text-transform: uppercase;
-}
-.resultName {
-  font-size: var(--fs-16);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  color: var(--Black);
-}
-.resultPriceRow {
-  display: flex;
-  gap: var(--gap-8);
-  align-items: center;
-}
-.resultPrice {
-  font-size: var(--fs-16);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  color: var(--Black);
-}
-.resultOriginalPrice {
-  font-size: var(--fs-16);
-  font-weight: 500;
-  letter-spacing: -0.06em;
-  color: var(--Gray-3);
-  text-decoration: line-through;
+.viewAllButton:hover {
+  background: var(--Black);
+  color: var(--White);
 }
