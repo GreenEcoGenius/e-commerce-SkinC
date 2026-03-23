@@ -10,6 +10,7 @@ const primaryFilters = [
   { label: "Women", value: "women" },
   { label: "Men", value: "men" },
   { label: "Accessories", value: "accessories" },
+  { label: "Rituals", value: "rituals" },
   { label: "ISYF Premium", value: "premium" },
   { label: "ISYF FEELS", value: "feels" },
 ];
@@ -29,6 +30,13 @@ const collectionSubFilters = [
 ];
 
 const accessorySubFilters = [
+  { label: "All", value: "all" },
+  { label: "Women", value: "women" },
+  { label: "Men", value: "men" },
+  { label: "Unisex", value: "unisex" },
+];
+
+const ritualsSubFilters = [
   { label: "All", value: "all" },
   { label: "Women", value: "women" },
   { label: "Men", value: "men" },
@@ -86,7 +94,8 @@ export default function ShopContent() {
   const isGenderFilter = primary === "women" || primary === "men";
   const isCollectionFilter = primary === "premium" || primary === "feels";
   const isAccessoryFilter = primary === "accessories";
-  const hasSubFilters = isGenderFilter || isCollectionFilter || isAccessoryFilter;
+  const isRitualsFilter = primary === "rituals";
+  const hasSubFilters = isGenderFilter || isCollectionFilter || isAccessoryFilter || isRitualsFilter;
 
   const currentSubFilters = isGenderFilter
     ? genderSubFilters
@@ -94,13 +103,23 @@ export default function ShopContent() {
       ? collectionSubFilters
       : isAccessoryFilter
         ? accessorySubFilters
-        : [];
+        : isRitualsFilter
+          ? ritualsSubFilters
+          : [];
 
   const filtered = useMemo(() => {
     if (primary === "all") return products;
 
     if (isAccessoryFilter) {
       let result = products.filter((p) => p.category === "accessories");
+      if (sub === "women" || sub === "men" || sub === "unisex") {
+        result = result.filter((p) => p.gender === sub);
+      }
+      return result;
+    }
+
+    if (isRitualsFilter) {
+      let result = products.filter((p) => p.category === "rituals");
       if (sub === "women" || sub === "men" || sub === "unisex") {
         result = result.filter((p) => p.gender === sub);
       }
@@ -126,7 +145,7 @@ export default function ShopContent() {
     }
 
     return products;
-  }, [primary, sub, isGenderFilter, isCollectionFilter, isAccessoryFilter]);
+  }, [primary, sub, isGenderFilter, isCollectionFilter, isAccessoryFilter, isRitualsFilter]);
 
   const title = useMemo(() => {
     const parts: string[] = [];
@@ -138,6 +157,13 @@ export default function ShopContent() {
       if (sub === "men") return "Accessories — Men";
       if (sub === "unisex") return "Accessories — Unisex";
       return "Accessories";
+    }
+
+    if (isRitualsFilter) {
+      if (sub === "women") return "Rituals — Women";
+      if (sub === "men") return "Rituals — Men";
+      if (sub === "unisex") return "Rituals — Unisex";
+      return "Rituals";
     }
 
     if (isGenderFilter) {
@@ -153,7 +179,7 @@ export default function ShopContent() {
     }
 
     return parts.join(" — ");
-  }, [primary, sub, isGenderFilter, isCollectionFilter, isAccessoryFilter]);
+  }, [primary, sub, isGenderFilter, isCollectionFilter, isAccessoryFilter, isRitualsFilter]);
 
   return (
     <section className={styles.content}>

@@ -18,6 +18,7 @@ export default function Footer() {
             <Link href="/shop?category=women" className={styles.columnLink}>Women</Link>
             <Link href="/shop?category=men" className={styles.columnLink}>Men</Link>
             <Link href="/shop?category=accessories" className={styles.columnLink}>Accessories</Link>
+            <Link href="/shop?category=rituals" className={styles.columnLink}>Rituals</Link>
             <Link href="/shop" className={styles.columnLink}>New Arrivals</Link>
           </div>
         </div>

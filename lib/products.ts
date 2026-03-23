@@ -3,7 +3,7 @@ export type Product = {
   name: string;
   price: number;
   image: string;
-  category: "women" | "men" | "accessories";
+  category: "women" | "men" | "accessories" | "rituals";
   collection?: "premium" | "feels";
   type?: "sweats" | "tshirts" | "limited" | "new";
   gender?: "women" | "men" | "unisex";
@@ -203,6 +203,66 @@ export const products: Product[] = [
     gender: "men",
     label: "Accessories — Men",
     description: "Essential warmth. Fine-knit merino wool beanie with subtle embroidered ISYF logo. Clean silhouette, comfortable fit. One size fits most.",
+  },
+  {
+    slug: "isyf-regenerating-serum",
+    name: "ISYF Regenerating Serum",
+    price: 52,
+    image: "/p-serum.jpg",
+    category: "rituals",
+    gender: "unisex",
+    label: "Rituals — Unisex",
+    description: "Revive your skin. A lightweight vitamin C and peptide serum that targets fine lines, dullness, and uneven texture. 30ml dropper bottle. Vegan, cruelty-free.",
+  },
+  {
+    slug: "isyf-hydrating-face-cream",
+    name: "ISYF Hydrating Face Cream",
+    price: 45,
+    image: "/p-face-cream.jpg",
+    category: "rituals",
+    gender: "women",
+    label: "Rituals — Women",
+    description: "Deep hydration, zero heaviness. Botanical-infused face cream with hyaluronic acid and shea butter. A daily ritual for radiant, supple skin. 50ml.",
+  },
+  {
+    slug: "isyf-lip-repair-balm",
+    name: "ISYF Lip Repair Balm",
+    price: 18,
+    image: "/p-lip-balm.jpg",
+    category: "rituals",
+    gender: "unisex",
+    label: "Rituals — Unisex",
+    description: "Nourish and protect. A rich, creamy lip balm with beeswax, vitamin E, and jojoba oil. Repairs dry, chapped lips instantly. Compact tin for on-the-go care.",
+  },
+  {
+    slug: "isyf-nourishing-body-oil",
+    name: "ISYF Nourishing Body Oil",
+    price: 59,
+    image: "/p-body-oil.jpg",
+    category: "rituals",
+    gender: "women",
+    label: "Rituals — Women",
+    description: "Glow from within. A luxurious dry body oil infused with jasmine, sandalwood, and amber. Fast-absorbing, deeply nourishing. 100ml glass bottle.",
+  },
+  {
+    slug: "isyf-aftershave-balm",
+    name: "ISYF After-Shave Balm",
+    price: 32,
+    image: "/p-aftershave.jpg",
+    category: "rituals",
+    gender: "men",
+    label: "Rituals — Men",
+    description: "Calm and repair. A soothing after-shave balm with aloe vera and chamomile extract. Hydrates, reduces irritation, and leaves skin feeling fresh. 80ml.",
+  },
+  {
+    slug: "isyf-botanical-face-mist",
+    name: "ISYF Botanical Face Mist",
+    price: 28,
+    image: "/p-face-mist.jpg",
+    category: "rituals",
+    gender: "unisex",
+    label: "Rituals — Unisex",
+    description: "Refresh anywhere. A fine botanical face mist with rose water and green tea extract. Hydrates, tones, and sets makeup. 100ml spray bottle.",
   },
 ];
 

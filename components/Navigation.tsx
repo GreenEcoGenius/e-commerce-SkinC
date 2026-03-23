@@ -95,6 +95,7 @@ export default function Navigation() {
             </div>
           ))}
           <Link href="/shop?category=accessories" className={styles.link}>Accessories</Link>
+          <Link href="/shop?category=rituals" className={styles.link}>Rituals</Link>
           <Link href="/lookbook" className={styles.link}>Lookbook</Link>
           <Link href="/our-story" className={styles.link}>Our Story</Link>
         </nav>
@@ -136,6 +137,7 @@ export default function Navigation() {
               </div>
             ))}
             <Link href="/shop?category=accessories" className={styles.mobileLink} onClick={closeAll}>Accessories</Link>
+            <Link href="/shop?category=rituals" className={styles.mobileLink} onClick={closeAll}>Rituals</Link>
             <Link href="/lookbook" className={styles.mobileLink} onClick={closeAll}>Lookbook</Link>
             <Link href="/our-story" className={styles.mobileLink} onClick={closeAll}>Our Story</Link>
             <div className={styles.mobileDivider} />
