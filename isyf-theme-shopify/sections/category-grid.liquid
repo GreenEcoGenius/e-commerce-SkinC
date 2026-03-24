@@ -1,0 +1,64 @@
+<section class="isyf-categories-grid">
+  {% for block in section.blocks %}
+    <div class="isyf-category-card" {{ block.shopify_attributes }}>
+      {% if block.settings.image != blank %}
+        <div class="isyf-category-card__image" style="background-image: url({{ block.settings.image | image_url: width: 800 }});"></div>
+      {% else %}
+        <div class="isyf-category-card__image" style="background-color: var(--Gray-3);"></div>
+      {% endif %}
+      <div class="isyf-category-card__overlay">
+        <h3 class="isyf-category-card__title">{{ block.settings.title }}</h3>
+        {% if block.settings.button_label != blank %}
+          {% render 'button', label: block.settings.button_label, variant: 'bright', href: block.settings.button_link %}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Category grid",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Category"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "DISCOVER"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category grid",
+      "blocks": [
+        { "type": "category", "settings": { "title": "ISYF PREMIUM", "button_label": "DISCOVER" } },
+        { "type": "category", "settings": { "title": "ISYF FEELS", "button_label": "DISCOVER" } },
+        { "type": "category", "settings": { "title": "ACCESSORIES", "button_label": "DISCOVER" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

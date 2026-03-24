@@ -1,0 +1,64 @@
+<section class="isyf-collections-grid">
+  {% for block in section.blocks %}
+    <div class="isyf-collection-card" {{ block.shopify_attributes }}>
+      {% if block.settings.image != blank %}
+        <div class="isyf-collection-card__image" style="background-image: url({{ block.settings.image | image_url: width: 1200 }});"></div>
+      {% else %}
+        <div class="isyf-collection-card__image" style="background-color: var(--Gray-3);"></div>
+      {% endif %}
+      <div class="isyf-collection-card__overlay">
+        <h2 class="isyf-collection-card__title">{{ block.settings.title }}</h2>
+        {% if block.settings.button_label != blank %}
+          {% render 'button', label: block.settings.button_label, variant: 'bright', href: block.settings.button_link %}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Two items grid",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Grid item",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "WOMEN"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "SHOP WOMEN"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two items grid",
+      "blocks": [
+        { "type": "item", "settings": { "title": "WOMEN", "button_label": "SHOP WOMEN" } },
+        { "type": "item", "settings": { "title": "MEN", "button_label": "SHOP MEN" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

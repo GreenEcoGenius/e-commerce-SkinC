@@ -1,0 +1,69 @@
+<section class="isyf-article-grid">
+  {% if section.settings.title != blank %}
+    <h2 class="isyf-article-grid__title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  <div class="isyf-article-grid__grid">
+    {% if section.settings.blog != blank %}
+      {% for article in blogs[section.settings.blog].articles limit: section.settings.articles_count %}
+        <a href="{{ article.url }}" class="isyf-article-card">
+          <div class="isyf-article-card__image">
+            {% if article.image %}
+              <img src="{{ article.image | image_url: width: 600 }}" alt="{{ article.image.alt | escape }}" loading="lazy">
+            {% endif %}
+          </div>
+          {% if article.tags.size > 0 %}
+            <span class="isyf-article-card__label">{{ article.tags.first }}</span>
+          {% endif %}
+          <h3 class="isyf-article-card__title">{{ article.title }}</h3>
+          <span class="isyf-article-card__link">Read more &rarr;</span>
+        </a>
+      {% endfor %}
+    {% else %}
+      {% for i in (1..3) %}
+        <div class="isyf-article-card">
+          <div class="isyf-article-card__image" style="background: var(--Gray-1);"></div>
+          <span class="isyf-article-card__label">Category</span>
+          <h3 class="isyf-article-card__title">Article title {{ i }}</h3>
+          <span class="isyf-article-card__link">Read more &rarr;</span>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Article grid",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "JOURNAL"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "articles_count",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "label": "Articles to show",
+      "default": 3
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article grid",
+      "settings": {
+        "title": "JOURNAL"
+      }
+    }
+  ]
+}
+{% endschema %}
