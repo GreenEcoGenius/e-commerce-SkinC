@@ -1,0 +1,12 @@
+{% comment %}
+  Renders an email input with submit arrow.
+  Usage:
+  {% render 'email-input' %}
+{% endcomment %}
+
+<div class="isyf-email-input">
+  <input class="isyf-email-input__field" placeholder="Enter your email" type="email" name="contact[email]" aria-label="Email">
+  <button type="submit" class="isyf-email-input__arrow" aria-label="Subscribe">
+    <img src="{{ 'arrow-right-alt.svg' | asset_url }}" alt="" width="16" height="16">
+  </button>
+</div>

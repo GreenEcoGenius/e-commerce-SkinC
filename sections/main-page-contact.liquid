@@ -1,0 +1,64 @@
+<div class="isyf-contact-page">
+  <main class="isyf-contact__content">
+    <h1 class="isyf-contact__title">{{ section.settings.title | default: 'Get in touch' }}</h1>
+    <p class="isyf-contact__subtitle">{{ section.settings.subtitle | default: 'Whether you have a question about sizing, shipping, or just want to say hello — reach out.' }}</p>
+
+    <div class="isyf-contact__layout">
+      <div class="isyf-contact__info-side">
+        {% for block in section.blocks %}
+          {% if block.type == 'info' %}
+            <div class="isyf-contact__info-block" {{ block.shopify_attributes }}>
+              <span class="isyf-contact__info-label">{{ block.settings.label }}</span>
+              <span class="isyf-contact__info-value">{{ block.settings.value }}</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      {% form 'contact' %}
+        <div class="isyf-contact__form">
+          {% if form.posted_successfully? %}
+            <p style="color: #4caf50; font-weight: 500;">Thank you for your message. We'll get back to you shortly.</p>
+          {% endif %}
+          {% if form.errors %}
+            <p style="color: var(--Red);">{{ form.errors | default_errors }}</p>
+          {% endif %}
+          <input class="isyf-contact__input" type="text" name="contact[name]" placeholder="Name" required>
+          <input class="isyf-contact__input" type="email" name="contact[email]" placeholder="Email" required>
+          <textarea class="isyf-contact__textarea" name="contact[body]" placeholder="Your message" required></textarea>
+          {% render 'button', label: 'SEND MESSAGE', variant: 'dark' %}
+        </div>
+      {% endform %}
+    </div>
+  </main>
+</div>
+
+{% schema %}
+{
+  "name": "Contact page",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Get in touch" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle", "default": "Whether you have a question about sizing, shipping, or just want to say hello — reach out." }
+  ],
+  "blocks": [
+    {
+      "type": "info",
+      "name": "Contact info",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Email" },
+        { "type": "text", "id": "value", "label": "Value", "default": "contact@iseeyoufeel.com" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact page",
+      "blocks": [
+        { "type": "info", "settings": { "label": "Email", "value": "contact@iseeyoufeel.com" } },
+        { "type": "info", "settings": { "label": "Instagram", "value": "@iseeyoufeel" } },
+        { "type": "info", "settings": { "label": "TikTok", "value": "@iseeyoufeel" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

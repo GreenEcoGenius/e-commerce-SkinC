@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "products_per_page": 12,
+        "show_filter_bar": true
+      },
+      "blocks": {
+        "f1": {
+          "type": "filter_link",
+          "settings": {
+            "label": "Women",
+            "collection_handle": "women"
+          }
+        },
+        "f2": {
+          "type": "filter_link",
+          "settings": {
+            "label": "Men",
+            "collection_handle": "men"
+          }
+        },
+        "f3": {
+          "type": "filter_link",
+          "settings": {
+            "label": "Accessories",
+            "collection_handle": "accessories"
+          }
+        }
+      },
+      "block_order": ["f1", "f2", "f3"]
+    },
+    "newsletter": {
+      "type": "subscribe",
+      "settings": {
+        "title": "JOIN THE FEELING",
+        "text": "Subscribe to receive exclusive drops, early access, and stories from the ISYF universe."
+      }
+    }
+  },
+  "order": ["main-collection", "newsletter"]
+}

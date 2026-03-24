@@ -1,0 +1,87 @@
+<section class="isyf-instagram">
+  <div class="isyf-instagram__header">
+    {% if section.settings.subtitle != blank %}
+      <span class="isyf-instagram__subtitle">{{ section.settings.subtitle }}</span>
+    {% endif %}
+    {% if section.settings.title != blank %}
+      <h2 class="isyf-instagram__title">
+        {% if section.settings.instagram_url != blank %}
+          <a href="{{ section.settings.instagram_url }}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">{{ section.settings.title }}</a>
+        {% else %}
+          {{ section.settings.title }}
+        {% endif %}
+      </h2>
+    {% endif %}
+  </div>
+
+  <div class="isyf-instagram__grid">
+    {% for block in section.blocks %}
+      <div class="isyf-instagram__image-wrapper" {{ block.shopify_attributes }}>
+        {% if block.settings.image != blank %}
+          <img class="isyf-instagram__image" src="{{ block.settings.image | image_url: width: 400 }}" alt="{{ block.settings.alt | default: 'Instagram' }}" loading="lazy">
+        {% else %}
+          <div class="isyf-instagram__image" style="background: var(--Gray-1); width: 100%; height: 100%;"></div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Instagram feed",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Follow us on Instagram"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "@ISEEYOUFEEL"
+    },
+    {
+      "type": "url",
+      "id": "instagram_url",
+      "label": "Instagram URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Instagram image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram feed",
+      "settings": {
+        "subtitle": "Follow us on Instagram",
+        "title": "@ISEEYOUFEEL"
+      },
+      "blocks": [
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" },
+        { "type": "image" }
+      ]
+    }
+  ]
+}
+{% endschema %}

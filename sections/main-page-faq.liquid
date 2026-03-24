@@ -1,0 +1,84 @@
+<div class="isyf-faq-page">
+  <main class="isyf-faq__content">
+    <h1 class="isyf-faq__page-title">{{ section.settings.title | default: 'Frequently Asked Questions' }}</h1>
+
+    <div class="isyf-faq__list">
+      {% assign current_category = '' %}
+      {% for block in section.blocks %}
+        {% if block.type == 'faq_item' %}
+          {% if block.settings.category != current_category %}
+            {% if current_category != '' %}
+              </div>
+            {% endif %}
+            {% assign current_category = block.settings.category %}
+            <div class="isyf-faq__section">
+              <span class="isyf-faq__category-label">{{ block.settings.category }}</span>
+          {% endif %}
+          <div class="isyf-faq__item" {{ block.shopify_attributes }}>
+            <details>
+              <summary class="isyf-faq__question">
+                <span>{{ block.settings.question }}</span>
+                <span class="isyf-faq__icon">+</span>
+              </summary>
+              <p class="isyf-faq__answer">{{ block.settings.answer }}</p>
+            </details>
+          </div>
+        {% endif %}
+      {% endfor %}
+      {% if current_category != '' %}
+        </div>
+      {% endif %}
+    </div>
+  </main>
+</div>
+
+<script>
+  document.querySelectorAll('.isyf-faq__item details').forEach(function(d) {
+    d.addEventListener('toggle', function() {
+      d.querySelector('.isyf-faq__icon').textContent = d.open ? '−' : '+';
+    });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "FAQ page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Page title",
+      "default": "Frequently Asked Questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ item",
+      "settings": [
+        { "type": "text", "id": "category", "label": "Category", "default": "Orders" },
+        { "type": "text", "id": "question", "label": "Question", "default": "What payment methods do you accept?" },
+        { "type": "textarea", "id": "answer", "label": "Answer", "default": "We accept Visa, Mastercard, PayPal, Apple Pay, Google Pay, and Klarna." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ page",
+      "blocks": [
+        { "type": "faq_item", "settings": { "category": "Orders", "question": "What payment methods do you accept?", "answer": "We accept Visa, Mastercard, PayPal, Apple Pay, Google Pay, and Klarna." } },
+        { "type": "faq_item", "settings": { "category": "Orders", "question": "Can I cancel my order?", "answer": "You can cancel within 2 hours of placing your order. After that, production begins and cancellation is no longer possible." } },
+        { "type": "faq_item", "settings": { "category": "Orders", "question": "Is my payment information secure?", "answer": "Yes. All transactions are encrypted with industry-standard SSL technology. We never store your full payment details." } },
+        { "type": "faq_item", "settings": { "category": "Shipping", "question": "Where do you ship?", "answer": "We ship worldwide. Free shipping on orders over €100 within Europe." } },
+        { "type": "faq_item", "settings": { "category": "Shipping", "question": "How long does delivery take?", "answer": "Europe: 5–10 business days. North America: 7–14 business days. Rest of world: 10–20 business days. Print-on-demand items may add 2–5 additional days." } },
+        { "type": "faq_item", "settings": { "category": "Shipping", "question": "Can I track my order?", "answer": "Yes. You'll receive a confirmation email with tracking information once your order ships." } },
+        { "type": "faq_item", "settings": { "category": "Returns", "question": "What is your return policy?", "answer": "We accept returns within 30 days of delivery. Items must be unworn, unwashed, and in original condition with tags attached." } },
+        { "type": "faq_item", "settings": { "category": "Returns", "question": "How do I return a product?", "answer": "Email contact@iseeyoufeel.com with your order number. We'll provide return instructions." } },
+        { "type": "faq_item", "settings": { "category": "Returns", "question": "When will I receive my refund?", "answer": "Refunds are processed within 5–7 business days after we receive your return." } },
+        { "type": "faq_item", "settings": { "category": "Sizing & Product", "question": "What sizes do you offer?", "answer": "XS to 3XL. Check our size guide for detailed measurements." } },
+        { "type": "faq_item", "settings": { "category": "Sizing & Product", "question": "Are your products eco-friendly?", "answer": "We work with responsible suppliers and our print-on-demand model eliminates overproduction and excess inventory." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

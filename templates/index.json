@@ -1,0 +1,192 @@
+{
+  "sections": {
+    "announcement": {
+      "type": "announcement-bar",
+      "settings": {
+        "text": "FREE WORLDWIDE SHIPPING ON ORDERS OVER €100"
+      }
+    },
+    "hero": {
+      "type": "hero-slideshow",
+      "settings": {
+        "title": "I SEE, YOU FEEL.",
+        "subtitle": "WEAR WHAT YOU FEEL",
+        "button_label": "EXPLORE",
+        "button_link": "/collections/all"
+      }
+    },
+    "two-grid": {
+      "type": "two-items-grid",
+      "blocks": {
+        "block1": {
+          "type": "item",
+          "settings": {
+            "title": "WOMEN",
+            "button_label": "SHOP WOMEN",
+            "button_link": "/collections/women"
+          }
+        },
+        "block2": {
+          "type": "item",
+          "settings": {
+            "title": "MEN",
+            "button_label": "SHOP MEN",
+            "button_link": "/collections/men"
+          }
+        }
+      },
+      "block_order": ["block1", "block2"]
+    },
+    "story": {
+      "type": "image-with-text",
+      "settings": {
+        "title": "What I see, you feel.",
+        "text": "Every piece we create carries an emotion. Every design tells a story. I SEE, YOU FEEL. is more than a brand — it's a way to express what words cannot.",
+        "link_label": "Read our story",
+        "link_url": "/pages/our-story"
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "THE SELECTION",
+        "subtitle": "Our curated picks",
+        "products_count": 4
+      }
+    },
+    "categories": {
+      "type": "category-grid",
+      "blocks": {
+        "cat1": {
+          "type": "category",
+          "settings": {
+            "title": "ISYF PREMIUM",
+            "button_label": "DISCOVER",
+            "button_link": "/collections/premium"
+          }
+        },
+        "cat2": {
+          "type": "category",
+          "settings": {
+            "title": "ISYF FEELS",
+            "button_label": "DISCOVER",
+            "button_link": "/collections/feels"
+          }
+        },
+        "cat3": {
+          "type": "category",
+          "settings": {
+            "title": "ACCESSORIES",
+            "button_label": "DISCOVER",
+            "button_link": "/collections/accessories"
+          }
+        }
+      },
+      "block_order": ["cat1", "cat2", "cat3"]
+    },
+    "full-banner": {
+      "type": "full-image-banner",
+      "settings": {
+        "subtitle": "Every design carries a message",
+        "title": "FEEL SOMETHING",
+        "button_label": "SHOP NOW",
+        "button_link": "/collections/all"
+      }
+    },
+    "values": {
+      "type": "values-columns",
+      "settings": {
+        "title": "OUR COMMITMENTS"
+      },
+      "blocks": {
+        "val1": {
+          "type": "value",
+          "settings": {
+            "title": "Crafted with emotion",
+            "text": "Each piece tells a story. Our designs are born from real feelings and meaningful messages."
+          }
+        },
+        "val2": {
+          "type": "value",
+          "settings": {
+            "title": "Eco-conscious",
+            "text": "We partner with responsible suppliers and choose sustainable materials whenever possible."
+          }
+        },
+        "val3": {
+          "type": "value",
+          "settings": {
+            "title": "Worldwide delivery",
+            "text": "Free shipping on orders over €100. We deliver to Europe, North America, and beyond."
+          }
+        }
+      },
+      "block_order": ["val1", "val2", "val3"]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "title": "WHAT THEY SAY"
+      },
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "The embroidered hoodie is the softest thing I've ever worn. The quality is unreal.",
+            "author": "Sara J."
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "I love that every piece has a message. ISYF FEELS tees are my go-to.",
+            "author": "Alex M."
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Finally a brand that gets it. Premium quality without the pretentious price tag.",
+            "author": "Kim L."
+          }
+        }
+      },
+      "block_order": ["t1", "t2", "t3"]
+    },
+    "instagram": {
+      "type": "instagram-feed",
+      "settings": {
+        "subtitle": "Follow us on Instagram",
+        "title": "@ISEEYOUFEEL"
+      },
+      "blocks": {
+        "ig1": { "type": "image" },
+        "ig2": { "type": "image" },
+        "ig3": { "type": "image" },
+        "ig4": { "type": "image" },
+        "ig5": { "type": "image" }
+      },
+      "block_order": ["ig1", "ig2", "ig3", "ig4", "ig5"]
+    },
+    "subscribe": {
+      "type": "subscribe",
+      "settings": {
+        "title": "JOIN THE FEELING",
+        "text": "Subscribe to receive exclusive drops, early access, and stories from the ISYF universe."
+      }
+    }
+  },
+  "order": [
+    "announcement",
+    "hero",
+    "two-grid",
+    "story",
+    "featured",
+    "categories",
+    "full-banner",
+    "values",
+    "testimonials",
+    "instagram",
+    "subscribe"
+  ]
+}

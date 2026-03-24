@@ -1,0 +1,110 @@
+<div class="isyf-cart-page">
+  <div class="isyf-cart__content">
+    <h1 class="isyf-cart__page-title">{{ section.settings.title | default: 'Your Bag' }}</h1>
+
+    {% if cart.item_count > 0 %}
+      {% assign shipping_threshold = 10000 %}
+      {% assign progress = cart.total_price | times: 100 | divided_by: shipping_threshold %}
+      {% if progress > 100 %}{% assign progress = 100 %}{% endif %}
+
+      <div class="isyf-cart__shipping-bar">
+        {% if cart.total_price >= shipping_threshold %}
+          <p class="isyf-cart__shipping-text">You qualify for free shipping!</p>
+        {% else %}
+          {% assign remaining = shipping_threshold | minus: cart.total_price %}
+          <p class="isyf-cart__shipping-text">{{ remaining | money }} away from free shipping</p>
+        {% endif %}
+        <div class="isyf-cart__shipping-track">
+          <div class="isyf-cart__shipping-progress" style="width: {{ progress }}%;"></div>
+        </div>
+      </div>
+
+      <div class="isyf-cart__layout">
+        <div class="isyf-cart__cart-side">
+          {% for item in cart.items %}
+            <div class="isyf-cart__item">
+              <a href="{{ item.url }}">
+                {% if item.image %}
+                  <img class="isyf-cart__item-image" src="{{ item.image | image_url: width: 240 }}" alt="{{ item.title | escape }}" loading="lazy">
+                {% endif %}
+              </a>
+              <div class="isyf-cart__item-details">
+                <span class="isyf-cart__item-name">{{ item.product.title }}</span>
+                {% if item.variant.title != 'Default Title' %}
+                  <span class="isyf-cart__item-size">{{ item.variant.title }}</span>
+                {% endif %}
+                <div class="isyf-cart__item-actions">
+                  <div class="isyf-cart__qty-picker">
+                    <a href="{{ routes.cart_change_url }}?id={{ item.key }}&quantity={{ item.quantity | minus: 1 }}" class="isyf-cart__qty-button">−</a>
+                    <span class="isyf-cart__qty-value">{{ item.quantity }}</span>
+                    <a href="{{ routes.cart_change_url }}?id={{ item.key }}&quantity={{ item.quantity | plus: 1 }}" class="isyf-cart__qty-button">+</a>
+                  </div>
+                  <a href="{{ routes.cart_change_url }}?id={{ item.key }}&quantity=0" class="isyf-cart__delete-button">&times;</a>
+                </div>
+              </div>
+              <div class="isyf-cart__item-price-col">
+                {% if item.original_line_price != item.final_line_price %}
+                  <span class="isyf-cart__item-original-price">{{ item.original_line_price | money }}</span>
+                {% endif %}
+                <span class="isyf-cart__item-price">{{ item.final_line_price | money }}</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="isyf-cart__summary-side">
+          <h2 class="isyf-cart__summary-title">Order summary</h2>
+          <div class="isyf-cart__summary-row">
+            <span class="isyf-cart__summary-label">Subtotal</span>
+            <span class="isyf-cart__summary-value">{{ cart.total_price | money }}</span>
+          </div>
+          <div class="isyf-cart__summary-row">
+            <span class="isyf-cart__summary-label">Shipping</span>
+            <span class="isyf-cart__summary-value">
+              {% if cart.total_price >= shipping_threshold %}
+                FREE
+              {% else %}
+                <span class="isyf-cart__summary-subtext">Calculated at checkout</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="isyf-cart__summary-divider"></div>
+          <div class="isyf-cart__summary-total">
+            <span class="isyf-cart__total-label">Total</span>
+            <span class="isyf-cart__total-value">{{ cart.total_price | money }}</span>
+          </div>
+
+          <form action="{{ routes.cart_url }}" method="post">
+            <button type="submit" name="checkout" class="isyf-cart__checkout-button">CHECKOUT</button>
+          </form>
+
+          <p class="isyf-cart__terms-text">
+            By proceeding, you agree to our <a href="/pages/terms-of-service">Terms of Service</a> and <a href="/pages/privacy-policy">Privacy Policy</a>.
+          </p>
+        </div>
+      </div>
+    {% else %}
+      <p class="isyf-cart__empty-text">Your bag is empty.</p>
+      {% render 'button', label: 'CONTINUE SHOPPING', variant: 'dark', href: '/collections/all' %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Your Bag"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cart page"
+    }
+  ]
+}
+{% endschema %}

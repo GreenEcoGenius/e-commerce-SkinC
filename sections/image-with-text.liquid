@@ -1,0 +1,54 @@
+<section class="isyf-brand-story">
+  <div class="isyf-brand-story__content">
+    {% if section.settings.title != blank %}
+      <h2 class="isyf-brand-story__title">{{ section.settings.title }}</h2>
+    {% endif %}
+    {% if section.settings.text != blank %}
+      <p class="isyf-brand-story__text">{{ section.settings.text }}</p>
+    {% endif %}
+    {% if section.settings.link_label != blank %}
+      <a href="{{ section.settings.link_url }}" class="isyf-text-link">{{ section.settings.link_label }} &rarr;</a>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What I see, you feel."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Every piece we create carries an emotion. Every design tells a story. I SEE, YOU FEEL. is more than a brand — it's a way to express what words cannot."
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label",
+      "default": "Read our story"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text",
+      "settings": {
+        "title": "What I see, you feel.",
+        "text": "Every piece we create carries an emotion. Every design tells a story. I SEE, YOU FEEL. is more than a brand — it's a way to express what words cannot.",
+        "link_label": "Read our story"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,44 @@
+<section class="isyf-recommendations">
+  {% if section.settings.title != blank %}
+    <h2 class="isyf-recommendations__title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if recommendations.products_count > 0 %}
+    <div class="isyf-recommendations__row">
+      {% for product in recommendations.products limit: section.settings.products_count %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "You might also like"
+    },
+    {
+      "type": "range",
+      "id": "products_count",
+      "min": 2,
+      "max": 8,
+      "step": 1,
+      "label": "Products to show",
+      "default": 4
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product recommendations",
+      "settings": {
+        "title": "You might also like"
+      }
+    }
+  ]
+}
+{% endschema %}

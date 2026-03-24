@@ -1,0 +1,38 @@
+<div class="isyf-legal-page">
+  <div class="isyf-legal__content" style="max-width: 720px;">
+    {% if article.image %}
+      <div style="margin-bottom: 32px;">
+        <img src="{{ article.image | image_url: width: 1200 }}" alt="{{ article.image.alt | escape }}" style="width: 100%; aspect-ratio: 16/9; object-fit: cover;">
+      </div>
+    {% endif %}
+
+    {% if article.tags.size > 0 %}
+      <span style="font-size: 12px; font-weight: 400; letter-spacing: 0.2em; text-transform: uppercase; color: var(--Gray-3); margin-bottom: 8px; display: block;">{{ article.tags | join: ', ' }}</span>
+    {% endif %}
+
+    <h1 class="isyf-legal__title">{{ article.title }}</h1>
+
+    <p style="font-size: 13px; font-weight: 300; color: var(--Gray-3); margin: 0 0 32px;">
+      {{ article.published_at | date: '%B %d, %Y' }}
+      {% if article.author != blank %} &middot; {{ article.author }}{% endif %}
+    </p>
+
+    <div class="isyf-legal__paragraph">{{ article.content }}</div>
+
+    <div style="margin-top: 48px;">
+      {% render 'button', label: 'BACK TO JOURNAL', variant: 'dark', href: article.blog.url %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Article page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Article page"
+    }
+  ]
+}
+{% endschema %}

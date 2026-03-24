@@ -1,0 +1,85 @@
+<div class="isyf-lookbook-page">
+  <section class="isyf-lookbook__hero">
+    {% if section.settings.hero_label != blank %}
+      <span class="isyf-lookbook__hero-label">{{ section.settings.hero_label }}</span>
+    {% endif %}
+    <h1 class="isyf-lookbook__hero-title">{{ section.settings.hero_title | default: 'LOOKBOOK' }}</h1>
+    {% if section.settings.hero_subtitle != blank %}
+      <p class="isyf-lookbook__hero-subtitle">{{ section.settings.hero_subtitle }}</p>
+    {% endif %}
+  </section>
+
+  <section class="isyf-lookbook__grid">
+    {% for block in section.blocks %}
+      {% if block.type == 'lookbook_image' %}
+        <div class="isyf-lookbook__grid-item{% if block.settings.span == 'wide' %} isyf-lookbook__grid-item--wide{% elsif block.settings.span == 'full' %} isyf-lookbook__grid-item--full{% endif %}" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | image_url: width: 1200 }}" alt="{{ block.settings.alt | escape }}" class="isyf-lookbook__grid-image" loading="lazy">
+          {% else %}
+            <div class="isyf-lookbook__grid-image" style="background: var(--Gray-1); width: 100%; height: 100%; position: absolute; inset: 0;"></div>
+          {% endif %}
+          {% if block.settings.caption != blank %}
+            <div class="isyf-lookbook__grid-caption">
+              <span>{{ block.settings.caption }}</span>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  {% if section.settings.quote != blank %}
+    <section class="isyf-lookbook__quote">
+      <p class="isyf-lookbook__quote-text">&ldquo;{{ section.settings.quote }}&rdquo;</p>
+    </section>
+  {% endif %}
+
+  <section class="isyf-lookbook__cta">
+    {% if section.settings.cta_label != blank %}
+      {% render 'button', label: section.settings.cta_label, variant: 'dark', href: section.settings.cta_link %}
+    {% endif %}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "Lookbook page",
+  "settings": [
+    { "type": "text", "id": "hero_label", "label": "Hero label", "default": "SS26 COLLECTION" },
+    { "type": "text", "id": "hero_title", "label": "Hero title", "default": "LOOKBOOK" },
+    { "type": "text", "id": "hero_subtitle", "label": "Hero subtitle", "default": "See the vision. Feel the collection." },
+    { "type": "textarea", "id": "quote", "label": "Quote", "default": "Every piece carries a feeling. Every look tells a story." },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "SHOP THE COLLECTION" },
+    { "type": "url", "id": "cta_link", "label": "CTA link", "default": "/collections/all" }
+  ],
+  "blocks": [
+    {
+      "type": "lookbook_image",
+      "name": "Lookbook image",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "alt", "label": "Alt text" },
+        { "type": "text", "id": "caption", "label": "Caption" },
+        { "type": "select", "id": "span", "label": "Grid span", "options": [
+          { "value": "normal", "label": "Normal" },
+          { "value": "wide", "label": "Wide (2 columns)" },
+          { "value": "full", "label": "Full width (3 columns)" }
+        ], "default": "normal" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Lookbook page",
+      "blocks": [
+        { "type": "lookbook_image", "settings": { "caption": "ISYF PREMIUM — AW26", "span": "wide" } },
+        { "type": "lookbook_image", "settings": { "caption": "FEEL SOMETHING" } },
+        { "type": "lookbook_image", "settings": { "caption": "STILL HERE" } },
+        { "type": "lookbook_image", "settings": { "caption": "WEAR WHAT YOU FEEL" } },
+        { "type": "lookbook_image", "settings": { "caption": "THE ESSENTIALS" } },
+        { "type": "lookbook_image", "settings": { "caption": "I SEE, YOU FEEL.", "span": "full" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
