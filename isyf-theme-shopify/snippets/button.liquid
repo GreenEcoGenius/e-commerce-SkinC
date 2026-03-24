@@ -1,0 +1,22 @@
+{% comment %}
+  Renders a button or link styled as button.
+  Accepts:
+  - label: {String} Button text
+  - variant: {String} 'bright', 'dark', or 'solid' (default: 'bright')
+  - href: {String} optional URL (renders as <a>, otherwise <button>)
+  - full_width: {Boolean} Full width
+  Usage:
+  {% render 'button', label: 'EXPLORE', variant: 'bright', href: '/collections/all' %}
+{% endcomment %}
+
+{% assign btn_variant = variant | default: 'bright' %}
+{% assign btn_classes = 'isyf-btn isyf-btn--' | append: btn_variant %}
+{% if full_width %}
+  {% assign btn_classes = btn_classes | append: ' isyf-btn--full-width' %}
+{% endif %}
+
+{% if href != blank %}
+  <a href="{{ href }}" class="{{ btn_classes }}">{{ label }}</a>
+{% else %}
+  <button type="submit" class="{{ btn_classes }}">{{ label }}</button>
+{% endif %}
