@@ -1,0 +1,101 @@
+<div class="isyf-about-page">
+  <section
+    class="isyf-about__hero"
+    {% if section.settings.hero_image != blank %}
+      style="background-image: url({{ section.settings.hero_image | image_url: width: 2000 }});"
+    {% endif %}
+  >
+    <span class="isyf-about__hero-subtitle">{{ section.settings.hero_subtitle | default: 'Our Story' }}</span>
+    <h1 class="isyf-about__hero-title">{{ section.settings.hero_title | default: 'I SEE, YOU FEEL.' }}</h1>
+  </section>
+
+  <section class="isyf-about__story-section">
+    <h2 class="isyf-about__story-title">{{ section.settings.story_title | default: 'Timeless by design, born from emotion' }}</h2>
+    {% for block in section.blocks %}
+      {% if block.type == 'story_paragraph' %}
+        <p class="isyf-about__story-text" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  {% if section.settings.collection1_name != blank or section.settings.collection2_name != blank %}
+    <section class="isyf-about__collections-section">
+      {% if section.settings.collection1_name != blank %}
+        <div class="isyf-about__collection-block">
+          <h3 class="isyf-about__collection-name">{{ section.settings.collection1_name }}</h3>
+          <p class="isyf-about__collection-desc">{{ section.settings.collection1_desc }}</p>
+        </div>
+      {% endif %}
+      {% if section.settings.collection2_name != blank %}
+        <div class="isyf-about__collection-block">
+          <h3 class="isyf-about__collection-name">{{ section.settings.collection2_name }}</h3>
+          <p class="isyf-about__collection-desc">{{ section.settings.collection2_desc }}</p>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  <section class="isyf-about__values-section">
+    {% for block in section.blocks %}
+      {% if block.type == 'value' %}
+        <div class="isyf-about__value-card" {{ block.shopify_attributes }}>
+          <h3 class="isyf-about__value-title">{{ block.settings.title }}</h3>
+          <p class="isyf-about__value-text">{{ block.settings.text }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
+
+  <section class="isyf-about__cta-section">
+    {% if section.settings.cta_label != blank %}
+      {% render 'button', label: section.settings.cta_label, variant: 'dark', href: section.settings.cta_link %}
+    {% endif %}
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "About page",
+  "settings": [
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image" },
+    { "type": "text", "id": "hero_subtitle", "label": "Hero subtitle", "default": "Our Story" },
+    { "type": "text", "id": "hero_title", "label": "Hero title", "default": "I SEE, YOU FEEL." },
+    { "type": "text", "id": "story_title", "label": "Story title", "default": "Timeless by design, born from emotion" },
+    { "type": "text", "id": "collection1_name", "label": "Collection 1 name", "default": "ISYF Premium" },
+    { "type": "textarea", "id": "collection1_desc", "label": "Collection 1 description", "default": "Embroidered essentials crafted with precision. Premium fabrics, minimal design, maximum impact. For those who speak through subtlety." },
+    { "type": "text", "id": "collection2_name", "label": "Collection 2 name", "default": "ISYF FEELS" },
+    { "type": "textarea", "id": "collection2_desc", "label": "Collection 2 description", "default": "Message-driven streetwear that says what you feel. Bold graphics, expressive prints, unapologetic style. For those who wear their emotions." },
+    { "type": "text", "id": "cta_label", "label": "CTA button label", "default": "EXPLORE THE COLLECTIONS" },
+    { "type": "url", "id": "cta_link", "label": "CTA button link", "default": "/collections/all" }
+  ],
+  "blocks": [
+    {
+      "type": "story_paragraph",
+      "name": "Story paragraph",
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Text" }
+      ]
+    },
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Emotion-driven design" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Each piece tells a story. Our designs are born from real feelings and meaningful messages that resonate." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About page",
+      "blocks": [
+        { "type": "story_paragraph", "settings": { "text": "I SEE, YOU FEEL. was born in Tallinn, Estonia from a simple belief: fashion should make you feel something. Every piece we create carries a message, a mood, an emotion that connects the wearer to something deeper." } },
+        { "type": "story_paragraph", "settings": { "text": "What started as a creative vision by GreenEcoGenius OÜ has grown into a brand with two distinct collections — each speaking to a different side of self-expression." } },
+        { "type": "value", "settings": { "title": "Emotion-driven design", "text": "Each piece tells a story. Our designs are born from real feelings and meaningful messages that resonate." } },
+        { "type": "value", "settings": { "title": "Eco-conscious", "text": "We work with responsible suppliers and our print-on-demand model eliminates overproduction and waste." } },
+        { "type": "value", "settings": { "title": "Direct to you", "text": "No middlemen. Premium quality at fair prices, shipped worldwide with free delivery over €100." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

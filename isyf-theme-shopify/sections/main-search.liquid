@@ -1,0 +1,57 @@
+<div class="isyf-shop-page">
+  <div class="isyf-shop__content">
+    <h1 class="isyf-shop__title">
+      {% if search.performed %}
+        Search results for &ldquo;{{ search.terms | escape }}&rdquo;
+      {% else %}
+        Search
+      {% endif %}
+    </h1>
+
+    <form action="{{ routes.search_url }}" method="get" style="max-width: 480px; margin: 0 auto 48px; display: flex; align-items: center; gap: 16px; border-bottom: var(--border-3); padding-bottom: 8px;">
+      <input type="text" name="q" value="{{ search.terms | escape }}" placeholder="Search..." style="flex: 1; border: none; outline: none; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 300; color: var(--Black); background: transparent;">
+      <button type="submit" style="background: none; border: none; cursor: pointer; font-size: 18px; color: var(--Black);">&#8594;</button>
+    </form>
+
+    {% if search.performed %}
+      {% if search.results_count > 0 %}
+        <div class="isyf-shop__product-grid">
+          {% for item in search.results %}
+            {% if item.object_type == 'product' %}
+              {% render 'product-card', product: item %}
+            {% elsif item.object_type == 'article' %}
+              <a href="{{ item.url }}" class="isyf-article-card">
+                {% if item.image %}
+                  <div class="isyf-article-card__image">
+                    <img src="{{ item.image | image_url: width: 400 }}" alt="{{ item.title | escape }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                  </div>
+                {% endif %}
+                <h3 class="isyf-article-card__title">{{ item.title }}</h3>
+                <span class="isyf-article-card__link">Read more &rarr;</span>
+              </a>
+            {% elsif item.object_type == 'page' %}
+              <a href="{{ item.url }}" class="isyf-article-card">
+                <h3 class="isyf-article-card__title">{{ item.title }}</h3>
+                <p style="font-size: 14px; font-weight: 300; color: var(--Gray-3);">{{ item.content | strip_html | truncate: 120 }}</p>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="isyf-shop__empty-text">No results found for &ldquo;{{ search.terms | escape }}&rdquo;. Try a different search term.</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Search page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Search page"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,61 @@
+<section class="isyf-values">
+  {% if section.settings.title != blank %}
+    <h2 class="isyf-values__title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  <div class="isyf-values__grid">
+    {% for block in section.blocks %}
+      <div class="isyf-value-card" {{ block.shopify_attributes }}>
+        <h3 class="isyf-value-card__title">{{ block.settings.title }}</h3>
+        <p class="isyf-value-card__text">{{ block.settings.text }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Values columns",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "OUR COMMITMENTS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "value",
+      "name": "Value",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Crafted with emotion"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Description",
+          "default": "Each piece tells a story. Our designs are born from real feelings and meaningful messages."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Values columns",
+      "settings": {
+        "title": "OUR COMMITMENTS"
+      },
+      "blocks": [
+        { "type": "value", "settings": { "title": "Crafted with emotion", "text": "Each piece tells a story. Our designs are born from real feelings and meaningful messages." } },
+        { "type": "value", "settings": { "title": "Eco-conscious", "text": "We partner with responsible suppliers and choose sustainable materials whenever possible." } },
+        { "type": "value", "settings": { "title": "Worldwide delivery", "text": "Free shipping on orders over €100. We deliver to Europe, North America, and beyond." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

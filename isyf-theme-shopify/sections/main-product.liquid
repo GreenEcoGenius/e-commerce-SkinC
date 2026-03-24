@@ -1,0 +1,168 @@
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="isyf-product-page">
+  <div class="isyf-product__section">
+    <div class="isyf-product__container">
+      <div class="isyf-product__thumbnails">
+        <div class="isyf-product__main-image">
+          {% if product.featured_image %}
+            <img class="isyf-product__main-img" src="{{ product.featured_image | image_url: width: 1000 }}" alt="{{ product.featured_image.alt | default: product.title | escape }}" id="main-product-image">
+          {% else %}
+            {{ 'product-1' | placeholder_svg_tag: 'isyf-product__main-img' }}
+          {% endif %}
+        </div>
+        {% if product.images.size > 1 %}
+          <div style="display: flex; gap: 8px; margin-top: 8px; overflow-x: auto;">
+            {% for image in product.images %}
+              <img
+                src="{{ image | image_url: width: 200 }}"
+                alt="{{ image.alt | escape }}"
+                style="width: 80px; height: 100px; object-fit: cover; cursor: pointer; border: 1px solid var(--Gray-2);"
+                onclick="document.getElementById('main-product-image').src='{{ image | image_url: width: 1000 }}'"
+                loading="lazy"
+              >
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="isyf-product__details">
+        {% if product.type != blank %}
+          <span class="isyf-product__category">{{ product.type }}</span>
+        {% endif %}
+
+        <h1 class="isyf-product__name">{{ product.title }}</h1>
+
+        <span class="isyf-product__price">
+          {% if current_variant.compare_at_price > current_variant.price %}
+            <s style="color: var(--Gray-3);">{{ current_variant.compare_at_price | money }}</s>
+          {% endif %}
+          {{ current_variant.price | money }}
+        </span>
+
+        {% if product.description != blank %}
+          <div class="isyf-product__description">{{ product.description }}</div>
+        {% endif %}
+
+        {% form 'product', product %}
+          <input type="hidden" name="id" value="{{ current_variant.id }}" id="variant-id">
+
+          {% for option in product.options_with_values %}
+            <div class="isyf-product__option-group">
+              <span class="isyf-product__option-label">{{ option.name }}</span>
+              {% if option.name == 'Size' %}
+                <div class="isyf-product__size-options">
+                  {% for value in option.values %}
+                    <button
+                      type="button"
+                      class="isyf-product__size-option{% if option.selected_value == value %} isyf-product__size-option--active{% endif %}"
+                      data-option-name="{{ option.name }}"
+                      data-option-value="{{ value }}"
+                      onclick="this.parentElement.querySelectorAll('.isyf-product__size-option').forEach(function(el){el.classList.remove('isyf-product__size-option--active')});this.classList.add('isyf-product__size-option--active');"
+                    >
+                      {{ value }}
+                    </button>
+                  {% endfor %}
+                </div>
+              {% else %}
+                <div class="isyf-product__size-options">
+                  {% for value in option.values %}
+                    <button
+                      type="button"
+                      class="isyf-product__size-option{% if option.selected_value == value %} isyf-product__size-option--active{% endif %}"
+                      data-option-name="{{ option.name }}"
+                      data-option-value="{{ value }}"
+                      onclick="this.parentElement.querySelectorAll('.isyf-product__size-option').forEach(function(el){el.classList.remove('isyf-product__size-option--active')});this.classList.add('isyf-product__size-option--active');"
+                    >
+                      {{ value }}
+                    </button>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+
+          <div class="isyf-product__option-group">
+            <span class="isyf-product__option-label">Quantity</span>
+            <div class="isyf-product__qty-picker">
+              <button type="button" class="isyf-product__qty-button" onclick="var q=document.getElementById('qty');var v=parseInt(q.value);if(v>1){q.value=v-1;document.getElementById('qty-display').textContent=v-1;}">−</button>
+              <span class="isyf-product__qty-value" id="qty-display">1</span>
+              <button type="button" class="isyf-product__qty-button" onclick="var q=document.getElementById('qty');var v=parseInt(q.value);q.value=v+1;document.getElementById('qty-display').textContent=v+1;">+</button>
+            </div>
+            <input type="hidden" name="quantity" value="1" id="qty">
+          </div>
+
+          <button type="submit" class="isyf-btn isyf-btn--solid isyf-btn--full-width isyf-product__add-to-bag">
+            {% if current_variant.available %}
+              ADD TO BAG
+            {% else %}
+              SOLD OUT
+            {% endif %}
+          </button>
+        {% endform %}
+
+        <p class="isyf-product__free-shipping">{{ section.settings.free_shipping_text | default: 'Free shipping over €100' }}</p>
+
+        <div class="isyf-product__accordion-list">
+          {% for block in section.blocks %}
+            {% if block.type == 'accordion' %}
+              <details {{ block.shopify_attributes }}>
+                <summary class="isyf-product__accordion">
+                  <span>{{ block.settings.title }}</span>
+                  <span>+</span>
+                </summary>
+                <div class="isyf-product__accordion-content">
+                  {{ block.settings.content }}
+                </div>
+              </details>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product page",
+  "settings": [
+    {
+      "type": "text",
+      "id": "free_shipping_text",
+      "label": "Free shipping text",
+      "default": "Free shipping over €100"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "accordion",
+      "name": "Accordion tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Description"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content",
+          "default": "<p>Product details go here.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product page",
+      "blocks": [
+        { "type": "accordion", "settings": { "title": "Description" } },
+        { "type": "accordion", "settings": { "title": "Shipping" } },
+        { "type": "accordion", "settings": { "title": "Size Guide" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
