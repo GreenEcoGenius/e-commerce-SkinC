@@ -1,0 +1,47 @@
+<div class="isyf-journal-page">
+  <main class="isyf-journal__content">
+    <h1 class="isyf-journal__page-title">{{ blog.title | default: 'Journal' }}</h1>
+
+    {% paginate blog.articles by 9 %}
+      <div class="isyf-journal__articles-grid">
+        {% for article in blog.articles %}
+          <a href="{{ article.url }}" class="isyf-article-card">
+            <div class="isyf-article-card__image">
+              {% if article.image %}
+                <img src="{{ article.image | image_url: width: 600 }}" alt="{{ article.image.alt | escape }}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+              {% endif %}
+            </div>
+            {% if article.tags.size > 0 %}
+              <span class="isyf-article-card__label">{{ article.tags.first }}</span>
+            {% endif %}
+            <h3 class="isyf-article-card__title">{{ article.title }}</h3>
+            <span class="isyf-article-card__link">Read more &rarr;</span>
+          </a>
+        {% endfor %}
+      </div>
+
+      {% if paginate.pages > 1 %}
+        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 48px;">
+          {% if paginate.previous %}
+            <a href="{{ paginate.previous.url }}" class="isyf-btn isyf-btn--dark">&larr; Previous</a>
+          {% endif %}
+          {% if paginate.next %}
+            <a href="{{ paginate.next.url }}" class="isyf-btn isyf-btn--dark">Next &rarr;</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endpaginate %}
+  </main>
+</div>
+
+{% schema %}
+{
+  "name": "Blog page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Blog page"
+    }
+  ]
+}
+{% endschema %}

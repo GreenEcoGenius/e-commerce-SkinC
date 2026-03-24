@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main-article": {
+      "type": "main-article",
+      "settings": {}
+    },
+    "instagram": {
+      "type": "instagram-feed",
+      "settings": {
+        "subtitle": "Follow us on Instagram",
+        "title": "@ISEEYOUFEEL"
+      },
+      "blocks": {
+        "ig1": { "type": "image" },
+        "ig2": { "type": "image" },
+        "ig3": { "type": "image" },
+        "ig4": { "type": "image" },
+        "ig5": { "type": "image" }
+      },
+      "block_order": ["ig1", "ig2", "ig3", "ig4", "ig5"]
+    }
+  },
+  "order": ["main-article", "instagram"]
+}

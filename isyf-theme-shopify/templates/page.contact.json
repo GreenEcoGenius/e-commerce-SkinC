@@ -1,0 +1,33 @@
+{
+  "sections": {
+    "main-contact": {
+      "type": "main-page-contact",
+      "settings": {
+        "title": "Get in touch",
+        "subtitle": "Whether you have a question about sizing, shipping, or just want to say hello — reach out."
+      },
+      "blocks": {
+        "i1": { "type": "info", "settings": { "label": "Email", "value": "contact@iseeyoufeel.com" } },
+        "i2": { "type": "info", "settings": { "label": "Instagram", "value": "@iseeyoufeel" } },
+        "i3": { "type": "info", "settings": { "label": "TikTok", "value": "@iseeyoufeel" } }
+      },
+      "block_order": ["i1", "i2", "i3"]
+    },
+    "instagram": {
+      "type": "instagram-feed",
+      "settings": {
+        "subtitle": "Follow us on Instagram",
+        "title": "@ISEEYOUFEEL"
+      },
+      "blocks": {
+        "ig1": { "type": "image" },
+        "ig2": { "type": "image" },
+        "ig3": { "type": "image" },
+        "ig4": { "type": "image" },
+        "ig5": { "type": "image" }
+      },
+      "block_order": ["ig1", "ig2", "ig3", "ig4", "ig5"]
+    }
+  },
+  "order": ["main-contact", "instagram"]
+}

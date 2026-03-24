@@ -1,0 +1,87 @@
+<section class="isyf-section">
+  {% if section.settings.title != blank %}
+    <h2 class="isyf-section__title">{{ section.settings.title }}</h2>
+  {% endif %}
+  {% if section.settings.subtitle != blank %}
+    <p class="isyf-section__subtitle">{{ section.settings.subtitle }}</p>
+  {% endif %}
+
+  <div class="isyf-products-row">
+    {% if section.settings.collection != blank %}
+      {% for product in section.settings.collection.products limit: section.settings.products_count %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    {% else %}
+      {% for i in (1..4) %}
+        <div class="isyf-product-card">
+          <div class="isyf-product-card__image-wrapper">
+            {{ 'product-' | append: i | placeholder_svg_tag: 'isyf-product-card__image' }}
+          </div>
+          <div class="isyf-product-card__info">
+            <span class="isyf-product-card__name">Product {{ i }}</span>
+            <span class="isyf-product-card__price">€0.00</span>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  {% if section.settings.button_label != blank %}
+    <div style="margin-top: 48px;">
+      {% render 'button', label: section.settings.button_label, variant: 'dark', href: section.settings.button_link %}
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "THE SELECTION"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Our curated picks"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_count",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "label": "Products to show",
+      "default": 4
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured collection",
+      "settings": {
+        "title": "THE SELECTION",
+        "subtitle": "Our curated picks"
+      }
+    }
+  ]
+}
+{% endschema %}

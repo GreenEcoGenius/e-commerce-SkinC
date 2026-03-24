@@ -1,0 +1,41 @@
+{% comment %}
+  Renders a product card.
+  Accepts:
+  - product: {Object} Product Liquid object
+  Usage:
+  {% render 'product-card', product: product %}
+{% endcomment %}
+
+<a href="{{ product.url }}" class="isyf-product-card">
+  <div class="isyf-product-card__image-wrapper">
+    {% if product.featured_image %}
+      <img
+        class="isyf-product-card__image"
+        src="{{ product.featured_image | image_url: width: 600 }}"
+        alt="{{ product.featured_image.alt | default: product.title | escape }}"
+        loading="lazy"
+        width="600"
+        height="800"
+      >
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'isyf-product-card__image' }}
+    {% endif %}
+
+    {% if product.compare_at_price > product.price %}
+      {% render 'badge', text: 'Sale', variant: 'red', floating: true %}
+    {% endif %}
+  </div>
+
+  <div class="isyf-product-card__info">
+    {% if product.type != blank %}
+      <span class="isyf-product-card__label">{{ product.type }}</span>
+    {% endif %}
+    <span class="isyf-product-card__name">{{ product.title }}</span>
+    <div class="isyf-product-card__price-row">
+      {% if product.compare_at_price > product.price %}
+        <span class="isyf-product-card__original-price">{{ product.compare_at_price | money }}</span>
+      {% endif %}
+      <span class="isyf-product-card__price">{{ product.price | money }}</span>
+    </div>
+  </div>
+</a>

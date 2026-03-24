@@ -1,0 +1,61 @@
+<section class="isyf-testimonials">
+  {% if section.settings.title != blank %}
+    <h2 class="isyf-testimonials__title">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  <div class="isyf-testimonials__grid">
+    {% for block in section.blocks %}
+      <div class="isyf-testimonial-card" {{ block.shopify_attributes }}>
+        <p class="isyf-testimonial-card__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
+        <span class="isyf-testimonial-card__author">{{ block.settings.author }}</span>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "WHAT THEY SAY"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "The embroidered hoodie is the softest thing I've ever worn. The quality is unreal."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Sara J."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "settings": {
+        "title": "WHAT THEY SAY"
+      },
+      "blocks": [
+        { "type": "testimonial", "settings": { "quote": "The embroidered hoodie is the softest thing I've ever worn. The quality is unreal.", "author": "Sara J." } },
+        { "type": "testimonial", "settings": { "quote": "I love that every piece has a message. ISYF FEELS tees are my go-to.", "author": "Alex M." } },
+        { "type": "testimonial", "settings": { "quote": "Finally a brand that gets it. Premium quality without the pretentious price tag.", "author": "Kim L." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

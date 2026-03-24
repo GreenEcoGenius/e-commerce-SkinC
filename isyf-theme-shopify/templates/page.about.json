@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "main-about": {
+      "type": "main-page-about",
+      "settings": {
+        "hero_subtitle": "Our Story",
+        "hero_title": "I SEE, YOU FEEL.",
+        "story_title": "Timeless by design, born from emotion",
+        "collection1_name": "ISYF Premium",
+        "collection1_desc": "Embroidered essentials crafted with precision. Premium fabrics, minimal design, maximum impact. For those who speak through subtlety.",
+        "collection2_name": "ISYF FEELS",
+        "collection2_desc": "Message-driven streetwear that says what you feel. Bold graphics, expressive prints, unapologetic style. For those who wear their emotions.",
+        "cta_label": "EXPLORE THE COLLECTIONS",
+        "cta_link": "/collections/all"
+      },
+      "blocks": {
+        "p1": {
+          "type": "story_paragraph",
+          "settings": {
+            "text": "I SEE, YOU FEEL. was born in Tallinn, Estonia from a simple belief: fashion should make you feel something. Every piece we create carries a message, a mood, an emotion that connects the wearer to something deeper."
+          }
+        },
+        "p2": {
+          "type": "story_paragraph",
+          "settings": {
+            "text": "What started as a creative vision by GreenEcoGenius OÜ has grown into a brand with two distinct collections — each speaking to a different side of self-expression."
+          }
+        },
+        "v1": {
+          "type": "value",
+          "settings": {
+            "title": "Emotion-driven design",
+            "text": "Each piece tells a story. Our designs are born from real feelings and meaningful messages that resonate."
+          }
+        },
+        "v2": {
+          "type": "value",
+          "settings": {
+            "title": "Eco-conscious",
+            "text": "We work with responsible suppliers and our print-on-demand model eliminates overproduction and waste."
+          }
+        },
+        "v3": {
+          "type": "value",
+          "settings": {
+            "title": "Direct to you",
+            "text": "No middlemen. Premium quality at fair prices, shipped worldwide with free delivery over €100."
+          }
+        }
+      },
+      "block_order": ["p1", "p2", "v1", "v2", "v3"]
+    },
+    "instagram": {
+      "type": "instagram-feed",
+      "settings": {
+        "subtitle": "Follow us on Instagram",
+        "title": "@ISEEYOUFEEL"
+      },
+      "blocks": {
+        "ig1": { "type": "image" },
+        "ig2": { "type": "image" },
+        "ig3": { "type": "image" },
+        "ig4": { "type": "image" },
+        "ig5": { "type": "image" }
+      },
+      "block_order": ["ig1", "ig2", "ig3", "ig4", "ig5"]
+    }
+  },
+  "order": ["main-about", "instagram"]
+}

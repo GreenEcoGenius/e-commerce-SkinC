@@ -1,0 +1,58 @@
+<section class="isyf-newsletter">
+  {% if section.settings.title != blank %}
+    <h2 class="isyf-newsletter__title">{{ section.settings.title }}</h2>
+  {% endif %}
+  {% if section.settings.text != blank %}
+    <p class="isyf-newsletter__text">{{ section.settings.text }}</p>
+  {% endif %}
+
+  {% form 'customer', id: 'newsletter-form' %}
+    <input type="hidden" name="contact[tags]" value="newsletter">
+    <div class="isyf-newsletter__input">
+      <input
+        type="email"
+        name="contact[email]"
+        placeholder="{{ section.settings.placeholder | default: 'Enter your email' }}"
+        class="isyf-newsletter__field"
+        required
+        aria-label="Email"
+      >
+      <button type="submit" class="isyf-newsletter__submit" aria-label="Subscribe">&rarr;</button>
+    </div>
+  {% endform %}
+</section>
+
+{% schema %}
+{
+  "name": "Subscribe",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "JOIN THE FEELING"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Description",
+      "default": "Subscribe to receive exclusive drops, early access, and stories from the ISYF universe."
+    },
+    {
+      "type": "text",
+      "id": "placeholder",
+      "label": "Placeholder text",
+      "default": "Enter your email"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Subscribe",
+      "settings": {
+        "title": "JOIN THE FEELING",
+        "text": "Subscribe to receive exclusive drops, early access, and stories from the ISYF universe."
+      }
+    }
+  ]
+}
+{% endschema %}

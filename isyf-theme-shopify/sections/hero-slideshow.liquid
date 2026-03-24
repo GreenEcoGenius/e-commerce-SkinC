@@ -1,0 +1,64 @@
+<section
+  class="isyf-hero"
+  {% if section.settings.image != blank %}
+    style="background-image: url({{ section.settings.image | image_url: width: 2000 }});"
+  {% endif %}
+>
+  <div class="isyf-hero__overlay"></div>
+  <div class="isyf-hero__content">
+    <h1 class="isyf-hero__title">{{ section.settings.title | default: 'I SEE, YOU FEEL.' }}</h1>
+    {% if section.settings.subtitle != blank %}
+      <span class="isyf-hero__subtitle">{{ section.settings.subtitle }}</span>
+    {% endif %}
+    {% if section.settings.button_label != blank %}
+      {% render 'button', label: section.settings.button_label, variant: 'bright', href: section.settings.button_link %}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero slideshow",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "I SEE, YOU FEEL."
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "WEAR WHAT YOU FEEL"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "EXPLORE"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link",
+      "default": "/collections/all"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero slideshow",
+      "settings": {
+        "title": "I SEE, YOU FEEL.",
+        "subtitle": "WEAR WHAT YOU FEEL",
+        "button_label": "EXPLORE"
+      }
+    }
+  ]
+}
+{% endschema %}

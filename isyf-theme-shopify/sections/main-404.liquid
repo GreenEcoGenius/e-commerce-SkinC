@@ -1,0 +1,17 @@
+<div style="width: 100%; background: var(--White); display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 60vh; padding: 120px 40px 80px; text-align: center;">
+  <h1 style="font-size: 48px; margin: 0 0 16px;">404</h1>
+  <p style="font-size: 15px; font-weight: 300; color: var(--Gray-3); margin: 0 0 32px;">The page you're looking for doesn't exist.</p>
+  {% render 'button', label: 'BACK TO HOME', variant: 'dark', href: '/' %}
+</div>
+
+{% schema %}
+{
+  "name": "404 page",
+  "settings": [],
+  "presets": [
+    {
+      "name": "404 page"
+    }
+  ]
+}
+{% endschema %}

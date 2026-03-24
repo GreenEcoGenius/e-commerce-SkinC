@@ -1,0 +1,130 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_content": "Skip to content",
+      "close": "Close"
+    },
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\"",
+      "page": "Page {{ page }}"
+    },
+    "breadcrumbs": {
+      "home": "Home"
+    },
+    "search": {
+      "placeholder": "Search...",
+      "no_results": "No results found for \"{{ terms }}\"",
+      "results_count": "{{ count }} results for \"{{ terms }}\""
+    },
+    "newsletter": {
+      "title": "JOIN THE FEELING",
+      "description": "Subscribe to receive exclusive drops, early access, and stories from the ISYF universe.",
+      "placeholder": "Enter your email",
+      "submit": "Subscribe",
+      "success": "Thank you for subscribing!"
+    },
+    "social": {
+      "follow_on_instagram": "Follow us on Instagram",
+      "follow_on_tiktok": "Follow us on TikTok"
+    }
+  },
+  "header": {
+    "menu": "Menu",
+    "cart": "Bag",
+    "search": "Search",
+    "account": "Account",
+    "sign_in": "Sign in"
+  },
+  "footer": {
+    "shop": "Shop",
+    "support": "Support",
+    "company": "Company",
+    "terms": "Terms of service",
+    "privacy": "Privacy policy",
+    "cookies": "Cookies settings"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "ADD TO BAG",
+      "sold_out": "SOLD OUT",
+      "unavailable": "Unavailable",
+      "price": {
+        "from": "From {{ price }}",
+        "sale_price": "Sale price",
+        "regular_price": "Regular price"
+      },
+      "quantity": "Quantity",
+      "size": "Size",
+      "color": "Color",
+      "description": "Description",
+      "shipping": "Shipping",
+      "size_guide": "Size Guide",
+      "free_shipping": "Free shipping over €100",
+      "you_might_also_like": "You might also like"
+    }
+  },
+  "collections": {
+    "general": {
+      "all": "All",
+      "no_products": "No products found.",
+      "items_count": "{{ count }} products"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Bag",
+      "empty": "Your bag is empty.",
+      "continue_shopping": "Continue shopping",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "shipping_at_checkout": "Calculated at checkout",
+      "shipping_free": "FREE",
+      "total": "Total",
+      "checkout": "CHECKOUT",
+      "remove": "Remove",
+      "free_shipping_message": "{{ amount }} away from free shipping",
+      "free_shipping_achieved": "You qualify for free shipping!"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Read more",
+      "back_to_blog": "Back to Journal"
+    }
+  },
+  "pages": {
+    "contact": {
+      "title": "Get in touch",
+      "subtitle": "Whether you have a question about sizing, shipping, or just want to say hello — reach out.",
+      "name": "Name",
+      "email": "Email",
+      "message": "Your message",
+      "send": "SEND MESSAGE",
+      "success": "Thank you for your message. We'll get back to you shortly."
+    },
+    "faq": {
+      "title": "Frequently Asked Questions"
+    },
+    "about": {
+      "title": "Our Story"
+    },
+    "lookbook": {
+      "title": "Lookbook"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "title": "Your gift card",
+      "subtext": "Your gift card",
+      "disabled": "Disabled",
+      "expired": "Expired on {{ expiry }}",
+      "active": "Expires on {{ expiry }}",
+      "redeem": "Use this code at checkout",
+      "shop_link": "Start shopping",
+      "print": "Print"
+    }
+  },
+  "date_formats": {
+    "month_day_year": "%B %d, %Y"
+  }
+}

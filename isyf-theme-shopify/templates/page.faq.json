@@ -1,0 +1,40 @@
+{
+  "sections": {
+    "main-faq": {
+      "type": "main-page-faq",
+      "settings": {
+        "title": "Frequently Asked Questions"
+      },
+      "blocks": {
+        "q1": { "type": "faq_item", "settings": { "category": "Orders", "question": "What payment methods do you accept?", "answer": "We accept Visa, Mastercard, PayPal, Apple Pay, Google Pay, and Klarna." } },
+        "q2": { "type": "faq_item", "settings": { "category": "Orders", "question": "Can I cancel my order?", "answer": "You can cancel within 2 hours of placing your order. After that, production begins and cancellation is no longer possible." } },
+        "q3": { "type": "faq_item", "settings": { "category": "Orders", "question": "Is my payment information secure?", "answer": "Yes. All transactions are encrypted with industry-standard SSL technology. We never store your full payment details." } },
+        "q4": { "type": "faq_item", "settings": { "category": "Shipping", "question": "Where do you ship?", "answer": "We ship worldwide. Free shipping on orders over €100 within Europe." } },
+        "q5": { "type": "faq_item", "settings": { "category": "Shipping", "question": "How long does delivery take?", "answer": "Europe: 5–10 business days. North America: 7–14 business days. Rest of world: 10–20 business days. Print-on-demand items may add 2–5 additional days." } },
+        "q6": { "type": "faq_item", "settings": { "category": "Shipping", "question": "Can I track my order?", "answer": "Yes. You'll receive a confirmation email with tracking information once your order ships." } },
+        "q7": { "type": "faq_item", "settings": { "category": "Returns", "question": "What is your return policy?", "answer": "We accept returns within 30 days of delivery. Items must be unworn, unwashed, and in original condition with tags attached." } },
+        "q8": { "type": "faq_item", "settings": { "category": "Returns", "question": "How do I return a product?", "answer": "Email contact@iseeyoufeel.com with your order number. We'll provide return instructions." } },
+        "q9": { "type": "faq_item", "settings": { "category": "Returns", "question": "When will I receive my refund?", "answer": "Refunds are processed within 5–7 business days after we receive your return." } },
+        "q10": { "type": "faq_item", "settings": { "category": "Sizing & Product", "question": "What sizes do you offer?", "answer": "XS to 3XL. Check our size guide for detailed measurements." } },
+        "q11": { "type": "faq_item", "settings": { "category": "Sizing & Product", "question": "Are your products eco-friendly?", "answer": "We work with responsible suppliers and our print-on-demand model eliminates overproduction and excess inventory." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "q11"]
+    },
+    "instagram": {
+      "type": "instagram-feed",
+      "settings": {
+        "subtitle": "Follow us on Instagram",
+        "title": "@ISEEYOUFEEL"
+      },
+      "blocks": {
+        "ig1": { "type": "image" },
+        "ig2": { "type": "image" },
+        "ig3": { "type": "image" },
+        "ig4": { "type": "image" },
+        "ig5": { "type": "image" }
+      },
+      "block_order": ["ig1", "ig2", "ig3", "ig4", "ig5"]
+    }
+  },
+  "order": ["main-faq", "instagram"]
+}

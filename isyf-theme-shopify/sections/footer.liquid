@@ -1,0 +1,140 @@
+<footer class="isyf-footer">
+  <div class="isyf-footer__top">
+    <div class="isyf-footer__brand-column">
+      <a href="/" class="isyf-footer__logo-text">{{ section.settings.logo_text | default: shop.name }}</a>
+      <div class="isyf-footer__social-links">
+        {% if settings.social_instagram != blank %}
+          <a href="{{ settings.social_instagram }}" target="_blank" rel="noopener noreferrer" class="isyf-footer__social-link">Instagram</a>
+        {% endif %}
+        {% if settings.social_tiktok != blank %}
+          <a href="{{ settings.social_tiktok }}" target="_blank" rel="noopener noreferrer" class="isyf-footer__social-link">TikTok</a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% for block in section.blocks %}
+      {% if block.type == 'column' %}
+        <div class="isyf-footer__column" {{ block.shopify_attributes }}>
+          <span class="isyf-footer__column-title">{{ block.settings.title }}</span>
+          <div class="isyf-footer__column-links">
+            {% if block.settings.link1_label != blank %}
+              <a href="{{ block.settings.link1_url }}" class="isyf-footer__column-link">{{ block.settings.link1_label }}</a>
+            {% endif %}
+            {% if block.settings.link2_label != blank %}
+              <a href="{{ block.settings.link2_url }}" class="isyf-footer__column-link">{{ block.settings.link2_label }}</a>
+            {% endif %}
+            {% if block.settings.link3_label != blank %}
+              <a href="{{ block.settings.link3_url }}" class="isyf-footer__column-link">{{ block.settings.link3_label }}</a>
+            {% endif %}
+            {% if block.settings.link4_label != blank %}
+              <a href="{{ block.settings.link4_url }}" class="isyf-footer__column-link">{{ block.settings.link4_label }}</a>
+            {% endif %}
+            {% if block.settings.link5_label != blank %}
+              <a href="{{ block.settings.link5_url }}" class="isyf-footer__column-link">{{ block.settings.link5_label }}</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="isyf-footer__divider"></div>
+
+  <div class="isyf-footer__bottom">
+    <span class="isyf-footer__copyright">&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright_text | default: 'I SEE, YOU FEEL. — GreenEcoGenius OÜ' }}</span>
+    <div class="isyf-footer__legal-links">
+      {% if section.settings.terms_url != blank %}
+        <a href="{{ section.settings.terms_url }}" class="isyf-footer__legal-link">{{ section.settings.terms_label | default: 'Terms of service' }}</a>
+      {% endif %}
+      {% if section.settings.privacy_url != blank %}
+        <a href="{{ section.settings.privacy_url }}" class="isyf-footer__legal-link">{{ section.settings.privacy_label | default: 'Privacy policy' }}</a>
+      {% endif %}
+      {% if section.settings.cookies_url != blank %}
+        <a href="{{ section.settings.cookies_url }}" class="isyf-footer__legal-link">{{ section.settings.cookies_label | default: 'Cookies settings' }}</a>
+      {% endif %}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "isyf-footer-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "I SEE, YOU FEEL."
+    },
+    {
+      "type": "text",
+      "id": "copyright_text",
+      "label": "Copyright text",
+      "default": "I SEE, YOU FEEL. — GreenEcoGenius OÜ"
+    },
+    {
+      "type": "text",
+      "id": "terms_label",
+      "label": "Terms label",
+      "default": "Terms of service"
+    },
+    {
+      "type": "url",
+      "id": "terms_url",
+      "label": "Terms URL"
+    },
+    {
+      "type": "text",
+      "id": "privacy_label",
+      "label": "Privacy label",
+      "default": "Privacy policy"
+    },
+    {
+      "type": "url",
+      "id": "privacy_url",
+      "label": "Privacy URL"
+    },
+    {
+      "type": "text",
+      "id": "cookies_label",
+      "label": "Cookies label",
+      "default": "Cookies settings"
+    },
+    {
+      "type": "url",
+      "id": "cookies_url",
+      "label": "Cookies URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Footer column",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Column title", "default": "Shop" },
+        { "type": "text", "id": "link1_label", "label": "Link 1 label" },
+        { "type": "url", "id": "link1_url", "label": "Link 1 URL" },
+        { "type": "text", "id": "link2_label", "label": "Link 2 label" },
+        { "type": "url", "id": "link2_url", "label": "Link 2 URL" },
+        { "type": "text", "id": "link3_label", "label": "Link 3 label" },
+        { "type": "url", "id": "link3_url", "label": "Link 3 URL" },
+        { "type": "text", "id": "link4_label", "label": "Link 4 label" },
+        { "type": "url", "id": "link4_url", "label": "Link 4 URL" },
+        { "type": "text", "id": "link5_label", "label": "Link 5 label" },
+        { "type": "url", "id": "link5_url", "label": "Link 5 URL" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        { "type": "column", "settings": { "title": "Shop", "link1_label": "Women", "link2_label": "Men", "link3_label": "Accessories", "link4_label": "Rituals", "link5_label": "New Arrivals" } },
+        { "type": "column", "settings": { "title": "Support", "link1_label": "FAQ", "link2_label": "Shipping & Returns", "link3_label": "Size Guide", "link4_label": "Contact" } },
+        { "type": "column", "settings": { "title": "Company", "link1_label": "Our Story", "link2_label": "Lookbook", "link3_label": "Legal Notice" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

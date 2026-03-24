@@ -1,0 +1,15 @@
+{% comment %}
+  Renders a badge.
+  Accepts:
+  - text: {String} Badge text
+  - variant: {String} 'red', 'dark', or 'gray' (default: 'dark')
+  - floating: {Boolean} Position absolute top-right
+  Usage:
+  {% render 'badge', text: 'Sale', variant: 'red', floating: true %}
+{% endcomment %}
+
+{% assign badge_variant = variant | default: 'dark' %}
+
+<span class="isyf-badge isyf-badge--{{ badge_variant }}{% if floating %} isyf-badge--floating{% endif %}">
+  {{ text }}
+</span>

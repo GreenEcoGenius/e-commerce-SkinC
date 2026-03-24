@@ -1,0 +1,43 @@
+<div class="isyf-shop-page">
+  <div class="isyf-shop__content">
+    <h1 class="isyf-shop__title">{{ section.settings.title | default: 'Collections' }}</h1>
+
+    <div class="isyf-categories-grid" style="flex-wrap: wrap;">
+      {% for collection in collections %}
+        {% unless collection.handle == 'all' %}
+          <a href="{{ collection.url }}" class="isyf-category-card" style="min-width: 280px; text-decoration: none;">
+            {% if collection.image %}
+              <div class="isyf-category-card__image" style="background-image: url({{ collection.image | image_url: width: 800 }});"></div>
+            {% elsif collection.products.first and collection.products.first.featured_image %}
+              <div class="isyf-category-card__image" style="background-image: url({{ collection.products.first.featured_image | image_url: width: 800 }});"></div>
+            {% else %}
+              <div class="isyf-category-card__image" style="background-color: var(--Gray-3);"></div>
+            {% endif %}
+            <div class="isyf-category-card__overlay">
+              <h3 class="isyf-category-card__title">{{ collection.title }}</h3>
+            </div>
+          </a>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections list"
+    }
+  ]
+}
+{% endschema %}
