@@ -113,38 +113,53 @@ export default function Navigation() {
         <Link href="/cart" className={styles.mobileBag}>Bag ({cartCount})</Link>
 
         {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
-
-        {menuOpen && (
-          <nav className={styles.mobileMenu}>
-            {menuData.map((item) => (
-              <div key={item.label} className={styles.mobileGroup}>
-                <button className={styles.mobileGroupBtn} onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}>
-                  {item.label}
-                  <span>{mobileExpanded === item.label ? "−" : "+"}</span>
-                </button>
-                {mobileExpanded === item.label && (
-                  <div className={styles.mobileSubMenu}>
-                    {item.sections.map((sec, i) => (
-                      <div key={i} className={styles.mobileSubGroup}>
-                        {sec.title && <span className={styles.mobileSubTitle}>{sec.title}</span>}
-                        {sec.links.map((l) => (
-                          <Link key={l.href} href={l.href} className={styles.mobileSubLink} onClick={closeAll}>{l.label}</Link>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <Link href="/shop?category=accessories" className={styles.mobileLink} onClick={closeAll}>Accessories</Link>
-            <Link href="/shop?category=rituals" className={styles.mobileLink} onClick={closeAll}>Rituals</Link>
-            <Link href="/lookbook" className={styles.mobileLink} onClick={closeAll}>Lookbook</Link>
-            <Link href="/our-story" className={styles.mobileLink} onClick={closeAll}>Our Story</Link>
-            <div className={styles.mobileDivider} />
-            <Link href="/account" className={styles.mobileLink} onClick={closeAll}>{user ? "My Account" : "Sign In"}</Link>
-          </nav>
-        )}
       </header>
+
+      {/* Full-page drawer menu */}
+      <nav className={menuOpen ? styles.drawerMenuOpen : styles.drawerMenu}>
+        <div className={styles.drawerHeader}>
+          <span className={styles.drawerSectionTitle}>Menu</span>
+          <button className={styles.drawerClose} onClick={closeAll} aria-label="Close menu">&times;</button>
+        </div>
+        <div className={styles.drawerBody}>
+          {menuData.map((item) => (
+            <div key={item.label} className={styles.drawerGroup}>
+              <button className={styles.drawerGroupBtn} onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}>
+                {item.label}
+                <span>{mobileExpanded === item.label ? "−" : "+"}</span>
+              </button>
+              {mobileExpanded === item.label && (
+                <div className={styles.drawerSubMenu}>
+                  {item.sections.map((sec, i) => (
+                    <div key={i} className={styles.drawerSubGroup}>
+                      {sec.title && <span className={styles.drawerSubTitle}>{sec.title}</span>}
+                      {sec.links.map((l) => (
+                        <Link key={l.href} href={l.href} className={styles.drawerSubLink} onClick={closeAll}>{l.label}</Link>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+          <Link href="/shop?category=accessories" className={styles.drawerLink} onClick={closeAll}>Accessories</Link>
+          <Link href="/shop?category=rituals" className={styles.drawerLink} onClick={closeAll}>Rituals</Link>
+          <Link href="/lookbook" className={styles.drawerLink} onClick={closeAll}>Lookbook</Link>
+          <Link href="/our-story" className={styles.drawerLink} onClick={closeAll}>Our Story</Link>
+          <Link href="/journal" className={styles.drawerLink} onClick={closeAll}>Journal</Link>
+
+          <div className={styles.drawerDivider} />
+          <span className={styles.drawerSectionTitle}>Support</span>
+          <Link href="/faq" className={styles.drawerLink} onClick={closeAll}>FAQ</Link>
+          <Link href="/contact" className={styles.drawerLink} onClick={closeAll}>Contact</Link>
+          <Link href="/size-guide" className={styles.drawerLink} onClick={closeAll}>Size Guide</Link>
+          <Link href="/shipping-policy" className={styles.drawerLink} onClick={closeAll}>Shipping &amp; Returns</Link>
+
+          <div className={styles.drawerDivider} />
+          <Link href="/account" className={styles.drawerLink} onClick={closeAll}>{user ? "My Account" : "Sign In"}</Link>
+        </div>
+      </nav>
+
       {searchOpen && <div className={styles.overlay} onClick={() => setSearchOpen(false)} />}
       {menuOpen && <div className={styles.overlay} onClick={closeAll} />}
     </>
