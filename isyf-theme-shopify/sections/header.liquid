@@ -1,0 +1,244 @@
+<header class="isyf-nav" data-header>
+  <button class="isyf-nav__hamburger" aria-label="Menu" data-mobile-toggle>
+    <span class="isyf-nav__hamburger-line"></span>
+    <span class="isyf-nav__hamburger-line"></span>
+  </button>
+
+  <nav class="isyf-nav__links">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'mega_menu' %}
+          <div class="isyf-nav__menu-item" {{ block.shopify_attributes }}>
+            <a href="{{ block.settings.link }}" class="isyf-nav__link">{{ block.settings.label }}</a>
+            {% if block.settings.col1_title != blank or block.settings.col2_title != blank %}
+              <div class="isyf-nav__mega-menu">
+                {% if block.settings.col1_title != blank %}
+                  <div class="isyf-nav__mega-col">
+                    <span class="isyf-nav__mega-title">{{ block.settings.col1_title }}</span>
+                    {% if block.settings.col1_link1_label != blank %}
+                      <a href="{{ block.settings.col1_link1_url }}" class="isyf-nav__mega-link">{{ block.settings.col1_link1_label }}</a>
+                    {% endif %}
+                    {% if block.settings.col1_link2_label != blank %}
+                      <a href="{{ block.settings.col1_link2_url }}" class="isyf-nav__mega-link">{{ block.settings.col1_link2_label }}</a>
+                    {% endif %}
+                    {% if block.settings.col1_link3_label != blank %}
+                      <a href="{{ block.settings.col1_link3_url }}" class="isyf-nav__mega-link">{{ block.settings.col1_link3_label }}</a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.col2_title != blank %}
+                  <div class="isyf-nav__mega-col">
+                    <span class="isyf-nav__mega-title">{{ block.settings.col2_title }}</span>
+                    {% if block.settings.col2_link1_label != blank %}
+                      <a href="{{ block.settings.col2_link1_url }}" class="isyf-nav__mega-link">{{ block.settings.col2_link1_label }}</a>
+                    {% endif %}
+                    {% if block.settings.col2_link2_label != blank %}
+                      <a href="{{ block.settings.col2_link2_url }}" class="isyf-nav__mega-link">{{ block.settings.col2_link2_label }}</a>
+                    {% endif %}
+                    {% if block.settings.col2_link3_label != blank %}
+                      <a href="{{ block.settings.col2_link3_url }}" class="isyf-nav__mega-link">{{ block.settings.col2_link3_label }}</a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+                {% if block.settings.shop_all_label != blank %}
+                  <div class="isyf-nav__mega-col">
+                    <a href="{{ block.settings.shop_all_url }}" class="isyf-nav__mega-link--bold">{{ block.settings.shop_all_label }}</a>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% when 'link' %}
+          <a href="{{ block.settings.link }}" class="isyf-nav__link" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+      {% endcase %}
+    {% endfor %}
+  </nav>
+
+  <a href="/" class="isyf-nav__logo-link">
+    {% if section.settings.logo != blank %}
+      <img src="{{ section.settings.logo | image_url: width: 200 }}" alt="{{ shop.name }}" style="height: 20px; width: auto;">
+    {% else %}
+      <span class="isyf-nav__logo-text">{{ section.settings.logo_text | default: shop.name }}</span>
+    {% endif %}
+  </a>
+
+  <nav class="isyf-nav__links-right">
+    <a href="{{ routes.account_url }}" class="isyf-nav__link">
+      {% if customer %}Account{% else %}Sign in{% endif %}
+    </a>
+    <a href="{{ routes.search_url }}" class="isyf-nav__link">Search</a>
+    <a href="{{ routes.cart_url }}" class="isyf-nav__link">Bag ({{ cart.item_count }})</a>
+  </nav>
+
+  <a href="{{ routes.cart_url }}" class="isyf-nav__mobile-bag">Bag ({{ cart.item_count }})</a>
+</header>
+
+<script>
+  (function() {
+    var toggle = document.querySelector('[data-mobile-toggle]');
+    var header = document.querySelector('[data-header]');
+    var menuOpen = false;
+    var mobileMenu = null;
+    var overlay = null;
+
+    function closeAll() {
+      if (mobileMenu) { mobileMenu.remove(); mobileMenu = null; }
+      if (overlay) { overlay.remove(); overlay = null; }
+      menuOpen = false;
+    }
+
+    if (toggle) {
+      toggle.addEventListener('click', function() {
+        if (menuOpen) {
+          closeAll();
+          return;
+        }
+        menuOpen = true;
+
+        overlay = document.createElement('div');
+        overlay.className = 'isyf-nav__overlay';
+        overlay.addEventListener('click', closeAll);
+        document.body.appendChild(overlay);
+
+        mobileMenu = document.createElement('nav');
+        mobileMenu.className = 'isyf-nav__mobile-menu';
+        mobileMenu.innerHTML = '';
+
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'mega_menu' %}
+              mobileMenu.innerHTML += '<div class="isyf-nav__mobile-group">' +
+                '<button class="isyf-nav__mobile-group-btn" data-expand="{{ block.settings.label }}">' +
+                '{{ block.settings.label | escape }}<span>+</span></button></div>';
+            {% when 'link' %}
+              mobileMenu.innerHTML += '<a href="{{ block.settings.link }}" class="isyf-nav__mobile-link">{{ block.settings.label | escape }}</a>';
+          {% endcase %}
+        {% endfor %}
+
+        mobileMenu.innerHTML += '<div class="isyf-nav__mobile-divider"></div>';
+        mobileMenu.innerHTML += '<a href="{{ routes.account_url }}" class="isyf-nav__mobile-link">' +
+          '{% if customer %}My Account{% else %}Sign In{% endif %}</a>';
+
+        header.appendChild(mobileMenu);
+
+        mobileMenu.querySelectorAll('[data-expand]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var existing = btn.parentElement.querySelector('.isyf-nav__mobile-submenu');
+            if (existing) {
+              existing.remove();
+              btn.querySelector('span').textContent = '+';
+              return;
+            }
+            btn.querySelector('span').textContent = '−';
+            var sub = document.createElement('div');
+            sub.className = 'isyf-nav__mobile-submenu';
+
+            {% for block in section.blocks %}
+              {% if block.type == 'mega_menu' %}
+                if (btn.getAttribute('data-expand') === '{{ block.settings.label | escape }}') {
+                  {% if block.settings.col1_title != blank %}
+                    sub.innerHTML += '<div class="isyf-nav__mobile-subgroup"><span class="isyf-nav__mobile-subtitle">{{ block.settings.col1_title | escape }}</span>';
+                    {% if block.settings.col1_link1_label != blank %}
+                      sub.innerHTML += '<a href="{{ block.settings.col1_link1_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col1_link1_label | escape }}</a>';
+                    {% endif %}
+                    {% if block.settings.col1_link2_label != blank %}
+                      sub.innerHTML += '<a href="{{ block.settings.col1_link2_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col1_link2_label | escape }}</a>';
+                    {% endif %}
+                    {% if block.settings.col1_link3_label != blank %}
+                      sub.innerHTML += '<a href="{{ block.settings.col1_link3_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col1_link3_label | escape }}</a>';
+                    {% endif %}
+                    sub.innerHTML += '</div>';
+                  {% endif %}
+                  {% if block.settings.col2_title != blank %}
+                    sub.innerHTML += '<div class="isyf-nav__mobile-subgroup"><span class="isyf-nav__mobile-subtitle">{{ block.settings.col2_title | escape }}</span>';
+                    {% if block.settings.col2_link1_label != blank %}
+                      sub.innerHTML += '<a href="{{ block.settings.col2_link1_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col2_link1_label | escape }}</a>';
+                    {% endif %}
+                    {% if block.settings.col2_link2_label != blank %}
+                      sub.innerHTML += '<a href="{{ block.settings.col2_link2_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col2_link2_label | escape }}</a>';
+                    {% endif %}
+                    {% if block.settings.col2_link3_label != blank %}
+                      sub.innerHTML += '<a href="{{ block.settings.col2_link3_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col2_link3_label | escape }}</a>';
+                    {% endif %}
+                    sub.innerHTML += '</div>';
+                  {% endif %}
+                  {% if block.settings.shop_all_label != blank %}
+                    sub.innerHTML += '<div class="isyf-nav__mobile-subgroup"><a href="{{ block.settings.shop_all_url }}" class="isyf-nav__mobile-sublink" style="font-weight:500;letter-spacing:0.1em;text-transform:uppercase;font-size:12px;">{{ block.settings.shop_all_label | escape }}</a></div>';
+                  {% endif %}
+                }
+              {% endif %}
+            {% endfor %}
+
+            btn.parentElement.appendChild(sub);
+          });
+        });
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "isyf-header-section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text (if no image)",
+      "default": "I SEE, YOU FEEL."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "Mega menu link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Women" },
+        { "type": "url", "id": "link", "label": "Link" },
+        { "type": "text", "id": "col1_title", "label": "Column 1 title", "default": "ISYF Premium" },
+        { "type": "text", "id": "col1_link1_label", "label": "Col 1 link 1 label", "default": "Sweats & Hoodies" },
+        { "type": "url", "id": "col1_link1_url", "label": "Col 1 link 1 URL" },
+        { "type": "text", "id": "col1_link2_label", "label": "Col 1 link 2 label", "default": "T-shirts" },
+        { "type": "url", "id": "col1_link2_url", "label": "Col 1 link 2 URL" },
+        { "type": "text", "id": "col1_link3_label", "label": "Col 1 link 3 label", "default": "Limited Drops" },
+        { "type": "url", "id": "col1_link3_url", "label": "Col 1 link 3 URL" },
+        { "type": "text", "id": "col2_title", "label": "Column 2 title", "default": "ISYF FEELS" },
+        { "type": "text", "id": "col2_link1_label", "label": "Col 2 link 1 label", "default": "T-shirts à message" },
+        { "type": "url", "id": "col2_link1_url", "label": "Col 2 link 1 URL" },
+        { "type": "text", "id": "col2_link2_label", "label": "Col 2 link 2 label", "default": "Sweats imprimés" },
+        { "type": "url", "id": "col2_link2_url", "label": "Col 2 link 2 URL" },
+        { "type": "text", "id": "col2_link3_label", "label": "Col 2 link 3 label", "default": "New Arrivals" },
+        { "type": "url", "id": "col2_link3_url", "label": "Col 2 link 3 URL" },
+        { "type": "text", "id": "shop_all_label", "label": "Shop all label", "default": "Shop All Women" },
+        { "type": "url", "id": "shop_all_url", "label": "Shop all URL" }
+      ]
+    },
+    {
+      "type": "link",
+      "name": "Simple link",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Accessories" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Header",
+      "blocks": [
+        { "type": "mega_menu", "settings": { "label": "Women" } },
+        { "type": "mega_menu", "settings": { "label": "Men", "col1_title": "ISYF Premium", "col2_title": "ISYF FEELS", "shop_all_label": "Shop All Men" } },
+        { "type": "link", "settings": { "label": "Accessories" } },
+        { "type": "link", "settings": { "label": "Lookbook" } },
+        { "type": "link", "settings": { "label": "Our Story" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
