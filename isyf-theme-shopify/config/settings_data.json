@@ -1,0 +1,122 @@
+{
+  "current": {
+    "color_primary": "#1A1A1A",
+    "color_background": "#FFFFFF",
+    "color_accent": "#E24B4A",
+    "color_text_secondary": "#6B6B6B",
+    "color_border": "#E8E6E3",
+    "color_surface": "#F8F6F3",
+    "social_instagram": "https://instagram.com/iseeyoufeel",
+    "social_tiktok": "https://tiktok.com/@iseeyoufeel",
+    "currency_code_enabled": true,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+          "logo_text": "I SEE, YOU FEEL."
+        },
+        "blocks": {
+          "menu_women": {
+            "type": "mega_menu",
+            "settings": {
+              "label": "Women",
+              "col1_title": "ISYF Premium",
+              "col1_link1_label": "Sweats & Hoodies",
+              "col1_link2_label": "T-shirts",
+              "col1_link3_label": "Limited Drops",
+              "col2_title": "ISYF FEELS",
+              "col2_link1_label": "T-shirts à message",
+              "col2_link2_label": "Sweats imprimés",
+              "col2_link3_label": "New Arrivals",
+              "shop_all_label": "Shop All Women"
+            }
+          },
+          "menu_men": {
+            "type": "mega_menu",
+            "settings": {
+              "label": "Men",
+              "col1_title": "ISYF Premium",
+              "col1_link1_label": "Sweats & Hoodies",
+              "col1_link2_label": "T-shirts",
+              "col1_link3_label": "Limited Drops",
+              "col2_title": "ISYF FEELS",
+              "col2_link1_label": "T-shirts à message",
+              "col2_link2_label": "Sweats imprimés",
+              "col2_link3_label": "New Arrivals",
+              "shop_all_label": "Shop All Men"
+            }
+          },
+          "link_accessories": {
+            "type": "link",
+            "settings": {
+              "label": "Accessories"
+            }
+          },
+          "link_lookbook": {
+            "type": "link",
+            "settings": {
+              "label": "Lookbook"
+            }
+          },
+          "link_story": {
+            "type": "link",
+            "settings": {
+              "label": "Our Story"
+            }
+          }
+        },
+        "block_order": [
+          "menu_women",
+          "menu_men",
+          "link_accessories",
+          "link_lookbook",
+          "link_story"
+        ]
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "logo_text": "I SEE, YOU FEEL.",
+          "copyright_text": "I SEE, YOU FEEL. — GreenEcoGenius OÜ",
+          "terms_label": "Terms of service",
+          "privacy_label": "Privacy policy",
+          "cookies_label": "Cookies settings"
+        },
+        "blocks": {
+          "col_shop": {
+            "type": "column",
+            "settings": {
+              "title": "Shop",
+              "link1_label": "Women",
+              "link2_label": "Men",
+              "link3_label": "Accessories",
+              "link4_label": "Rituals",
+              "link5_label": "New Arrivals"
+            }
+          },
+          "col_support": {
+            "type": "column",
+            "settings": {
+              "title": "Support",
+              "link1_label": "FAQ",
+              "link2_label": "Shipping & Returns",
+              "link3_label": "Size Guide",
+              "link4_label": "Contact"
+            }
+          },
+          "col_company": {
+            "type": "column",
+            "settings": {
+              "title": "Company",
+              "link1_label": "Our Story",
+              "link2_label": "Lookbook",
+              "link3_label": "Legal Notice"
+            }
+          }
+        },
+        "block_order": ["col_shop", "col_support", "col_company"]
+      }
+    },
+    "content_for_index": []
+  }
+}
