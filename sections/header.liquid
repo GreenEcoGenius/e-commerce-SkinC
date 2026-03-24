@@ -1,5 +1,5 @@
 <header class="isyf-nav" data-header>
-  <button class="isyf-nav__hamburger" aria-label="Menu" data-mobile-toggle>
+  <button class="isyf-nav__hamburger" aria-label="Menu" data-drawer-toggle>
     <span class="isyf-nav__hamburger-line"></span>
     <span class="isyf-nav__hamburger-line"></span>
   </button>
@@ -73,107 +73,125 @@
   <a href="{{ routes.cart_url }}" class="isyf-nav__mobile-bag">Bag ({{ cart.item_count }})</a>
 </header>
 
+<!-- Drawer menu -->
+<nav class="isyf-drawer" id="isyf-drawer" aria-hidden="true">
+  <div class="isyf-drawer__header">
+    <span class="isyf-drawer__section-title">Menu</span>
+    <button class="isyf-drawer__close" data-drawer-close aria-label="Close menu">&times;</button>
+  </div>
+  <div class="isyf-drawer__body">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'mega_menu' %}
+          <div class="isyf-drawer__group">
+            <button class="isyf-drawer__group-btn" data-drawer-expand="{{ block.settings.label | escape }}">
+              {{ block.settings.label | escape }}<span>+</span>
+            </button>
+            <div class="isyf-drawer__submenu" data-drawer-submenu="{{ block.settings.label | escape }}" style="display:none;">
+              {% if block.settings.col1_title != blank %}
+                <div class="isyf-drawer__subgroup">
+                  <span class="isyf-drawer__subtitle">{{ block.settings.col1_title }}</span>
+                  {% if block.settings.col1_link1_label != blank %}
+                    <a href="{{ block.settings.col1_link1_url }}" class="isyf-drawer__sublink">{{ block.settings.col1_link1_label }}</a>
+                  {% endif %}
+                  {% if block.settings.col1_link2_label != blank %}
+                    <a href="{{ block.settings.col1_link2_url }}" class="isyf-drawer__sublink">{{ block.settings.col1_link2_label }}</a>
+                  {% endif %}
+                  {% if block.settings.col1_link3_label != blank %}
+                    <a href="{{ block.settings.col1_link3_url }}" class="isyf-drawer__sublink">{{ block.settings.col1_link3_label }}</a>
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if block.settings.col2_title != blank %}
+                <div class="isyf-drawer__subgroup">
+                  <span class="isyf-drawer__subtitle">{{ block.settings.col2_title }}</span>
+                  {% if block.settings.col2_link1_label != blank %}
+                    <a href="{{ block.settings.col2_link1_url }}" class="isyf-drawer__sublink">{{ block.settings.col2_link1_label }}</a>
+                  {% endif %}
+                  {% if block.settings.col2_link2_label != blank %}
+                    <a href="{{ block.settings.col2_link2_url }}" class="isyf-drawer__sublink">{{ block.settings.col2_link2_label }}</a>
+                  {% endif %}
+                  {% if block.settings.col2_link3_label != blank %}
+                    <a href="{{ block.settings.col2_link3_url }}" class="isyf-drawer__sublink">{{ block.settings.col2_link3_label }}</a>
+                  {% endif %}
+                </div>
+              {% endif %}
+              {% if block.settings.shop_all_label != blank %}
+                <div class="isyf-drawer__subgroup">
+                  <a href="{{ block.settings.shop_all_url }}" class="isyf-drawer__sublink" style="font-weight:500;letter-spacing:0.1em;text-transform:uppercase;font-size:12px;">{{ block.settings.shop_all_label }}</a>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        {% when 'link' %}
+          <a href="{{ block.settings.link }}" class="isyf-drawer__link">{{ block.settings.label | escape }}</a>
+      {% endcase %}
+    {% endfor %}
+
+    {% if section.settings.drawer_link1_label != blank %}
+      <a href="{{ section.settings.drawer_link1_url }}" class="isyf-drawer__link">{{ section.settings.drawer_link1_label }}</a>
+    {% endif %}
+
+    <div class="isyf-drawer__divider"></div>
+    <span class="isyf-drawer__section-title">Support</span>
+    {% if section.settings.drawer_support1_label != blank %}
+      <a href="{{ section.settings.drawer_support1_url }}" class="isyf-drawer__link">{{ section.settings.drawer_support1_label }}</a>
+    {% endif %}
+    {% if section.settings.drawer_support2_label != blank %}
+      <a href="{{ section.settings.drawer_support2_url }}" class="isyf-drawer__link">{{ section.settings.drawer_support2_label }}</a>
+    {% endif %}
+    {% if section.settings.drawer_support3_label != blank %}
+      <a href="{{ section.settings.drawer_support3_url }}" class="isyf-drawer__link">{{ section.settings.drawer_support3_label }}</a>
+    {% endif %}
+    {% if section.settings.drawer_support4_label != blank %}
+      <a href="{{ section.settings.drawer_support4_url }}" class="isyf-drawer__link">{{ section.settings.drawer_support4_label }}</a>
+    {% endif %}
+
+    <div class="isyf-drawer__divider"></div>
+    <a href="{{ routes.account_url }}" class="isyf-drawer__link">
+      {% if customer %}My Account{% else %}Sign In{% endif %}
+    </a>
+  </div>
+</nav>
+<div class="isyf-drawer__overlay" id="isyf-drawer-overlay" style="display:none;"></div>
+
 <script>
   (function() {
-    var toggle = document.querySelector('[data-mobile-toggle]');
-    var header = document.querySelector('[data-header]');
-    var menuOpen = false;
-    var mobileMenu = null;
-    var overlay = null;
+    var drawer = document.getElementById('isyf-drawer');
+    var overlay = document.getElementById('isyf-drawer-overlay');
+    var toggleBtn = document.querySelector('[data-drawer-toggle]');
+    var closeBtn = document.querySelector('[data-drawer-close]');
+    var isOpen = false;
 
-    function closeAll() {
-      if (mobileMenu) { mobileMenu.remove(); mobileMenu = null; }
-      if (overlay) { overlay.remove(); overlay = null; }
-      menuOpen = false;
+    function openDrawer() {
+      isOpen = true;
+      drawer.classList.add('isyf-drawer--open');
+      drawer.setAttribute('aria-hidden', 'false');
+      overlay.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeDrawer() {
+      isOpen = false;
+      drawer.classList.remove('isyf-drawer--open');
+      drawer.setAttribute('aria-hidden', 'true');
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
     }
 
-    if (toggle) {
-      toggle.addEventListener('click', function() {
-        if (menuOpen) {
-          closeAll();
-          return;
-        }
-        menuOpen = true;
+    if (toggleBtn) toggleBtn.addEventListener('click', function() { isOpen ? closeDrawer() : openDrawer(); });
+    if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    if (overlay) overlay.addEventListener('click', closeDrawer);
 
-        overlay = document.createElement('div');
-        overlay.className = 'isyf-nav__overlay';
-        overlay.addEventListener('click', closeAll);
-        document.body.appendChild(overlay);
-
-        mobileMenu = document.createElement('nav');
-        mobileMenu.className = 'isyf-nav__mobile-menu';
-        mobileMenu.innerHTML = '';
-
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when 'mega_menu' %}
-              mobileMenu.innerHTML += '<div class="isyf-nav__mobile-group">' +
-                '<button class="isyf-nav__mobile-group-btn" data-expand="{{ block.settings.label }}">' +
-                '{{ block.settings.label | escape }}<span>+</span></button></div>';
-            {% when 'link' %}
-              mobileMenu.innerHTML += '<a href="{{ block.settings.link }}" class="isyf-nav__mobile-link">{{ block.settings.label | escape }}</a>';
-          {% endcase %}
-        {% endfor %}
-
-        mobileMenu.innerHTML += '<div class="isyf-nav__mobile-divider"></div>';
-        mobileMenu.innerHTML += '<a href="{{ routes.account_url }}" class="isyf-nav__mobile-link">' +
-          '{% if customer %}My Account{% else %}Sign In{% endif %}</a>';
-
-        header.appendChild(mobileMenu);
-
-        mobileMenu.querySelectorAll('[data-expand]').forEach(function(btn) {
-          btn.addEventListener('click', function() {
-            var existing = btn.parentElement.querySelector('.isyf-nav__mobile-submenu');
-            if (existing) {
-              existing.remove();
-              btn.querySelector('span').textContent = '+';
-              return;
-            }
-            btn.querySelector('span').textContent = '−';
-            var sub = document.createElement('div');
-            sub.className = 'isyf-nav__mobile-submenu';
-
-            {% for block in section.blocks %}
-              {% if block.type == 'mega_menu' %}
-                if (btn.getAttribute('data-expand') === '{{ block.settings.label | escape }}') {
-                  {% if block.settings.col1_title != blank %}
-                    sub.innerHTML += '<div class="isyf-nav__mobile-subgroup"><span class="isyf-nav__mobile-subtitle">{{ block.settings.col1_title | escape }}</span>';
-                    {% if block.settings.col1_link1_label != blank %}
-                      sub.innerHTML += '<a href="{{ block.settings.col1_link1_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col1_link1_label | escape }}</a>';
-                    {% endif %}
-                    {% if block.settings.col1_link2_label != blank %}
-                      sub.innerHTML += '<a href="{{ block.settings.col1_link2_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col1_link2_label | escape }}</a>';
-                    {% endif %}
-                    {% if block.settings.col1_link3_label != blank %}
-                      sub.innerHTML += '<a href="{{ block.settings.col1_link3_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col1_link3_label | escape }}</a>';
-                    {% endif %}
-                    sub.innerHTML += '</div>';
-                  {% endif %}
-                  {% if block.settings.col2_title != blank %}
-                    sub.innerHTML += '<div class="isyf-nav__mobile-subgroup"><span class="isyf-nav__mobile-subtitle">{{ block.settings.col2_title | escape }}</span>';
-                    {% if block.settings.col2_link1_label != blank %}
-                      sub.innerHTML += '<a href="{{ block.settings.col2_link1_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col2_link1_label | escape }}</a>';
-                    {% endif %}
-                    {% if block.settings.col2_link2_label != blank %}
-                      sub.innerHTML += '<a href="{{ block.settings.col2_link2_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col2_link2_label | escape }}</a>';
-                    {% endif %}
-                    {% if block.settings.col2_link3_label != blank %}
-                      sub.innerHTML += '<a href="{{ block.settings.col2_link3_url }}" class="isyf-nav__mobile-sublink">{{ block.settings.col2_link3_label | escape }}</a>';
-                    {% endif %}
-                    sub.innerHTML += '</div>';
-                  {% endif %}
-                  {% if block.settings.shop_all_label != blank %}
-                    sub.innerHTML += '<div class="isyf-nav__mobile-subgroup"><a href="{{ block.settings.shop_all_url }}" class="isyf-nav__mobile-sublink" style="font-weight:500;letter-spacing:0.1em;text-transform:uppercase;font-size:12px;">{{ block.settings.shop_all_label | escape }}</a></div>';
-                  {% endif %}
-                }
-              {% endif %}
-            {% endfor %}
-
-            btn.parentElement.appendChild(sub);
-          });
-        });
+    document.querySelectorAll('[data-drawer-expand]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var label = btn.getAttribute('data-drawer-expand');
+        var sub = document.querySelector('[data-drawer-submenu="' + label + '"]');
+        if (!sub) return;
+        var isVisible = sub.style.display !== 'none';
+        sub.style.display = isVisible ? 'none' : 'flex';
+        btn.querySelector('span').textContent = isVisible ? '+' : '−';
       });
-    }
+    });
   })();
 </script>
 
@@ -192,6 +210,69 @@
       "id": "logo_text",
       "label": "Logo text (if no image)",
       "default": "I SEE, YOU FEEL."
+    },
+    {
+      "type": "header",
+      "content": "Drawer menu — extra links"
+    },
+    {
+      "type": "text",
+      "id": "drawer_link1_label",
+      "label": "Extra link label",
+      "default": "Journal"
+    },
+    {
+      "type": "url",
+      "id": "drawer_link1_url",
+      "label": "Extra link URL"
+    },
+    {
+      "type": "header",
+      "content": "Drawer menu — Support links"
+    },
+    {
+      "type": "text",
+      "id": "drawer_support1_label",
+      "label": "Support link 1 label",
+      "default": "FAQ"
+    },
+    {
+      "type": "url",
+      "id": "drawer_support1_url",
+      "label": "Support link 1 URL"
+    },
+    {
+      "type": "text",
+      "id": "drawer_support2_label",
+      "label": "Support link 2 label",
+      "default": "Contact"
+    },
+    {
+      "type": "url",
+      "id": "drawer_support2_url",
+      "label": "Support link 2 URL"
+    },
+    {
+      "type": "text",
+      "id": "drawer_support3_label",
+      "label": "Support link 3 label",
+      "default": "Size Guide"
+    },
+    {
+      "type": "url",
+      "id": "drawer_support3_url",
+      "label": "Support link 3 URL"
+    },
+    {
+      "type": "text",
+      "id": "drawer_support4_label",
+      "label": "Support link 4 label",
+      "default": "Shipping & Returns"
+    },
+    {
+      "type": "url",
+      "id": "drawer_support4_url",
+      "label": "Support link 4 URL"
     }
   ],
   "blocks": [
@@ -235,6 +316,7 @@
         { "type": "mega_menu", "settings": { "label": "Women" } },
         { "type": "mega_menu", "settings": { "label": "Men", "col1_title": "ISYF Premium", "col2_title": "ISYF FEELS", "shop_all_label": "Shop All Men" } },
         { "type": "link", "settings": { "label": "Accessories" } },
+        { "type": "link", "settings": { "label": "Rituals" } },
         { "type": "link", "settings": { "label": "Lookbook" } },
         { "type": "link", "settings": { "label": "Our Story" } }
       ]

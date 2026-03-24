@@ -13,7 +13,12 @@
       "header": {
         "type": "header",
         "settings": {
-          "logo_text": "I SEE, YOU FEEL."
+          "logo_text": "I SEE, YOU FEEL.",
+          "drawer_link1_label": "Journal",
+          "drawer_support1_label": "FAQ",
+          "drawer_support2_label": "Contact",
+          "drawer_support3_label": "Size Guide",
+          "drawer_support4_label": "Shipping & Returns"
         },
         "blocks": {
           "menu_women": {
@@ -52,6 +57,12 @@
               "label": "Accessories"
             }
           },
+          "link_rituals": {
+            "type": "link",
+            "settings": {
+              "label": "Rituals"
+            }
+          },
           "link_lookbook": {
             "type": "link",
             "settings": {
@@ -69,6 +80,7 @@
           "menu_women",
           "menu_men",
           "link_accessories",
+          "link_rituals",
           "link_lookbook",
           "link_story"
         ]
