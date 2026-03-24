@@ -1,0 +1,42 @@
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "settings": {
+        "free_shipping_text": "Free shipping over €100"
+      },
+      "blocks": {
+        "acc1": {
+          "type": "accordion",
+          "settings": {
+            "title": "Description",
+            "content": "<p>Product description details.</p>"
+          }
+        },
+        "acc2": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping",
+            "content": "<p>Free shipping on orders over €100 within Europe. Standard delivery: 5–10 business days. Express options available at checkout.</p>"
+          }
+        },
+        "acc3": {
+          "type": "accordion",
+          "settings": {
+            "title": "Size Guide",
+            "content": "<p>XS: Chest 86cm / S: Chest 91cm / M: Chest 97cm / L: Chest 102cm / XL: Chest 107cm / 2XL: Chest 112cm / 3XL: Chest 117cm</p>"
+          }
+        }
+      },
+      "block_order": ["acc1", "acc2", "acc3"]
+    },
+    "recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "title": "You might also like",
+        "products_count": 4
+      }
+    }
+  },
+  "order": ["main-product", "recommendations"]
+}

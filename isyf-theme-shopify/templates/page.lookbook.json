@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main-lookbook": {
+      "type": "main-page-lookbook",
+      "settings": {
+        "hero_label": "SS26 COLLECTION",
+        "hero_title": "LOOKBOOK",
+        "hero_subtitle": "See the vision. Feel the collection.",
+        "quote": "Every piece carries a feeling. Every look tells a story.",
+        "cta_label": "SHOP THE COLLECTION",
+        "cta_link": "/collections/all"
+      },
+      "blocks": {
+        "l1": { "type": "lookbook_image", "settings": { "caption": "ISYF PREMIUM — AW26", "span": "wide" } },
+        "l2": { "type": "lookbook_image", "settings": { "caption": "FEEL SOMETHING", "span": "normal" } },
+        "l3": { "type": "lookbook_image", "settings": { "caption": "STILL HERE", "span": "normal" } },
+        "l4": { "type": "lookbook_image", "settings": { "caption": "WEAR WHAT YOU FEEL", "span": "normal" } },
+        "l5": { "type": "lookbook_image", "settings": { "caption": "THE ESSENTIALS", "span": "normal" } },
+        "l6": { "type": "lookbook_image", "settings": { "caption": "I SEE, YOU FEEL.", "span": "full" } }
+      },
+      "block_order": ["l1", "l2", "l3", "l4", "l5", "l6"]
+    }
+  },
+  "order": ["main-lookbook"]
+}
